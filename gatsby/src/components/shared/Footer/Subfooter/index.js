@@ -1,9 +1,12 @@
 import React from 'react';
+import { format } from 'date-fns';
 import { TertiaryButton } from '../../Buttons';
 import { SubfooterLink, SubfooterLinkList, SubfooterStyles } from './Styles';
 import { Instagram, Newsletter, Twitter } from './Icons';
 
 export default function Subfooter() {
+  const copyrightYear = format(new Date(), 'yyyy');
+
   return (
     <SubfooterStyles>
       <div>
@@ -11,7 +14,9 @@ export default function Subfooter() {
           link="https://christopherrouleau.faire.com/welcome/r/personal?signUp=widget&widgetToken=bw_5luuqz5njm"
           text="Shop wholesale"
         />
-        <p style={{ marginTop: '16px' }}>© 2022 Christopher Rouleau</p>
+        <p style={{ marginTop: '16px' }}>
+          © {copyrightYear} Christopher Rouleau
+        </p>
       </div>
       <div>
         <SubfooterLinkList>

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const WordmarkStyles = styled.svg`
   max-width: 300px;
-  transition: fill 0.25s ease-in-out;
 
   &:hover {
     fill: var(--primary-blue);

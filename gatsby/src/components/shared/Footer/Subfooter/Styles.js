@@ -4,6 +4,7 @@ export const SubfooterStyles = styled.div`
   display: flex;
   justify-content: center;
   margin: 3em 0 2em;
+  font-size: 0.75em;
 
   div {
     margin: 0 12px;
@@ -12,10 +13,10 @@ export const SubfooterStyles = styled.div`
 
 export const SubfooterLinkList = styled.ul`
   display: flex;
-  height: 100%;
   flex-direction: column;
   justify-content: space-between;
   list-style-type: none;
+  gap: 1em;
 `;
 
 export const SubfooterLink = styled.li`
@@ -29,7 +30,6 @@ export const SubfooterLink = styled.li`
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 400;
-    font-size: 0.75em;
   }
 
   svg {

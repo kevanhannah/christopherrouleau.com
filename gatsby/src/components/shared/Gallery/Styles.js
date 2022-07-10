@@ -3,13 +3,10 @@ import styled from 'styled-components';
 export const GalleryStyles = styled.div`
   --columns: 6;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 12px;
-  min-width: 50%;
-  max-width: 50%;
-  user-select: none;
+  grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
+  gap: 1em;
 
-  .gatsby-image-wrapper:first-of-type {
+  & div:first-child {
     grid-column: 1 / span 6;
   }
 `;

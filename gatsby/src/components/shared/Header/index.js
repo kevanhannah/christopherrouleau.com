@@ -1,5 +1,5 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Nav from './Nav';
 import Wordmark from '../Wordmark';

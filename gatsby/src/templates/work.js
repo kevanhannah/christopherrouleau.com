@@ -1,14 +1,25 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import ItemFeature from '../components/ItemFeature';
-import RelatedItems from '../components/RelatedItems';
+import styled from 'styled-components';
+import SingleItemFeature from '../components/shared/SingleItemFeature';
+
+const PageGrid = styled.main`
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 3em;
+  margin-bottom: 3em;
+`;
 
 export default function WorkTemplate({ data: { work, relatedWorks } }) {
   return (
-    <main>
-      <ItemFeature item={work} pageType="work" series={work.series} />
-      {work.series && <RelatedItems relatedWorks={relatedWorks} />}
-    </main>
+    <PageGrid>
+      <SingleItemFeature
+        category={work.category || work.series.category}
+        description={work.description}
+        images={work.images}
+        name={work.name}
+      />
+    </PageGrid>
   );
 }
 
@@ -17,9 +28,9 @@ export const query = graphql`
     work: sanityWork(id: { eq: $id }) {
       name
       description: _rawDescription
-      slug {
-        current
-      }
+      # slug {
+      #   current
+      # }
       images {
         alt
         asset {
