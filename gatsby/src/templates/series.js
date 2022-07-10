@@ -1,24 +1,24 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import ItemFeature from '../components/ItemFeature';
-import WorkGrid from '../components/WorkGrid';
-import WorkItem from '../components/WorkItem';
+import CardGrid from '../components/shared/CardGrid';
+import CardGridItem from '../components/shared/CardGrid/CardGridItem';
 
 export default function SeriesTemplate({ data: { series, works } }) {
   return (
     <main>
       <ItemFeature item={series} pageType="series" />
       <h2>Works in this series</h2>
-      <WorkGrid>
+      <CardGrid>
         {works.nodes.map((work) => (
-          <WorkItem
+          <CardGridItem
             imageData={work.images[0]}
             key={work.id}
             link={`../${work.slug.current}`}
             name={work.name}
           />
         ))}
-      </WorkGrid>
+      </CardGrid>
     </main>
   );
 }

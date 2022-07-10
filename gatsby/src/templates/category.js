@@ -1,8 +1,7 @@
-import { graphql } from 'gatsby';
 import React from 'react';
-import WorkGrid from '../components/WorkGrid';
-import WorkItem from '../components/WorkItem';
-import FooterFeature from '../components/shared/FooterFeature';
+import { graphql } from 'gatsby';
+import CardGrid from '../components/shared/CardGrid';
+import CardGridItem from '../components/shared/CardGrid/CardGridItem';
 
 export default function CategoryTemplate({
   data: { category, series, works },
@@ -14,17 +13,16 @@ export default function CategoryTemplate({
   return (
     <main>
       <h2 style={{ fontSize: '2em' }}>{category.name}</h2>
-      <WorkGrid>
+      <CardGrid>
         {categoryItems.map((item) => (
-          <WorkItem
+          <CardGridItem
             imageData={item.images}
             key={item.id}
             link={`../../${item.slug.current}`}
             name={item.name}
           />
         ))}
-      </WorkGrid>
-      <FooterFeature />
+      </CardGrid>
     </main>
   );
 }

@@ -1,15 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Post from '../components/Layout/Post';
-import FooterFeature from '../components/shared/FooterFeature';
+import Post from '../components/Post';
 
 export default function PostTemplate({ data: { post } }) {
-  return (
-    <>
-      <Post post={post} />
-      <FooterFeature />
-    </>
-  );
+  return <Post post={post} />;
 }
 
 export const query = graphql`

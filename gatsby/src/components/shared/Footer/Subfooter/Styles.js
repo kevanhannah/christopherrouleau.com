@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FooterStyles = styled.div`
+export const SubfooterStyles = styled.div`
   display: flex;
   justify-content: center;
   margin: 3em 0 2em;
@@ -10,7 +10,7 @@ export const FooterStyles = styled.div`
   }
 `;
 
-export const FooterLinkList = styled.ul`
+export const SubfooterLinkList = styled.ul`
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -18,7 +18,7 @@ export const FooterLinkList = styled.ul`
   list-style-type: none;
 `;
 
-export const FooterLink = styled.li`
+export const SubfooterLink = styled.li`
   display: flex;
   align-items: center;
   margin: 0;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextLink } from '../../Buttons';
+import { TextLink } from '../shared/Buttons';
 
 export default {
   marks: {

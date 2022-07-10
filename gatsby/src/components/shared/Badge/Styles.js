@@ -1,8 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
 
-const CategoryBadgeStyles = styled(Link)`
+export const BadgeStyles = styled(Link)`
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -19,10 +18,3 @@ const CategoryBadgeStyles = styled(Link)`
     background-color: var(--primary-blue-lighter);
   }
 `;
-
-export default function CategoryBadge({ category: { name, slug }, pageType }) {
-  const path =
-    pageType === 'series' ? `../../${slug.current}` : `../${slug.current}`;
-
-  return <CategoryBadgeStyles to={path}>{name}</CategoryBadgeStyles>;
-}

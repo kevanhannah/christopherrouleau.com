@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import LatestBlogPost from './LatestBlogPost';
-import { FeatureItemStyles, FooterFeatureStyles } from './styles';
+import { FeatureItemStyles, FeatureLinksStyles } from './Styles';
 import { renderFeatureItem } from './renderFeatureItem';
 
-export default function FooterFeature() {
+export default function FeatureLinks() {
   const {
     latestPost,
     sanitySettings: { featureLists },
@@ -85,7 +85,7 @@ export default function FooterFeature() {
   `);
 
   return (
-    <FooterFeatureStyles>
+    <FeatureLinksStyles>
       <LatestBlogPost post={latestPost} />
       {featureLists.map((list) => (
         <div key={list.title}>
@@ -102,6 +102,6 @@ export default function FooterFeature() {
           </ul>
         </div>
       ))}
-    </FooterFeatureStyles>
+    </FeatureLinksStyles>
   );
 }

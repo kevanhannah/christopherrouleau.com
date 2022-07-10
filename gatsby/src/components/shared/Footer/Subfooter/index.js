@@ -1,11 +1,11 @@
 import React from 'react';
 import { TertiaryButton } from '../../Buttons';
-import { FooterLink, FooterLinkList, FooterStyles } from './Styles';
+import { SubfooterLink, SubfooterLinkList, SubfooterStyles } from './Styles';
 import { Instagram, Newsletter, Twitter } from './Icons';
 
-export default function Footer() {
+export default function Subfooter() {
   return (
-    <FooterStyles>
+    <SubfooterStyles>
       <div>
         <TertiaryButton
           link="https://christopherrouleau.faire.com/welcome/r/personal?signUp=widget&widgetToken=bw_5luuqz5njm"
@@ -14,8 +14,8 @@ export default function Footer() {
         <p style={{ marginTop: '16px' }}>© 2022 Christopher Rouleau</p>
       </div>
       <div>
-        <FooterLinkList>
-          <FooterLink>
+        <SubfooterLinkList>
+          <SubfooterLink>
             <a
               href="http://christopherrouleau.us11.list-manage2.com/subscribe?u=b1b927bb82834df5ac175e16b&id=32a2f3432e"
               rel="noopener noreferrer"
@@ -24,8 +24,8 @@ export default function Footer() {
               <Newsletter />
               Newsletter
             </a>
-          </FooterLink>
-          <FooterLink>
+          </SubfooterLink>
+          <SubfooterLink>
             <a
               href="http://instagram.com/chris_rouleau/"
               rel="noopener noreferrer"
@@ -34,8 +34,8 @@ export default function Footer() {
               <Instagram />
               Instagram
             </a>
-          </FooterLink>
-          <FooterLink>
+          </SubfooterLink>
+          <SubfooterLink>
             <a
               href="http://twitter.com/Chris_Rouleau"
               rel="noopener noreferrer"
@@ -44,9 +44,9 @@ export default function Footer() {
               <Twitter />
               Twitter
             </a>
-          </FooterLink>
-        </FooterLinkList>
+          </SubfooterLink>
+        </SubfooterLinkList>
       </div>
-    </FooterStyles>
+    </SubfooterStyles>
   );
 }

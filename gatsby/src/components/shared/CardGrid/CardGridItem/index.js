@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { format } from 'date-fns';
 
-const WorkItemStyles = styled.li`
+const GridCardItemStyles = styled.li`
   display: block;
   list-style-type: none;
 
@@ -57,7 +57,7 @@ const ItemDateStyles = styled.div`
   margin: 1em 0 0;
 `;
 
-export default function WorkItem({ date, imageData, link, name }) {
+export default function CardGridItem({ date, imageData, link, name }) {
   const image = imageData.length ? imageData[0] : imageData;
   const formattedImage = image.asset.gatsbyImageData;
   const formattedDate = date
@@ -65,7 +65,7 @@ export default function WorkItem({ date, imageData, link, name }) {
     : null;
 
   return (
-    <WorkItemStyles>
+    <GridCardItemStyles>
       <Link to={link}>
         <GatsbyImage image={formattedImage} alt={image.alt} />
         {date && (
@@ -75,6 +75,6 @@ export default function WorkItem({ date, imageData, link, name }) {
         )}
         <p>{name}</p>
       </Link>
-    </WorkItemStyles>
+    </GridCardItemStyles>
   );
 }

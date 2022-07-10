@@ -1,27 +1,6 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { GatsbyImage } from 'gatsby-plugin-image';
-
-const GalleryStyles = styled.div`
-  --columns: 6;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 12px;
-  min-width: 50%;
-  max-width: 50%;
-  user-select: none;
-
-  .gatsby-image-wrapper:first-of-type {
-    grid-column: 1 / span 6;
-  }
-`;
-
-const ImageSelectWrapper = styled.div`
-  &:hover {
-    cursor: pointer;
-    opacity: 0.8;
-  }
-`;
+import { GalleryStyles, ImageSelectWrapper } from './Styles';
 
 export default function Gallery({ images }) {
   const imageData = images.length

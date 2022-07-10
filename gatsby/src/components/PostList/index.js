@@ -1,14 +1,14 @@
 import React from 'react';
-import WorkGrid from '../../WorkGrid';
-import WorkItem from '../../WorkItem';
+import CardGrid from '../shared/CardGrid';
+import CardGridItem from '../shared/CardGrid/CardGridItem';
 
 export default function PostList({ main, title, posts }) {
   return (
     <main>
       <h2 style={{ fontSize: '2em' }}>{title}</h2>
-      <WorkGrid>
+      <CardGrid>
         {posts.nodes.map((post) => (
-          <WorkItem
+          <CardGridItem
             date={post.publishedAt}
             imageData={post.heroImage}
             key={post.id}
@@ -16,7 +16,7 @@ export default function PostList({ main, title, posts }) {
             name={post.title}
           />
         ))}
-      </WorkGrid>
+      </CardGrid>
     </main>
   );
 }

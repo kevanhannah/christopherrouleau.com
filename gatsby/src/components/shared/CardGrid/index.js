@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const WorkGridStyles = styled.ul`
+const CardGridStyles = styled.ul`
   --columns: 3;
   display: grid;
   gap: 24px;
@@ -17,6 +17,6 @@ const WorkGridStyles = styled.ul`
   }
 `;
 
-export default function WorkGrid({ children }) {
-  return <WorkGridStyles>{children}</WorkGridStyles>;
+export default function CardGrid({ children }) {
+  return <CardGridStyles>{children}</CardGridStyles>;
 }

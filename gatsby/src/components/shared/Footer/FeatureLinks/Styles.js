@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FooterFeatureStyles = styled.div`
+export const FeatureLinksStyles = styled.div`
   max-width: 970px;
   margin-left: auto;
   margin-right: auto;

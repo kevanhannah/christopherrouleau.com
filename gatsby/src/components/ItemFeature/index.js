@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PortableText } from '@portabletext/react';
-import Gallery from '../Gallery';
-import CategoryBadge from '../CategoryBadge';
+import Gallery from '../shared/Gallery';
+import Badge from '../shared/Badge';
 
 const ItemFeaturePageHeader = styled.h1`
   margin-bottom: 4px;
@@ -43,7 +43,7 @@ export default function ItemFeature({ item, pageType, series }) {
   return (
     <>
       <ItemFeaturePageHeader>{item.name}</ItemFeaturePageHeader>
-      <CategoryBadge category={category} pageType={pageType} />
+      <Badge category={category} pageType={pageType} />
       <ItemFeatureMainArea>
         <ItemFeatureDescriptionStyles>
           <PortableText value={item.description} />

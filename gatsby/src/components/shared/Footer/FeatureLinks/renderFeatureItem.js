@@ -1,5 +1,5 @@
 import React from 'react';
-import parseSanityLink from '../../../utils/parseSanityLink';
+import parseSanityLink from '../../../../utils/parseSanityLink';
 import { TextLink } from '../../Buttons';
 
 export function renderFeatureItem(item) {
