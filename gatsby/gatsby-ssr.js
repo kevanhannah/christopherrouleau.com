@@ -1,10 +1,17 @@
-import React from 'react';
-import Layout from './src/components/Layout';
+import React, { Fragment } from 'react';
+import GlobalStyles from './src/components/Layout/styles/GlobalStyles';
+import Typography from './src/components/Layout/styles/Typography';
 
 export function wrapPageElement({ element, props }) {
   if (props.location.pathname === '/') {
     return;
   }
 
-  return <Layout {...props}>{element}</Layout>;
+  return (
+    <Fragment {...props}>
+      <GlobalStyles />
+      <Typography />
+      {element}
+    </Fragment>
+  );
 }

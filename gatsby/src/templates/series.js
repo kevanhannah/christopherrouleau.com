@@ -1,9 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SeriesPage from '../components/SeriesPage';
+import WorkPage from '../components/WorkPage';
 
 export default function SeriesTemplate({ data: { series, works } }) {
-  return <SeriesPage series={series} works={works} />;
+  return (
+    <WorkPage
+      category={series.category}
+      description={series.description}
+      images={[series.coverImage]}
+      name={series.name}
+      relatedWorks={works}
+      relatedWorksHeader="Works in this series"
+    />
+  );
 }
 
 export const query = graphql`
@@ -14,7 +23,7 @@ export const query = graphql`
       slug {
         current
       }
-      images: coverImage {
+      coverImage {
         alt
         asset {
           id

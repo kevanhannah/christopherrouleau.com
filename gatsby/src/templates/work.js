@@ -1,36 +1,28 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
-import SingleItemFeature from '../components/shared/SingleItemFeature';
-
-const PageGrid = styled.main`
-  display: grid;
-  grid-template-rows: auto auto;
-  gap: 3em;
-  margin-bottom: 3em;
-`;
+import WorkPage from '../components/WorkPage';
 
 export default function WorkTemplate({ data: { work, relatedWorks } }) {
   return (
-    <PageGrid>
-      <SingleItemFeature
-        category={work.category || work.series.category}
-        description={work.description}
-        images={work.images}
-        name={work.name}
-      />
-    </PageGrid>
+    <WorkPage
+      category={work.category || work.series.category}
+      description={work.description}
+      images={work.images}
+      name={work.name}
+      relatedWorks={relatedWorks}
+      relatedWorksHeader={
+        work.series ? `More works from ${work.series.name}` : 'More works'
+      }
+    />
   );
 }
 
 export const query = graphql`
   query ($id: String!, $seriesId: String) {
     work: sanityWork(id: { eq: $id }) {
+      id
       name
       description: _rawDescription
-      # slug {
-      #   current
-      # }
       images {
         alt
         asset {

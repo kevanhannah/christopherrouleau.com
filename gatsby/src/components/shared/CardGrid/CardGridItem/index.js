@@ -7,6 +7,7 @@ import { format } from 'date-fns';
 const GridCardItemStyles = styled.li`
   display: block;
   list-style-type: none;
+  margin: 0;
 
   a {
     display: block;

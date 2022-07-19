@@ -38,17 +38,21 @@ export const HomePageIntroStyles = styled.div`
 `;
 
 export const CategoryContainer = styled.div`
-  margin-bottom: 48px;
-  padding-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 1.25em;
+  padding: 2em 0 2.75em;
+  /* margin-bottom: 48px;
+  padding-bottom: 48px; */
   border-bottom: 4px solid var(--black);
-
-  &:first-of-type {
-    margin-top: 48px;
-  }
 
   &:last-of-type {
     border-bottom: none;
-    margin-bottom: 0;
+  }
+
+  h2 {
+    margin: 0;
   }
 `;
 

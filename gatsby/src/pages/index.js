@@ -3,7 +3,32 @@ import { graphql } from 'gatsby';
 import HomePage from '../components/HomePage';
 
 export default function Home({ data: { home, series, works } }) {
-  return <HomePage home={home} series={series} works={works} />;
+  const allCategories = home.categories.map((category) => {
+    const seriesInCategory = series.nodes.filter(
+      (s) => s.category.id === category.id
+    );
+    const worksInCategory = works.nodes.filter(
+      (w) => w.category.id === category.id
+    );
+
+    const categoryItems = [...seriesInCategory, ...worksInCategory].sort(
+      (a, b) => new Date(b.releaseDate) - new Date(a.releaseDate)
+    );
+
+    return {
+      id: category.id,
+      items: categoryItems.slice(0, 3), // Max three items displayed
+      name: category.name,
+      linkToMore: categoryItems.length > 3,
+      slug: category.slug,
+    };
+  });
+
+  const categoryContents = allCategories.filter(
+    (category) => category.items.length
+  );
+
+  return <HomePage home={home} categoryContents={categoryContents} />;
 }
 
 export const query = graphql`

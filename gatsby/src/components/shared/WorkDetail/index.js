@@ -4,7 +4,7 @@ import { PortableText } from '@portabletext/react';
 import Badge from '../Badge';
 import Gallery from '../Gallery';
 
-const SingleItemFeatureStyles = styled.div`
+const WorkDetailStyles = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3em;
@@ -12,16 +12,25 @@ const SingleItemFeatureStyles = styled.div`
 `;
 
 const SingleItemInformationPanel = styled.div`
-  /* max-width: 50%; */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
 `;
 
-const SingleItemHeader = styled.h2`
+const SingleItemHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5em;
+`;
+
+const ItemTitle = styled.h2`
   font-size: 2.25em;
   font-weight: 700;
   margin: 0;
 `;
 
-export default function SingleItemFeature({
+export default function WorkDetail({
   category,
   description,
   images,
@@ -29,13 +38,17 @@ export default function SingleItemFeature({
   pageType,
 }) {
   return (
-    <SingleItemFeatureStyles>
+    <WorkDetailStyles>
       <SingleItemInformationPanel>
-        <SingleItemHeader>{name}</SingleItemHeader>
-        <Badge category={category} pageType={pageType} />
-        <PortableText value={description} />
+        <SingleItemHeader>
+          <ItemTitle>{name}</ItemTitle>
+          <Badge category={category} pageType={pageType} />
+        </SingleItemHeader>
+        <div>
+          <PortableText value={description} />
+        </div>
       </SingleItemInformationPanel>
       <Gallery images={images} />
-    </SingleItemFeatureStyles>
+    </WorkDetailStyles>
   );
 }

@@ -114,6 +114,7 @@ async function createWorkPages({ graphql, actions }) {
       works: allSanityWork {
         nodes {
           id
+          inSeries
           slug {
             current
           }
