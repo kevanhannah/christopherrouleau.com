@@ -11,7 +11,7 @@ export default function SeriesWorkTemplate({ data: { work, relatedWorks } }) {
       name={work.name}
       relatedWorks={relatedWorks}
       relatedWorksHeader={
-        work.series ? `More works from ${work.series.name}` : 'More works'
+        work.series ? `More from ${work.series.name}` : 'More works'
       }
     />
   );

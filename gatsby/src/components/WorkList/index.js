@@ -6,7 +6,7 @@ import CardGridItem from '../shared/CardGrid/CardGridItem';
 export default function WorkList({ title, works }) {
   return (
     <WorkListStyles>
-      <h2 style={{ fontSize: '2em' }}>{title}</h2>
+      <h2>{title}</h2>
       <CardGrid>
         {works.map((work) => (
           <CardGridItem
