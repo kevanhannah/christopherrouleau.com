@@ -6,11 +6,11 @@ export const BadgeStyles = styled(Link)`
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.65em;
+  font-size: 0.75em;
   color: #ffffff;
   background-color: var(--primary-blue);
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
   user-select: none;
 
   &:hover {

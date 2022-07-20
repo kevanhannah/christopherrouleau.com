@@ -14,7 +14,7 @@ export default function Subfooter() {
           link="https://christopherrouleau.faire.com/welcome/r/personal?signUp=widget&widgetToken=bw_5luuqz5njm"
           text="Shop wholesale"
         />
-        <p style={{ marginTop: '16px' }}>
+        <p style={{ marginTop: '1em' }}>
           © {copyrightYear} Christopher Rouleau
         </p>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { BannerStyles } from './styles';
+import { BannerStyles } from './Styles';
 
 export default function Banner() {
   const {

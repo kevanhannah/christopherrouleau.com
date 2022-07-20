@@ -41,8 +41,8 @@ const GridCardItemStyles = styled.li`
 
     a > p {
       text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 4px;
+      text-decoration-thickness: 0.125em;
+      text-underline-offset: 0.25em;
     }
 
     div.gatsby-image-wrapper {

@@ -1,10 +1,11 @@
 import React from 'react';
+import { PostListStyles } from './Styles';
 import CardGrid from '../shared/CardGrid';
 import CardGridItem from '../shared/CardGrid/CardGridItem';
 
 export default function PostList({ main, title, posts }) {
   return (
-    <main>
+    <PostListStyles>
       <h2 style={{ fontSize: '2em' }}>{title}</h2>
       <CardGrid>
         {posts.nodes.map((post) => (
@@ -17,6 +18,6 @@ export default function PostList({ main, title, posts }) {
           />
         ))}
       </CardGrid>
-    </main>
+    </PostListStyles>
   );
 }

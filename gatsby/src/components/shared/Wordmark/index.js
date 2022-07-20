@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const WordmarkStyles = styled.svg`
-  max-width: 300px;
+  max-width: 18.75em;
 
   &:hover {
     fill: var(--primary-blue);

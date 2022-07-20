@@ -118,6 +118,9 @@ async function createWorkPages({ graphql, actions }) {
           slug {
             current
           }
+          category {
+            id
+          }
           series {
             id
             slug {
@@ -130,14 +133,22 @@ async function createWorkPages({ graphql, actions }) {
   `);
 
   data.works.nodes.forEach((work) => {
-    createPage({
+    const page = {
       path: `${work.slug.current}`,
-      component: path.resolve('./src/templates/work.js'),
       context: {
         id: work.id,
-        seriesId: work.series?.id || null,
       },
-    });
+    };
+
+    if (work.series) {
+      page.component = path.resolve('./src/templates/seriesWork.js');
+      page.context.seriesId = work.series.id;
+    } else {
+      page.component = path.resolve('./src/templates/nonSeriesWork.js');
+      page.context.categoryId = work.category.id;
+    }
+
+    createPage(page);
   });
 }
 

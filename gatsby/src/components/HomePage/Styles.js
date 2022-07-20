@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import Header from '../shared/Header';
 
 export const HomePageIntroStyles = styled.div`
-  margin: 64px auto;
-  max-width: 970px;
+  margin: 4em auto;
+  max-width: 60.75em;
   display: grid;
   grid-template-columns: 3fr 2fr;
-  gap: 48px;
+  gap: 2em;
 
   & > div > h1 {
     font-size: 4em;
@@ -14,9 +14,9 @@ export const HomePageIntroStyles = styled.div`
   }
 
   & > div > p {
-    font-size: 1.3em;
+    font-size: 1.5em;
     line-height: 1.4;
-    margin-bottom: 36px;
+    margin-bottom: 1.5em;
 
     & strong {
       font-weight: 400;
@@ -43,21 +43,21 @@ export const CategoryContainer = styled.div`
   align-items: flex-start;
   row-gap: 1.25em;
   padding: 2em 0 2.75em;
-  /* margin-bottom: 48px;
-  padding-bottom: 48px; */
-  border-bottom: 4px solid var(--black);
+  border-bottom: 0.25em solid var(--black);
 
   &:last-of-type {
     border-bottom: none;
   }
 
   h2 {
+    font-size: 2.25em;
+    font-weight: 700;
     margin: 0;
   }
 `;
 
 export const HomePageHeader = styled(Header)`
-  max-width: 970px;
+  max-width: 60.75em;
   margin-left: auto;
   margin-right: auto;
 `;

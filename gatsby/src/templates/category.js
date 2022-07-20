@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import CardGrid from '../components/shared/CardGrid';
 import CardGridItem from '../components/shared/CardGrid/CardGridItem';
+import WorkList from '../components/WorkList';
 
 export default function CategoryTemplate({
   data: { category, series, works },
@@ -11,19 +12,20 @@ export default function CategoryTemplate({
   );
 
   return (
-    <main>
-      <h2 style={{ fontSize: '2em' }}>{category.name}</h2>
-      <CardGrid>
-        {categoryItems.map((item) => (
-          <CardGridItem
-            imageData={item.images}
-            key={item.id}
-            link={`../../${item.slug.current}`}
-            name={item.name}
-          />
-        ))}
-      </CardGrid>
-    </main>
+    <WorkList title={category.name} works={categoryItems} />
+    // <main>
+    //   <h2 style={{ fontSize: '2em' }}>{category.name}</h2>
+    //   <CardGrid>
+    //     {categoryItems.map((item) => (
+    //       <CardGridItem
+    //         imageData={item.images}
+    //         key={item.id}
+    //         link={`../../${item.slug.current}`}
+    //         name={item.name}
+    //       />
+    //     ))}
+    //   </CardGrid>
+    // </main>
   );
 }
 

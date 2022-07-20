@@ -12,7 +12,6 @@ const LatestBlogPostStyles = styled.div`
       color: var(--black);
       text-decoration: none;
       background-color: var(--primary-yellow);
-      padding: 2px 0;
 
       &:hover {
         background-color: var(--primary-yellow-lighter);
@@ -24,11 +23,11 @@ const LatestBlogPostStyles = styled.div`
     margin-bottom: 1em;
 
     & > a {
-      font-size: 0.9em;
+      font-size: 1em;
       font-weight: 400;
       color: var(--black);
-      text-decoration-thickness: 2px;
-      text-underline-offset: 4px;
+      text-decoration-thickness: 0.125em;
+      text-underline-offset: 0.25em;
 
       &:hover {
         text-decoration: none;

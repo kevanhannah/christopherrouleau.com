@@ -2,23 +2,23 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import WorkPage from '../components/WorkPage';
 
-export default function WorkTemplate({ data: { work, relatedWorks } }) {
+export default function NonSeriesWorkTemplate({
+  data: { work, relatedWorks },
+}) {
   return (
     <WorkPage
-      category={work.category || work.series.category}
+      category={work.category}
       description={work.description}
       images={work.images}
       name={work.name}
       relatedWorks={relatedWorks}
-      relatedWorksHeader={
-        work.series ? `More works from ${work.series.name}` : 'More works'
-      }
+      relatedWorksHeader="More works"
     />
   );
 }
 
 export const query = graphql`
-  query ($id: String!, $seriesId: String) {
+  query ($id: String!, $categoryId: String!) {
     work: sanityWork(id: { eq: $id }) {
       id
       name
@@ -35,19 +35,6 @@ export const query = graphql`
           )
         }
       }
-      series {
-        name
-        slug {
-          current
-        }
-        excerpt: _rawExcerpt
-        category {
-          name
-          slug {
-            current
-          }
-        }
-      }
       category {
         name
         slug {
@@ -56,7 +43,7 @@ export const query = graphql`
       }
     }
     relatedWorks: allSanityWork(
-      filter: { series: { id: { eq: $seriesId } }, id: { ne: $id } }
+      filter: { category: { id: { eq: $categoryId } }, id: { ne: $id } }
       limit: 3
     ) {
       nodes {

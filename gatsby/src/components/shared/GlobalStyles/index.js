@@ -15,7 +15,6 @@ const GlobalStyles = createGlobalStyle`
   --darker-grey: hsl(var(--base-grey), 67%);
   --darkest-grey: hsl(var(--base-grey), 57%);
 
-  /* NEW */
   --base-primary-blue: 224, 76%;
   --primary-blue: hsl(var(--base-primary-blue), 34%);
   --primary-blue-lighter: hsl(var(--base-primary-blue), 44%);

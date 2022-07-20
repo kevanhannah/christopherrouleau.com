@@ -7,8 +7,8 @@ export const PostPageStyles = styled.div`
   a {
     color: var(--primary-blue-lighter);
     text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
+    text-decoration-thickness: 0.125em;
+    text-underline-offset: 0.25em;
 
     &:hover {
       text-decoration: none;
@@ -18,14 +18,14 @@ export const PostPageStyles = styled.div`
   p,
   li {
     color: var(--black-light);
-    font-size: 1.125em;
+    font-size: 1em;
     line-height: 1.75;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.25em;
   }
 
   ul,
   ol {
-    margin-left: 24px;
+    margin-left: 1.5em;
   }
 `;
 
@@ -38,12 +38,12 @@ export const PostTitle = styled.h2`
   font-size: 3em;
   font-weight: 700;
   color: var(--black);
-  margin-bottom: 0.65em;
+  margin-bottom: 0.5em;
 `;
 
 export const PostDateStyles = styled.div`
   text-transform: uppercase;
-  font-size: 0.875em;
+  font-size: 1em;
   color: var(--black);
-  margin-bottom: 1em;
+  margin-bottom: 0.75em;
 `;

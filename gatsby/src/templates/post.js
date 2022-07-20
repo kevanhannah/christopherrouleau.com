@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Post from '../components/Post';
+import PostPage from '../components/PostPage';
 
 export default function PostTemplate({ data: { post } }) {
-  return <Post post={post} />;
+  return <PostPage post={post} />;
 }
 
 export const query = graphql`

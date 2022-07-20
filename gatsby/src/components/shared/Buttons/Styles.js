@@ -3,13 +3,13 @@ import styled, { css } from 'styled-components';
 
 const PrimaryButtonStyles = css`
   display: inline-block;
-  padding: 12px 24px;
+  padding: 0.75em 1.5em;
   font-weight: 400;
   text-transform: uppercase;
   background-color: var(--primary-blue);
   color: #ffffff;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 0.25em;
   user-select: none;
 
   &:hover {
@@ -20,14 +20,14 @@ const PrimaryButtonStyles = css`
 
 const SecondaryButtonStyles = css`
   display: inline-block;
-  padding: 12px 24px;
+  padding: 0.75em 1.5em;
   font-weight: 400;
   text-transform: uppercase;
   background-color: var(--primary-blue);
   border: 1px solid #ffffff;
   color: #ffffff;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 0.25em;
   user-select: none;
 
   &:hover {
@@ -38,13 +38,13 @@ const SecondaryButtonStyles = css`
 
 const TertiaryButtonStyles = css`
   display: inline-block;
-  padding: 16px 40px;
+  padding: 1em 2.5em;
   font-weight: 400;
   text-transform: uppercase;
   background-color: var(--black);
   color: #ffffff;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 0.25em;
   user-select: none;
 
   &:hover {

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const IconStyles = styled.svg`
-  max-width: 24px;
+  max-width: 1.5em;
 
   &:hover {
     fill: var(--primary-blue);

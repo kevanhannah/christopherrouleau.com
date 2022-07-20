@@ -21,19 +21,21 @@ export default function WorkPage({
         images={images}
         name={name}
       />
-      <RelatedWorkCards>
-        <h2>{relatedWorksHeader}</h2>
-        <CardGrid>
-          {relatedWorks.nodes.map((work) => (
-            <CardGridItem
-              imageData={work.images[0]}
-              key={work.id}
-              link={`../${!series ? '../' : ''}${work.slug.current}`}
-              name={work.name}
-            />
-          ))}
-        </CardGrid>
-      </RelatedWorkCards>
+      {relatedWorks.nodes.length ? (
+        <RelatedWorkCards>
+          <h3>{relatedWorksHeader}</h3>
+          <CardGrid>
+            {relatedWorks.nodes.map((work) => (
+              <CardGridItem
+                imageData={work.images[0]}
+                key={work.id}
+                link={`../${!series ? '../' : ''}${work.slug.current}`}
+                name={work.name}
+              />
+            ))}
+          </CardGrid>
+        </RelatedWorkCards>
+      ) : null}
     </WorkPageStyles>
   );
 }

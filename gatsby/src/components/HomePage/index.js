@@ -1,8 +1,8 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { PortableText } from '@portabletext/react';
-import GlobalStyles from '../Layout/styles/GlobalStyles';
-import Typography from '../Layout/styles/Typography';
+import GlobalStyles from '../shared/GlobalStyles';
+import Typography from '../shared/Typography';
 import Banner from '../shared/Banner';
 import Footer from '../shared/Footer';
 import { PrimaryButton } from '../shared/Buttons';
@@ -40,10 +40,10 @@ export default function HomePage({ categoryContents, home }) {
           />
         </HomePageIntroStyles>
         <Hero heroContent={home.hero} />
-        <div style={{ maxWidth: '970px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '60.75em', margin: '0 auto' }}>
           {categoryContents.map((contents) => (
             <CategoryContainer key={contents.id}>
-              <h2 style={{ fontSize: '2.2em' }}>{contents.name}</h2>
+              <h2>{contents.name}</h2>
               <CardGrid>
                 {contents.items.map((item) => (
                   <CardGridItem

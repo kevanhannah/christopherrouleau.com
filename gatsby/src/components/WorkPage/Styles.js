@@ -9,4 +9,9 @@ export const WorkPageStyles = styled.main`
 
 export const RelatedWorkCards = styled.div`
   grid-column: 1 / span end;
+
+  h3 {
+    font-size: 1.75em;
+    font-weight: 700;
+  }
 `;

@@ -8,8 +8,7 @@ export const NavStyles = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 25%;
-  max-width: 50%;
+  gap: 2em;
 
   li {
     margin: 0;
@@ -28,8 +27,8 @@ export const NavStyles = styled.ul`
     &:hover {
       color: var(--primary-blue);
       text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 4px;
+      text-decoration-thickness: 0.125em;
+      text-underline-offset: 0.25em;
     }
   }
 `;

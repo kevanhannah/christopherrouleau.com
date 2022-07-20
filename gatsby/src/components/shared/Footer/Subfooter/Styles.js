@@ -7,7 +7,7 @@ export const SubfooterStyles = styled.div`
   font-size: 0.75em;
 
   div {
-    margin: 0 12px;
+    margin: 0 0.75em;
   }
 `;
 
@@ -33,8 +33,8 @@ export const SubfooterLink = styled.li`
   }
 
   svg {
-    width: 16px;
-    margin-right: 8px;
+    width: 1em;
+    margin-right: 0.5em;
   }
 
   &:hover {
@@ -43,8 +43,8 @@ export const SubfooterLink = styled.li`
     a {
       color: var(--primary-blue);
       text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 4px;
+      text-decoration-thickness: 0.125em;
+      text-underline-offset: 0.25em;
     }
 
     svg {

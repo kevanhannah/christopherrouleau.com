@@ -17,7 +17,7 @@ export default function Hero({
           image={image.asset.gatsbyImageData}
           alt={image.alt}
           imgStyle={{
-            boxShadow: '8px 8px 0 var(--primary-blue-darker)',
+            boxShadow: '0.5em 0.5em 0 var(--primary-blue-darker)',
             userSelect: 'none',
           }}
         />

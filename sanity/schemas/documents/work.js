@@ -34,10 +34,6 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      // options: {
-      //   source: 'name',
-      //   maxLength: 140,
-      // },
       options: {
         source: (doc, options) => ({ doc, options }),
         slugify: asyncSlugifier,
@@ -55,7 +51,7 @@ export default {
           type: 'itemImage',
         },
       ],
-      validation: (Rule) => Rule.max(6),
+      validation: (Rule) => Rule.required().min(1).max(6),
     },
     {
       name: 'description',
