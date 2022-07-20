@@ -6,7 +6,7 @@ import CardGridItem from '../shared/CardGrid/CardGridItem';
 export default function PostList({ main, title, posts }) {
   return (
     <PostListStyles>
-      <h2 style={{ fontSize: '2em' }}>{title}</h2>
+      <h2>{title}</h2>
       <CardGrid>
         {posts.nodes.map((post) => (
           <CardGridItem
