@@ -1,31 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-
-import basecoat from '../../../assets/fonts/basecoat.otf';
-import basecoatLight from '../../../assets/fonts/basecoat-light.otf';
-import basecoatBold from '../../../assets/fonts/basecoat-bold.otf';
+import '../../../assets/fonts/font.css';
 
 const Typography = createGlobalStyle`
-  @font-face {
-    font-family: Basecoat;
-    src: url(${basecoat}) format("opentype");
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: Basecoat;
-    src: url(${basecoatLight}) format("opentype");
-    font-style: normal;
-    font-weight: 300;
-  }
-
-  @font-face {
-    font-family: Basecoat;
-    src: url(${basecoatBold}) format("opentype");
-    font-style: normal;
-    font-weight: 700;
-  }
-
   html {
     font-family: Basecoat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--black);
