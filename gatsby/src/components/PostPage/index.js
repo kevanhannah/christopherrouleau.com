@@ -5,13 +5,14 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import textComponents from './textComponents';
 import {
   PostDateStyles,
+  PostHeaderStyles,
   PostPageStyles,
   PostTitle,
   TextAreaStyles,
 } from './styles';
 
 export default function Post({ post }) {
-  const postDate = format(new Date(`${post.publishedAt} EST`), 'MMMM d, yyyy');
+  const postDate = format(new Date(`${post.publishedAt}`), 'MMMM d, yyyy');
 
   return (
     <main>
@@ -20,16 +21,19 @@ export default function Post({ post }) {
           image={post.heroImage.asset.gatsbyImageData}
           alt={post.heroImage.altText}
           style={{
-            marginBottom: '2.5em',
             userSelect: 'none',
           }}
         />
         <TextAreaStyles>
-          <PostDateStyles>
-            Published <time dateTime={post.publishedAt}>{postDate}</time>
-          </PostDateStyles>
-          <PostTitle>{post.title}</PostTitle>
-          <PortableText value={post.body} components={textComponents} />
+          <PostHeaderStyles>
+            <PostDateStyles dateTime={post.publishedAt}>
+              {postDate}
+            </PostDateStyles>
+            <PostTitle>{post.title}</PostTitle>
+          </PostHeaderStyles>
+          <div>
+            <PortableText value={post.body} components={textComponents} />
+          </div>
         </TextAreaStyles>
       </PostPageStyles>
     </main>

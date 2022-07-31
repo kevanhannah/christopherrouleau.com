@@ -10,19 +10,20 @@ const GridCardItemStyles = styled.li`
   margin: 0;
 
   a {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
     text-decoration: none;
-    font-size: 1.6em;
     font-weight: 300;
     color: var(--black);
     user-select: none;
 
     p {
-      font-size: 0.8em;
+      font-size: 1.25em;
       font-weight: 400;
       line-height: 1.4;
-      margin: 0.5em 0 0;
       text-transform: uppercase;
+      margin: 0;
     }
 
     &:visited {
@@ -51,28 +52,30 @@ const GridCardItemStyles = styled.li`
   }
 `;
 
-const ItemDateStyles = styled.div`
+const ItemDateStyles = styled.time`
   text-transform: uppercase;
-  font-size: 0.5em;
+  font-size: 0.75em;
   font-weight: 400;
-  margin: 1em 0 0;
 `;
 
 export default function CardGridItem({ date, imageData, link, name }) {
   const image = imageData.length ? imageData[0] : imageData;
   const formattedImage = image.asset.gatsbyImageData;
   const formattedDate = date
-    ? format(new Date(`${date} EST`), 'MMMM d, yyyy')
+    ? format(new Date(`${date}`), 'MMMM d, yyyy')
     : null;
 
   return (
     <GridCardItemStyles>
       <Link to={link}>
-        <GatsbyImage image={formattedImage} alt={image.alt} />
+        <GatsbyImage
+          image={formattedImage}
+          alt={image.alt}
+          aria-hidden
+          role="presentation"
+        />
         {date && (
-          <ItemDateStyles>
-            <time dateTime={date}>{formattedDate}</time>
-          </ItemDateStyles>
+          <ItemDateStyles dateTime={date}>{formattedDate}</ItemDateStyles>
         )}
         <p>{name}</p>
       </Link>

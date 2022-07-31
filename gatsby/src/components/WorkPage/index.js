@@ -7,19 +7,23 @@ import { RelatedWorkCards, WorkPageStyles } from './Styles';
 export default function WorkPage({
   category,
   description,
+  forSale,
   images,
   name,
   relatedWorks,
   relatedWorksHeader,
   series,
+  storeUrl,
 }) {
   return (
     <WorkPageStyles>
       <WorkDetail
         category={category}
         description={description}
+        forSale={forSale}
         images={images}
         name={name}
+        storeUrl={storeUrl}
       />
       {relatedWorks.nodes.length ? (
         <RelatedWorkCards>

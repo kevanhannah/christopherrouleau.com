@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const PostListStyles = styled.main`
-  gap: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
   margin-bottom: 3em;
 
   h2 {

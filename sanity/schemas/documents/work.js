@@ -83,6 +83,18 @@ export default {
       description: 'Description of the work',
     },
     {
+      name: 'forSale',
+      title: 'Available in the store',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
+      name: 'storeUrl',
+      title: 'Link to item in store',
+      type: 'url',
+      hidden: ({ document }) => !document?.forSale,
+    },
+    {
       name: 'inSeries',
       title: 'Part of a series',
       type: 'boolean',

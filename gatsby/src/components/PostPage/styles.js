@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const PostPageStyles = styled.div`
-  max-width: 800px;
+  max-width: 50em;
   margin: 0 auto 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 
   a {
     color: var(--primary-blue-lighter);
@@ -20,7 +23,6 @@ export const PostPageStyles = styled.div`
     color: var(--black-light);
     font-size: 1em;
     line-height: 1.75;
-    margin-bottom: 1.25em;
   }
 
   ul,
@@ -30,20 +32,27 @@ export const PostPageStyles = styled.div`
 `;
 
 export const TextAreaStyles = styled.div`
-  max-width: 700px;
+  max-width: 43.75em;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75em;
+`;
+
+export const PostHeaderStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 `;
 
 export const PostTitle = styled.h2`
   font-size: 3em;
   font-weight: 700;
   color: var(--black);
-  margin-bottom: 0.5em;
 `;
 
-export const PostDateStyles = styled.div`
+export const PostDateStyles = styled.time`
   text-transform: uppercase;
   font-size: 1em;
   color: var(--black);
-  margin-bottom: 0.75em;
 `;
