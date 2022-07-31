@@ -7,12 +7,12 @@ export default function SeriesWorkTemplate({ data: { work, relatedWorks } }) {
     <WorkPage
       category={work.category || work.series.category}
       description={work.description}
+      forSale={work.forSale}
       images={work.images}
       name={work.name}
       relatedWorks={relatedWorks}
-      relatedWorksHeader={
-        work.series ? `More from ${work.series.name}` : 'More works'
-      }
+      relatedWorksHeader={`More from ${work.series.name}`}
+      storeUrl={work.storeUrl}
     />
   );
 }
@@ -23,6 +23,8 @@ export const query = graphql`
       id
       name
       description: _rawDescription
+      forSale
+      storeUrl
       images {
         alt
         asset {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
-import { HeroStyles } from './Styles';
+import { HeroOuterArea, HeroInnerArea, HeroTextStyles } from './Styles';
 import { SecondaryButton } from '../../shared/Buttons';
 import parseSanityLink from '../../../utils/parseSanityLink';
 
@@ -11,8 +11,8 @@ export default function Hero({
   const parsedLink = parseSanityLink(link[0]);
 
   return (
-    <HeroStyles>
-      <div className="heroPromoInner">
+    <HeroOuterArea>
+      <HeroInnerArea>
         <GatsbyImage
           image={image.asset.gatsbyImageData}
           alt={image.alt}
@@ -21,7 +21,7 @@ export default function Hero({
             userSelect: 'none',
           }}
         />
-        <div>
+        <HeroTextStyles>
           <h2>{heading}</h2>
           <p>{tagline}</p>
           <SecondaryButton
@@ -29,9 +29,9 @@ export default function Hero({
             link={parsedLink.url}
             text={parsedLink.text}
           />
-        </div>
-      </div>
-    </HeroStyles>
+        </HeroTextStyles>
+      </HeroInnerArea>
+    </HeroOuterArea>
   );
 }
 

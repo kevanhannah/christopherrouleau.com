@@ -16,16 +16,15 @@ const Typography = createGlobalStyle`
     font-size: 1em;
     margin-bottom: 1em;
 
-    &:last-of-type {
+    /* &:last-of-type {
       margin-bottom: 0;
-    }
+    } */
   }
 
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     text-transform: uppercase;
     margin: 0;
-    margin-bottom: 1em;
 }
 
   h1 {

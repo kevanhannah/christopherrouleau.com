@@ -9,10 +9,12 @@ export default function NonSeriesWorkTemplate({
     <WorkPage
       category={work.category}
       description={work.description}
+      forSale={work.forSale}
       images={work.images}
       name={work.name}
       relatedWorks={relatedWorks}
       relatedWorksHeader={`More ${work.category.name}`}
+      storeUrl={work.storeUrl}
     />
   );
 }
@@ -23,6 +25,8 @@ export const query = graphql`
       id
       name
       description: _rawDescription
+      forSale
+      storeUrl
       images {
         alt
         asset {

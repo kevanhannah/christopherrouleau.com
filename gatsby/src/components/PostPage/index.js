@@ -5,6 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import textComponents from './textComponents';
 import {
   PostDateStyles,
+  PostHeaderStyles,
   PostPageStyles,
   PostTitle,
   TextAreaStyles,
@@ -20,16 +21,19 @@ export default function Post({ post }) {
           image={post.heroImage.asset.gatsbyImageData}
           alt={post.heroImage.altText}
           style={{
-            marginBottom: '2.5em',
             userSelect: 'none',
           }}
         />
         <TextAreaStyles>
-          <PostDateStyles dateTime={post.publishedAt}>
-            {postDate}
-          </PostDateStyles>
-          <PostTitle>{post.title}</PostTitle>
-          <PortableText value={post.body} components={textComponents} />
+          <PostHeaderStyles>
+            <PostDateStyles dateTime={post.publishedAt}>
+              {postDate}
+            </PostDateStyles>
+            <PostTitle>{post.title}</PostTitle>
+          </PostHeaderStyles>
+          <div>
+            <PortableText value={post.body} components={textComponents} />
+          </div>
         </TextAreaStyles>
       </PostPageStyles>
     </main>

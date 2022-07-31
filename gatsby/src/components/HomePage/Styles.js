@@ -23,6 +23,7 @@ export const HomePageIntroStyles = styled.div`
     p {
       font-size: 1.25em;
       line-height: 1.5;
+      margin: 0;
 
       & strong {
         font-weight: 400;
