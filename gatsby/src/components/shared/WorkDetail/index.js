@@ -2,12 +2,7 @@ import React from 'react';
 import { PortableText } from '@portabletext/react';
 import Badge from '../Badge';
 import Gallery from '../Gallery';
-import {
-  ItemTitle,
-  SingleItemHeader,
-  SingleItemInformationPanel,
-  WorkDetailStyles,
-} from './Styles';
+import { ItemTitle, WorkDetailStyles, WorkInformationPanel } from './Styles';
 
 export default function WorkDetail({
   category,
@@ -18,15 +13,13 @@ export default function WorkDetail({
 }) {
   return (
     <WorkDetailStyles>
-      <SingleItemInformationPanel>
-        <SingleItemHeader>
-          <ItemTitle>{name}</ItemTitle>
-          <Badge category={category} pageType={pageType} />
-        </SingleItemHeader>
+      <WorkInformationPanel>
+        <Badge category={category} pageType={pageType} />
+        <ItemTitle>{name}</ItemTitle>
         <div>
           <PortableText value={description} />
         </div>
-      </SingleItemInformationPanel>
+      </WorkInformationPanel>
       <Gallery images={images} />
     </WorkDetailStyles>
   );

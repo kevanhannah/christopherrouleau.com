@@ -5,6 +5,7 @@ export const GalleryStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
   gap: 1em;
+  user-select: none;
 
   & div:first-child {
     grid-column: 1 / span 6;

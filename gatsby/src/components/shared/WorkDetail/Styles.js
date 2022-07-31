@@ -7,17 +7,11 @@ export const WorkDetailStyles = styled.div`
   align-items: start;
 `;
 
-export const SingleItemInformationPanel = styled.div`
+export const WorkInformationPanel = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
-`;
-
-export const SingleItemHeader = styled.div`
-  display: flex;
-  flex-direction: column;
+  gap: 1em;
   align-items: start;
-  gap: 0.25em;
 `;
 
 export const ItemTitle = styled.h2`

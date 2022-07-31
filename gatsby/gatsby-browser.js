@@ -9,10 +9,10 @@ export function wrapPageElement({ element, props }) {
   }
 
   return (
-    <Fragment {...props}>
+    <>
       <GlobalStyles />
       <Typography />
       <Layout>{element}</Layout>
-    </Fragment>
+    </>
   );
 }

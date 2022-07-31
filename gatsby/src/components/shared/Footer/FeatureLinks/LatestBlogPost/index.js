@@ -6,7 +6,7 @@ const LatestBlogPostStyles = styled.div`
   h5 {
     font-size: 2em;
     font-weight: 700;
-    margin-bottom: 1em;
+    margin: 0;
 
     & > a {
       color: var(--black);
@@ -19,10 +19,10 @@ const LatestBlogPostStyles = styled.div`
     }
   }
 
-  & > p {
-    margin-bottom: 1em;
+  p {
+    margin: 0;
 
-    & > a {
+    a {
       font-size: 1em;
       font-weight: 400;
       color: var(--black);

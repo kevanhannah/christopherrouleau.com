@@ -14,7 +14,7 @@ const Typography = createGlobalStyle`
     font-family: Basecoat;
     font-weight: 300;
     font-size: 1em;
-    margin-bottom: 0.6rem;
+    margin-bottom: 1em;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -25,7 +25,7 @@ const Typography = createGlobalStyle`
     line-height: 1.2;
     text-transform: uppercase;
     margin: 0;
-    margin-bottom: 0.6rem;
+    margin-bottom: 1em;
 }
 
   h1 {

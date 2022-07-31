@@ -8,26 +8,33 @@ export const HomePageIntroStyles = styled.div`
   grid-template-columns: 3fr 2fr;
   gap: 2em;
 
-  & > div > h1 {
-    font-size: 4em;
-    font-weight: 400;
-  }
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5em;
 
-  & > div > p {
-    font-size: 1.5em;
-    line-height: 1.4;
-    margin-bottom: 1.5em;
-
-    & strong {
+    h1 {
+      font-size: 4em;
       font-weight: 400;
+      margin: 0;
     }
 
-    & a {
-      color: var(--black);
-      text-decoration: none;
+    p {
+      font-size: 1.25em;
+      line-height: 1.5;
 
-      &:hover {
-        text-decoration: underline;
+      & strong {
+        font-weight: 400;
+      }
+
+      & a {
+        color: var(--black);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

@@ -10,18 +10,18 @@ const GridCardItemStyles = styled.li`
   margin: 0;
 
   a {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
     text-decoration: none;
-    font-size: 1.6em;
     font-weight: 300;
     color: var(--black);
     user-select: none;
 
     p {
-      font-size: 0.8em;
+      font-size: 1.25em;
       font-weight: 400;
       line-height: 1.4;
-      margin: 0.5em 0 0;
       text-transform: uppercase;
     }
 

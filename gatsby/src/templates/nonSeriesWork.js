@@ -12,7 +12,7 @@ export default function NonSeriesWorkTemplate({
       images={work.images}
       name={work.name}
       relatedWorks={relatedWorks}
-      relatedWorksHeader="More works"
+      relatedWorksHeader={`More ${work.category.name}`}
     />
   );
 }

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const BannerStyles = styled.aside`
   width: 100%;
   background-color: var(--primary-yellow);
-  border-bottom: 1px solid var(--light-grey);
   text-align: center;
   padding: 0.75em;
 

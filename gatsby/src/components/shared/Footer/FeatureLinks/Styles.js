@@ -12,9 +12,15 @@ export const FeatureLinksStyles = styled.div`
   border-bottom: 0.25em solid var(--black);
 
   & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
     h4 {
       font-size: 1em;
-      margin-bottom: 1em;
+      margin: 0;
+      display: block;
+      min-height: 2.5em;
     }
 
     ul {

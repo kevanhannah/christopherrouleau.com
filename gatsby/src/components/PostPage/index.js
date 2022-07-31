@@ -11,7 +11,7 @@ import {
 } from './styles';
 
 export default function Post({ post }) {
-  const postDate = format(new Date(`${post.publishedAt} EST`), 'MMMM d, yyyy');
+  const postDate = format(new Date(`${post.publishedAt}`), 'MMMM d, yyyy');
 
   return (
     <main>
@@ -25,8 +25,8 @@ export default function Post({ post }) {
           }}
         />
         <TextAreaStyles>
-          <PostDateStyles>
-            Published <time dateTime={post.publishedAt}>{postDate}</time>
+          <PostDateStyles dateTime={post.publishedAt}>
+            {postDate}
           </PostDateStyles>
           <PostTitle>{post.title}</PostTitle>
           <PortableText value={post.body} components={textComponents} />

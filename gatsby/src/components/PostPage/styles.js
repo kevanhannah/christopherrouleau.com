@@ -41,7 +41,7 @@ export const PostTitle = styled.h2`
   margin-bottom: 0.5em;
 `;
 
-export const PostDateStyles = styled.div`
+export const PostDateStyles = styled.time`
   text-transform: uppercase;
   font-size: 1em;
   color: var(--black);

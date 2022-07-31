@@ -57,8 +57,8 @@ export const query = graphql`
           id
         }
         images: coverImage {
+          alt
           asset {
-            altText
             gatsbyImageData(aspectRatio: 1)
           }
         }
@@ -79,8 +79,8 @@ export const query = graphql`
           id
         }
         images {
+          alt
           asset {
-            altText
             gatsbyImageData(aspectRatio: 1)
           }
         }
