@@ -22,9 +22,9 @@ export default function WorkDetail({
         <div>
           <PortableText value={description} />
         </div>
-        {forSale && storeUrl ? (
+        {forSale && storeUrl && (
           <PrimaryButton link={storeUrl} text="Buy in store" />
-        ) : null}
+        )}
       </WorkInformationPanel>
       <Gallery images={images} />
     </WorkDetailStyles>

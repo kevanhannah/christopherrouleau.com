@@ -25,7 +25,7 @@ export default function WorkPage({
         name={name}
         storeUrl={storeUrl}
       />
-      {relatedWorks.nodes.length ? (
+      {relatedWorks.nodes.length && (
         <RelatedWorkCards>
           <h3>{relatedWorksHeader}</h3>
           <CardGrid>
@@ -39,7 +39,7 @@ export default function WorkPage({
             ))}
           </CardGrid>
         </RelatedWorkCards>
-      ) : null}
+      )}
     </WorkPageStyles>
   );
 }
