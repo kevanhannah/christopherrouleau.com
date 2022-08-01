@@ -35,6 +35,8 @@ export const HomePageIntroStyles = styled.div`
 
         &:hover {
           text-decoration: underline;
+          text-decoration-thickness: 0.125em;
+          text-underline-offset: 0.125em;
         }
       }
     }

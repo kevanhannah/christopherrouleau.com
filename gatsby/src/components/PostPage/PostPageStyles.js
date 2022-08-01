@@ -11,7 +11,7 @@ export const PostPageStyles = styled.div`
     color: var(--primary-blue-lighter);
     text-decoration: underline;
     text-decoration-thickness: 0.125em;
-    text-underline-offset: 0.25em;
+    text-underline-offset: 0.125em;
 
     &:hover {
       text-decoration: none;

@@ -27,7 +27,7 @@ const LatestBlogPostStyles = styled.div`
       font-weight: 400;
       color: var(--black);
       text-decoration-thickness: 0.125em;
-      text-underline-offset: 0.25em;
+      text-underline-offset: 0.125em;
 
       &:hover {
         text-decoration: none;
