@@ -40,4 +40,8 @@ export const LatestBlogPostStyles = styled.div`
     border-top: 0.25em solid var(--black);
     padding-top: 2em;
   }
+
+  @media (max-width: 600px) {
+    order: 4;
+  }
 `;

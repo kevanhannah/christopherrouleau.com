@@ -47,7 +47,7 @@ export const CardGridItemStyles = styled.li`
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     a {
       p {
         font-size: 1em;

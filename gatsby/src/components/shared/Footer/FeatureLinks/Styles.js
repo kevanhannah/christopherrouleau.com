@@ -22,10 +22,6 @@ export const FeatureLinksStyles = styled.div`
       display: block;
       min-height: 2.5em;
     }
-
-    ul {
-      margin: 0;
-    }
   }
 
   @media (max-width: 970px) {
@@ -35,12 +31,51 @@ export const FeatureLinksStyles = styled.div`
   @media (max-width: 800px) {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto;
+    row-gap: 2em;
+
+    & > div {
+      h4 {
+        min-height: 1.5em;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    & > div {
+      h4 {
+        min-height: inherit;
+      }
+    }
   }
 `;
 
-export const FeatureLinkColumn = styled.div`
+export const FeatureLinkColumnContainer = styled.div`
   @media (max-width: 800px) {
     grid-row: 1;
+  }
+`;
+
+export const FeatureLinkColumn = styled.ul`
+  margin: 0;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+
+    li:after {
+      content: '/';
+      margin-left: 0.75em;
+    }
+
+    li:last-of-type:after {
+      content: none;
+      margin-left: 0;
+    }
   }
 `;
 

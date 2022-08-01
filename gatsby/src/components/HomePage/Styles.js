@@ -85,7 +85,7 @@ export const CategoryContainer = styled.div`
   }
 
   h2 {
-    font-size: 2.25em;
+    font-size: 1.75em;
     font-weight: 700;
     margin: 0;
   }

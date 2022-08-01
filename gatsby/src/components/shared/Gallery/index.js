@@ -16,21 +16,21 @@ export default function Gallery({ images }) {
           image: images.asset.gatsbyImageData,
         },
       ];
-  const [leadImage, setLeadImage] = useState(imageData[0]);
+  const [index, setIndex] = useState(0);
 
   return (
     <GalleryStyles>
-      <GatsbyImage image={leadImage.image} alt={leadImage.alt} />
+      <GatsbyImage image={imageData[index].image} alt={imageData[index].alt} />
       {imageData.length > 1 &&
-        imageData.map((image) => (
+        imageData.map((img, imgIndex) => (
           <ImageSelectWrapper
             tabIndex="0"
             role="button"
-            key={image.id}
-            onClick={() => setLeadImage(image)}
-            onKeyPress={(event) => event.key === 'Enter' && setLeadImage(image)}
+            key={img.id}
+            onClick={() => setIndex(imgIndex)}
+            onKeyPress={(event) => event.key === 'Enter' && setIndex(imgIndex)}
           >
-            <GatsbyImage image={image.image} alt={image.alt} />
+            <GatsbyImage image={img.image} alt={img.alt} />
           </ImageSelectWrapper>
         ))}
     </GalleryStyles>
