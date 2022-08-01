@@ -10,4 +10,10 @@ export const PostListStyles = styled.main`
     font-size: 2.25em;
     font-weight: 700;
   }
+
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 1.75em;
+    }
+  }
 `;

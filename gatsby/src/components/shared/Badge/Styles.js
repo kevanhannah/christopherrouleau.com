@@ -7,6 +7,7 @@ export const BadgeStyles = styled(Link)`
   text-decoration: none;
   font-weight: 700;
   font-size: 0.75em;
+  white-space: nowrap;
   color: #ffffff;
   background-color: var(--primary-blue);
   padding: 0.25em 0.5em;

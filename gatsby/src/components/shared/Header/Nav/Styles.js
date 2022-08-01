@@ -28,7 +28,7 @@ export const NavStyles = styled.ul`
       color: var(--primary-blue);
       text-decoration: underline;
       text-decoration-thickness: 0.125em;
-      text-underline-offset: 0.25em;
+      text-underline-offset: 0.125em;
     }
   }
 `;

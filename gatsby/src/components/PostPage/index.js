@@ -9,10 +9,10 @@ import {
   PostPageStyles,
   PostTitle,
   TextAreaStyles,
-} from './styles';
+} from './Styles';
 
 export default function Post({ post }) {
-  const postDate = format(new Date(`${post.publishedAt}`), 'MMMM d, yyyy');
+  const postDate = format(new Date(post.publishedAt), 'MMMM d, yyyy');
 
   return (
     <main>
