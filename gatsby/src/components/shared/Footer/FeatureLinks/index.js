@@ -4,6 +4,7 @@ import LatestBlogPost from './LatestBlogPost';
 import {
   FeatureItemStyles,
   FeatureLinkColumn,
+  FeatureLinkColumnContainer,
   FeatureLinksStyles,
 } from './Styles';
 import { renderFeatureItem } from './renderFeatureItem';
@@ -92,9 +93,9 @@ export default function FeatureLinks() {
     <FeatureLinksStyles>
       <LatestBlogPost post={latestPost} />
       {featureLists.map((list) => (
-        <FeatureLinkColumn key={list.title}>
+        <FeatureLinkColumnContainer key={list.title}>
           <h4>{list.title}</h4>
-          <ul>
+          <FeatureLinkColumn>
             {list.items.map((item) => {
               const renderedItem = renderFeatureItem(item);
               return (
@@ -103,8 +104,8 @@ export default function FeatureLinks() {
                 </FeatureItemStyles>
               );
             })}
-          </ul>
-        </FeatureLinkColumn>
+          </FeatureLinkColumn>
+        </FeatureLinkColumnContainer>
       ))}
     </FeatureLinksStyles>
   );
