@@ -45,6 +45,10 @@ export const HomePageIntroStyles = styled.div`
   .gatsby-image-wrapper {
     user-select: none;
   }
+
+  @media (max-width: 970px) {
+    margin: 0 1em;
+  }
 `;
 
 export const CategoryContainer = styled.div`
@@ -64,10 +68,18 @@ export const CategoryContainer = styled.div`
     font-weight: 700;
     margin: 0;
   }
+
+  @media (max-width: 970px) {
+    margin: 0 1em;
+  }
 `;
 
 export const HomePageHeader = styled(Header)`
   max-width: 60.75em;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: 970px) {
+    margin: 0 1em;
+  }
 `;

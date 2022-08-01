@@ -10,6 +10,22 @@ export const GalleryStyles = styled.div`
   & div:first-child {
     grid-column: 1 / span 6;
   }
+
+  @media (max-width: 800px) {
+    --columns: 3;
+
+    & div:first-child {
+      grid-column: 1 / span 3;
+    }
+  }
+
+  @media (max-width: 600px) {
+    --columns: 4;
+
+    & div:first-child {
+      grid-column: 1 / span 4;
+    }
+  }
 `;
 
 export const ImageSelectWrapper = styled.div`

@@ -1,7 +1,11 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import LatestBlogPost from './LatestBlogPost';
-import { FeatureItemStyles, FeatureLinksStyles } from './Styles';
+import {
+  FeatureItemStyles,
+  FeatureLinkColumn,
+  FeatureLinksStyles,
+} from './Styles';
 import { renderFeatureItem } from './renderFeatureItem';
 
 export default function FeatureLinks() {
@@ -88,7 +92,7 @@ export default function FeatureLinks() {
     <FeatureLinksStyles>
       <LatestBlogPost post={latestPost} />
       {featureLists.map((list) => (
-        <div key={list.title}>
+        <FeatureLinkColumn key={list.title}>
           <h4>{list.title}</h4>
           <ul>
             {list.items.map((item) => {
@@ -100,7 +104,7 @@ export default function FeatureLinks() {
               );
             })}
           </ul>
-        </div>
+        </FeatureLinkColumn>
       ))}
     </FeatureLinksStyles>
   );

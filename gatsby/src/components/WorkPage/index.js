@@ -15,6 +15,7 @@ export default function WorkPage({
   series,
   storeUrl,
 }) {
+  console.log(relatedWorks);
   return (
     <WorkPageStyles>
       <WorkDetail
@@ -25,7 +26,7 @@ export default function WorkPage({
         name={name}
         storeUrl={storeUrl}
       />
-      {relatedWorks.nodes.length && (
+      {relatedWorks.nodes.length > 0 && (
         <RelatedWorkCards>
           <h3>{relatedWorksHeader}</h3>
           <CardGrid>

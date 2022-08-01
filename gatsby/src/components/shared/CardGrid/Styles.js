@@ -7,8 +7,9 @@ export const CardGridStyles = styled.ul`
   grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
   margin: 0;
 
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     --columns: 2;
+    gap: 1em;
   }
 
   @media (max-width: 400px) {

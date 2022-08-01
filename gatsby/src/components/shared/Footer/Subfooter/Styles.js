@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const SubfooterStyles = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 3em 0 2em;
   font-size: 0.75em;
 

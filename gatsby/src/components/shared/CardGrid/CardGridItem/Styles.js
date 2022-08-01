@@ -46,6 +46,14 @@ export const CardGridItemStyles = styled.li`
       opacity: 0.8;
     }
   }
+
+  @media (max-width: 600px) {
+    a {
+      p {
+        font-size: 1em;
+      }
+    }
+  }
 `;
 
 export const ItemDateStyles = styled.time`

@@ -3,7 +3,12 @@ import { PortableText } from '@portabletext/react';
 import Badge from '../Badge';
 import { PrimaryButton } from '../Buttons';
 import Gallery from '../Gallery';
-import { ItemTitle, WorkDetailStyles, WorkInformationPanel } from './Styles';
+import {
+  ItemTitle,
+  WorkDetailsHeader,
+  WorkDetailStyles,
+  WorkInformationPanel,
+} from './Styles';
 
 export default function WorkDetail({
   category,
@@ -17,8 +22,10 @@ export default function WorkDetail({
   return (
     <WorkDetailStyles>
       <WorkInformationPanel>
-        <Badge category={category} pageType={pageType} />
-        <ItemTitle>{name}</ItemTitle>
+        <WorkDetailsHeader>
+          <Badge category={category} pageType={pageType} />
+          <ItemTitle>{name}</ItemTitle>
+        </WorkDetailsHeader>
         <div>
           <PortableText value={description} />
         </div>
