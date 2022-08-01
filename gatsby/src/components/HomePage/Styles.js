@@ -47,7 +47,28 @@ export const HomePageIntroStyles = styled.div`
   }
 
   @media (max-width: 970px) {
-    margin: 0 1em;
+    margin: 4em 1em;
+
+    & > div {
+      h1 {
+        font-size: 3.25em;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    display: block;
+    margin: 3em 1em 2em;
+
+    & > div {
+      h1 {
+        font-size: 3em;
+      }
+    }
+
+    .gatsby-image-wrapper {
+      display: none;
+    }
   }
 `;
 
@@ -80,6 +101,7 @@ export const HomePageHeader = styled(Header)`
   margin-right: auto;
 
   @media (max-width: 970px) {
-    margin: 0 1em;
+    margin-left: 1em;
+    margin-right: 1em;
   }
 `;
