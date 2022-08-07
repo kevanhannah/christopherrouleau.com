@@ -10,6 +10,10 @@ export const HeroOuterArea = styled.div`
   .gatsby-image-wrapper {
     overflow: visible;
   }
+
+  @media (max-width: 700px) {
+    padding: 2em 1em;
+  }
 `;
 
 export const HeroInnerArea = styled.div`
@@ -19,6 +23,12 @@ export const HeroInnerArea = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 3em;
   align-items: center;
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75em;
+  }
 `;
 
 export const HeroTextStyles = styled.div`
@@ -44,5 +54,9 @@ export const HeroTextStyles = styled.div`
   p::selection {
     background: #ffffff;
     color: var(--primary-blue);
+  }
+
+  @media (max-width: 700px) {
+    align-items: stretch;
   }
 `;
