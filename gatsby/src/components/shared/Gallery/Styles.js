@@ -8,23 +8,15 @@ export const GalleryStyles = styled.div`
   user-select: none;
 
   & div:first-child {
-    grid-column: 1 / span 6;
+    grid-column: 1 / -1;
   }
 
   @media (max-width: 800px) {
     --columns: 3;
-
-    & div:first-child {
-      grid-column: 1 / span 3;
-    }
   }
 
   @media (max-width: 600px) {
     --columns: 4;
-
-    & div:first-child {
-      grid-column: 1 / span 4;
-    }
   }
 `;
 

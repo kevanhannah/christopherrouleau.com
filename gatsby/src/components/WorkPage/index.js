@@ -15,7 +15,6 @@ export default function WorkPage({
   series,
   storeUrl,
 }) {
-  console.log(relatedWorks);
   return (
     <WorkPageStyles>
       <WorkDetail
