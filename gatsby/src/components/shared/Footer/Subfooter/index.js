@@ -1,11 +1,10 @@
 import React from 'react';
-import { format } from 'date-fns';
 import { TertiaryButton } from '../../Buttons';
 import { SubfooterLink, SubfooterLinkList, SubfooterStyles } from './Styles';
 import { Instagram, Newsletter, Twitter } from './Icons';
 
 export default function Subfooter() {
-  const copyrightYear = format(new Date(), 'yyyy');
+  const copyrightYear = new Date().getFullYear();
 
   return (
     <SubfooterStyles>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import PostList from '../components/PostList';
 
 export default function PostListTemplate({ data: { posts } }) {
-  const year = format(new Date(posts.nodes[0].publishedAt), 'yyyy');
+  const year = format(parseISO(posts.nodes[0].publishedAt), 'yyyy');
 
   return <PostList title={`${year} blog posts`} posts={posts} />;
 }

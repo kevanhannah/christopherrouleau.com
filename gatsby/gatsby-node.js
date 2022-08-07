@@ -1,4 +1,4 @@
-const { format } = require('date-fns');
+const { format, parseISO } = require('date-fns');
 const path = require('path');
 
 // Create category pages
@@ -50,7 +50,7 @@ async function createBlogPages({ graphql, actions }) {
   const postYears = [];
 
   data.posts.nodes.forEach((p) => {
-    const postYear = format(new Date(p.publishedAt), 'yyyy');
+    const postYear = format(parseISO(p.publishedAt), 'yyyy');
 
     if (!postYears.includes(postYear)) {
       postYears.push(postYear);
