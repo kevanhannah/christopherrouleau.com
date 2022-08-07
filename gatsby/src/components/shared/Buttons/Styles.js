@@ -5,9 +5,10 @@ const PrimaryButtonStyles = css`
   display: inline-block;
   padding: 0.75em 1.5em;
   font-weight: 400;
-  text-transform: uppercase;
   background-color: var(--primary-blue);
   color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
   text-decoration: none;
   border-radius: 0.25em;
   user-select: none;
@@ -15,6 +16,10 @@ const PrimaryButtonStyles = css`
   &:hover {
     background-color: var(--primary-blue-lighter);
     cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1em 1.5em;
   }
 `;
 
@@ -22,10 +27,11 @@ const SecondaryButtonStyles = css`
   display: inline-block;
   padding: 0.75em 1.5em;
   font-weight: 400;
-  text-transform: uppercase;
   background-color: var(--primary-blue);
   border: 1px solid #ffffff;
   color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
   text-decoration: none;
   border-radius: 0.25em;
   user-select: none;
@@ -34,15 +40,20 @@ const SecondaryButtonStyles = css`
     background-color: var(--primary-blue-lighter);
     cursor: pointer;
   }
+
+  @media (max-width: 600px) {
+    padding: 1em 1.5em;
+  }
 `;
 
 const TertiaryButtonStyles = css`
   display: inline-block;
   padding: 1em 2.5em;
   font-weight: 400;
-  text-transform: uppercase;
   background-color: var(--black);
   color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
   text-decoration: none;
   border-radius: 0.25em;
   user-select: none;
@@ -50,6 +61,10 @@ const TertiaryButtonStyles = css`
   &:hover {
     background-color: var(--black-lighter);
     cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1em 2.5em;
   }
 `;
 

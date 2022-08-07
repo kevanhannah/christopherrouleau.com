@@ -6,9 +6,28 @@ export const SubfooterStyles = styled.div`
   align-items: center;
   margin: 3em 0 2em;
   font-size: 0.75em;
+  gap: 2em;
 
   div {
-    margin: 0 0.75em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: space-between;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    font-size: 1em;
+    margin: 2em 1em;
+
+    div {
+      text-align: center;
+    }
   }
 `;
 
@@ -18,6 +37,11 @@ export const SubfooterLinkList = styled.ul`
   justify-content: space-between;
   list-style-type: none;
   gap: 1em;
+  margin: 0;
+
+  @media (max-width: 600px) {
+    flex-direction: row;
+  }
 `;
 
 export const SubfooterLink = styled.li`

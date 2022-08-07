@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const WorkPageStyles = styled.main`
   display: grid;
   grid-template-rows: auto auto;
-  gap: 3em;
+  gap: 2em;
   margin-bottom: 3em;
 `;
 

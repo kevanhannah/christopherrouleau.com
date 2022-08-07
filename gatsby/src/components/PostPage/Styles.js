@@ -37,6 +37,10 @@ export const TextAreaStyles = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.75em;
+
+  @media (max-width: 600px) {
+    gap: 0.75em;
+  }
 `;
 
 export const PostHeaderStyles = styled.div`
@@ -49,6 +53,10 @@ export const PostTitle = styled.h2`
   font-size: 3em;
   font-weight: 700;
   color: var(--black);
+
+  @media (max-width: 600px) {
+    font-size: 2.25em;
+  }
 `;
 
 export const PostDateStyles = styled.time`

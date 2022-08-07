@@ -49,18 +49,18 @@ export const HomePageIntroStyles = styled.div`
   @media (max-width: 970px) {
     margin: 4em 1em;
 
-    & > div {
-      h1 {
-        font-size: 3.25em;
-      }
+    h1 {
+      font-size: 3.25em;
     }
   }
 
   @media (max-width: 600px) {
     display: block;
-    margin: 3em 1em 2em;
+    margin: 2em 1em;
 
     & > div {
+      align-items: stretch;
+
       h1 {
         font-size: 3em;
       }
