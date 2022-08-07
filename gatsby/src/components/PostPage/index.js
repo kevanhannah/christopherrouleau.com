@@ -19,7 +19,7 @@ export default function Post({ post }) {
       <PostPageStyles>
         <GatsbyImage
           image={post.heroImage.asset.gatsbyImageData}
-          alt={post.heroImage.altText}
+          alt={post.heroImage.alt}
           style={{
             userSelect: 'none',
           }}
