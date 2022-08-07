@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import { CardGridItemStyles, ItemDateStyles } from './Styles';
 
 export default function CardGridItem({ date, imageData, link, name }) {
   const image = imageData.length ? imageData[0] : imageData;
   const formattedImage = image.asset.gatsbyImageData;
-  const formattedDate = date && format(new Date(date), 'MMMM d, yyyy');
+  const formattedDate = date && format(parseISO(date), 'MMMM d, yyyy');
 
   return (
     <CardGridItemStyles>

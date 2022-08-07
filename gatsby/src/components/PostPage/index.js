@@ -1,6 +1,6 @@
 import React from 'react';
 import { PortableText } from '@portabletext/react';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import textComponents from './textComponents';
 import {
@@ -12,7 +12,7 @@ import {
 } from './Styles';
 
 export default function Post({ post }) {
-  const postDate = format(new Date(post.publishedAt), 'MMMM d, yyyy');
+  const postDate = format(parseISO(post.publishedAt), 'MMMM d, yyyy');
 
   return (
     <main>
