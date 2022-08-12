@@ -22,6 +22,7 @@ export const WorkInformationPanel = styled.div`
 
   @media (max-width: 600px) {
     order: 1;
+    align-items: stretch;
   }
 `;
 
@@ -33,9 +34,10 @@ export const WorkDetailsHeader = styled.div`
   width: 100%;
 
   @media (max-width: 600px) {
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 0.5em;
   }
 `;
 
@@ -45,6 +47,6 @@ export const ItemTitle = styled.h2`
   margin: 0;
 
   @media (max-width: 600px) {
-    font-size: 1.75em;
+    font-size: 2em;
   }
 `;

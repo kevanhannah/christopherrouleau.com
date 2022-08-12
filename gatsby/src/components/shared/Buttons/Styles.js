@@ -17,10 +17,6 @@ const PrimaryButtonStyles = css`
     background-color: var(--primary-blue-lighter);
     cursor: pointer;
   }
-
-  @media (max-width: 600px) {
-    padding: 1em 1.5em;
-  }
 `;
 
 const SecondaryButtonStyles = css`
@@ -40,15 +36,11 @@ const SecondaryButtonStyles = css`
     background-color: var(--primary-blue-lighter);
     cursor: pointer;
   }
-
-  @media (max-width: 600px) {
-    padding: 1em 1.5em;
-  }
 `;
 
 const TertiaryButtonStyles = css`
   display: inline-block;
-  padding: 1em 2.5em;
+  padding: 0.75em 1.5em;
   font-weight: 400;
   background-color: var(--black);
   color: #ffffff;
@@ -61,10 +53,6 @@ const TertiaryButtonStyles = css`
   &:hover {
     background-color: var(--black-lighter);
     cursor: pointer;
-  }
-
-  @media (max-width: 600px) {
-    padding: 1em 2.5em;
   }
 `;
 
