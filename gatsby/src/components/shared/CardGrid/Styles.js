@@ -9,9 +9,8 @@ export const CardGridStyles = styled.ul`
 
   @media (max-width: 600px) {
     --columns: 2;
-    gap: 1em;
+    gap: 2em;
   }
-
   @media (max-width: 400px) {
     --columns: 1;
     justify-items: center;

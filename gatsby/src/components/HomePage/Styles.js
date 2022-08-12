@@ -93,6 +93,14 @@ export const CategoryContainer = styled.div`
   @media (max-width: 970px) {
     margin: 0 1em;
   }
+
+  @media (max-width: 600px) {
+    align-items: stretch;
+
+    h2 {
+      font-size: 2.25em;
+    }
+  }
 `;
 
 export const HomePageHeader = styled(Header)`
