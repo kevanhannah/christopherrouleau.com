@@ -19,7 +19,8 @@ import settings from './singletons/settings';
 import body from './blocks/body';
 
 // Objects
-import excerptPortableText from './objects/excerptPortableText';
+import description from './objects/description';
+import excerpt from './objects/excerpt';
 import featuresList from './objects/featuresList';
 import featureListItem from './objects/featureListItem';
 import hero from './objects/hero';
@@ -46,7 +47,8 @@ export default createSchema({
     // Block content
     body,
     // Objects
-    excerptPortableText,
+    description,
+    excerpt,
     featuresList,
     featureListItem,
     hero,

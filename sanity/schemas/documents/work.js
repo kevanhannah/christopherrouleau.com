@@ -1,23 +1,3 @@
-import sanityClient from 'part:@sanity/base/client';
-
-async function asyncSlugifier(input) {
-  const client = sanityClient.withConfig({
-    apiVersion: process.env.SANITY_STUDIO_API_VERSION || '2022-06-30',
-  });
-  const seriesQuery = '*[_id == $id][0]';
-  const seriesQueryParams = {
-    id: input.doc.series?._ref || '',
-  };
-  const series = await client.fetch(seriesQuery, seriesQueryParams);
-  const seriesSlug = series?.slug?.current ? `${series.slug.current}/` : '';
-  const workSlug = input.doc.name
-    .toLowerCase()
-    .replace(/&/g, ' and ')
-    .replace(/\s+/g, '-')
-    .slice(0, 200);
-  return `${seriesSlug}${workSlug}`;
-}
-
 export default {
   name: 'work',
   title: 'Works',
@@ -35,8 +15,8 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: (doc, options) => ({ doc, options }),
-        slugify: asyncSlugifier,
+        source: 'name',
+        maxLength: 140,
       },
     },
     {
@@ -55,32 +35,7 @@ export default {
     },
     {
       name: 'description',
-      title: 'Description',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-          styles: [
-            { title: 'Normal', value: 'normal' },
-            { title: 'H1', value: 'h1' },
-            { title: 'H2', value: 'h2' },
-          ],
-          lists: [
-            { title: 'Numbered', value: 'number' },
-            {
-              title: 'Bullet',
-              value: 'bullet',
-            },
-          ],
-          marks: {
-            decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
-            ],
-          },
-        },
-      ],
-      description: 'Description of the work',
+      type: 'description',
     },
     {
       name: 'forSale',
@@ -125,11 +80,7 @@ export default {
     },
     {
       name: 'excerpt',
-      type: 'excerptPortableText',
-      title: 'Excerpt',
-      description:
-        'This ends up on summary pages, on Google, when people share your post in social media.',
-      hidden: ({ document }) => document?.inSeries,
+      type: 'excerpt',
     },
   ],
 };

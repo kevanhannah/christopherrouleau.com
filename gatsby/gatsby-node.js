@@ -134,7 +134,6 @@ async function createWorkPages({ graphql, actions }) {
 
   data.works.nodes.forEach((work) => {
     const page = {
-      path: `${work.slug.current}`,
       context: {
         id: work.id,
       },
@@ -142,9 +141,11 @@ async function createWorkPages({ graphql, actions }) {
 
     if (work.series) {
       page.component = path.resolve('./src/templates/seriesWork.js');
+      page.path = `${work.series.slug.current}/${work.slug.current}`;
       page.context.seriesId = work.series.id;
     } else {
       page.component = path.resolve('./src/templates/nonSeriesWork.js');
+      page.path = `${work.slug.current}`;
       page.context.categoryId = work.category.id;
     }
 

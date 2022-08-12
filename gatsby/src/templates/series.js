@@ -11,6 +11,7 @@ export default function SeriesTemplate({ data: { series, works } }) {
       name={series.name}
       relatedWorks={works}
       relatedWorksHeader="Works in this series"
+      series={series}
     />
   );
 }

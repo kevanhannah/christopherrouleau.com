@@ -33,7 +33,9 @@ export default function WorkPage({
               <CardGridItem
                 imageData={work.images[0]}
                 key={work.id}
-                link={`../${!series ? '../' : ''}${work.slug.current}`}
+                link={`../../${series ? `../${series.slug.current}/` : ''}${
+                  work.slug.current
+                }`}
                 name={work.name}
               />
             ))}

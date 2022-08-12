@@ -27,32 +27,7 @@ export default {
     },
     {
       name: 'description',
-      title: 'Description',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-          styles: [
-            { title: 'Heading', value: 'h3' },
-            { title: 'Subheading', value: 'h4' },
-            { title: 'Paragraph', value: 'normal' },
-          ],
-          lists: [
-            { title: 'Numbered', value: 'number' },
-            {
-              title: 'Bullet',
-              value: 'bullet',
-            },
-          ],
-          marks: {
-            decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
-            ],
-          },
-        },
-      ],
-      description: 'Description of the collection',
+      type: 'description',
     },
     {
       name: 'category',
@@ -68,10 +43,13 @@ export default {
     },
     {
       name: 'excerpt',
-      type: 'excerptPortableText',
+      type: 'text',
+      rows: 3,
       title: 'Excerpt',
       description:
         'This ends up on summary pages, on Google, when people share your post in social media.',
+      validation: (Rule) =>
+        Rule.max(200).warning('Shorter excerpts are usually better.'),
     },
   ],
 };

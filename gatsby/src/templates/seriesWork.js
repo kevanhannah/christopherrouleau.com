@@ -12,6 +12,7 @@ export default function SeriesWorkTemplate({ data: { work, relatedWorks } }) {
       name={work.name}
       relatedWorks={relatedWorks}
       relatedWorksHeader={`More from ${work.series.name}`}
+      series={work.series}
       storeUrl={work.storeUrl}
     />
   );
