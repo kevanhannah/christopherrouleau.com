@@ -17,9 +17,9 @@ export default function Home({ data: { home, series, works } }) {
 
     return {
       id: category.id,
-      items: categoryItems.slice(0, 3), // Max three items displayed
+      items: categoryItems.slice(0, 4), // Max three items displayed
       name: category.name,
-      linkToMore: categoryItems.length > 3,
+      linkToMore: categoryItems.length > 4,
       slug: category.slug,
     };
   });

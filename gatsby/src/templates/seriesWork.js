@@ -10,8 +10,10 @@ export default function SeriesWorkTemplate({ data: { work, relatedWorks } }) {
       forSale={work.forSale}
       images={work.images}
       name={work.name}
+      pageType="work"
       relatedWorks={relatedWorks}
-      relatedWorksHeader={`More from ${work.series.name}`}
+      relatedWorksHeader="More in this series"
+      releaseDate={work.series.releaseDate}
       series={work.series}
       storeUrl={work.storeUrl}
     />
@@ -40,10 +42,11 @@ export const query = graphql`
       }
       series {
         name
+        releaseDate
         slug {
           current
         }
-        excerpt: _rawExcerpt
+        excerpt
         category {
           name
           slug {

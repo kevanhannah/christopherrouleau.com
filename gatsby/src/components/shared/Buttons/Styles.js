@@ -14,6 +14,7 @@ const PrimaryButtonStyles = css`
   user-select: none;
 
   &:hover {
+    color: #ffffff;
     background-color: var(--primary-blue-lighter);
     cursor: pointer;
   }
@@ -33,6 +34,7 @@ const SecondaryButtonStyles = css`
   user-select: none;
 
   &:hover {
+    color: #ffffff;
     background-color: var(--primary-blue-lighter);
     cursor: pointer;
   }
@@ -51,6 +53,7 @@ const TertiaryButtonStyles = css`
   user-select: none;
 
   &:hover {
+    color: #ffffff;
     background-color: var(--black-lighter);
     cursor: pointer;
   }

@@ -77,3 +77,15 @@ export const SubfooterLink = styled.li`
     }
   }
 `;
+
+export const CopyrightSection = styled.div`
+  margin: 0 auto;
+  max-width: 60.75em;
+  text-align: center;
+  font-size: 0.75em;
+  font-weight: 300;
+
+  @media (max-width: 600px) {
+    font-size: 1em;
+  }
+`;

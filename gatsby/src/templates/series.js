@@ -9,8 +9,10 @@ export default function SeriesTemplate({ data: { series, works } }) {
       description={series.description}
       images={[series.coverImage]}
       name={series.name}
+      pageType="series"
       relatedWorks={works}
       relatedWorksHeader="Works in this series"
+      releaseDate={series.releaseDate}
       series={series}
     />
   );
@@ -42,6 +44,7 @@ export const query = graphql`
           current
         }
       }
+      releaseDate
     }
     works: allSanityWork(filter: { series: { id: { eq: $id } } }) {
       nodes {

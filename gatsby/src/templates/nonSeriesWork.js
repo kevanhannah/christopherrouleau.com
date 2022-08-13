@@ -12,8 +12,10 @@ export default function NonSeriesWorkTemplate({
       forSale={work.forSale}
       images={work.images}
       name={work.name}
+      pageType="work"
       relatedWorks={relatedWorks}
       relatedWorksHeader={`More ${work.category.name}`}
+      releaseDate={work.releaseDate}
       storeUrl={work.storeUrl}
     />
   );
@@ -22,11 +24,12 @@ export default function NonSeriesWorkTemplate({
 export const query = graphql`
   query ($id: String!, $categoryId: String!) {
     work: sanityWork(id: { eq: $id }) {
-      id
       name
-      description: _rawDescription
       forSale
+      description: _rawDescription
+      releaseDate
       storeUrl
+      id
       images {
         alt
         asset {

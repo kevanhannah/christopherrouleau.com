@@ -54,6 +54,20 @@ const GlobalStyles = createGlobalStyle`
   hr, ol, p, pre, ul {
     margin-bottom: 0.8rem;
   }
+
+  a {
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--black);
+    -webkit-text-decoration-thickness: 0.125em;
+    text-decoration-thickness: 0.125em;
+    text-underline-offset: 0.125em;
+
+    &:hover {
+      text-decoration: none;
+      color: var(--primary-blue);
+    }
+  }
 `;
 
 export default GlobalStyles;

@@ -16,9 +16,13 @@ export const WorkDetailStyles = styled.div`
 export const WorkInformationPanel = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.25em;
   align-items: start;
   order: -1;
+
+  div > p:last-of-type {
+    margin-bottom: 0;
+  }
 
   @media (max-width: 600px) {
     order: 1;
@@ -33,11 +37,19 @@ export const WorkDetailsHeader = styled.div`
   align-items: start;
   width: 100%;
 
+  div {
+    time {
+      font-size: 1.25em;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+
   @media (max-width: 600px) {
     flex-direction: column-reverse;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 0.5em;
+    gap: 0.75em;
   }
 `;
 
@@ -48,5 +60,18 @@ export const ItemTitle = styled.h2`
 
   @media (max-width: 600px) {
     font-size: 2em;
+  }
+`;
+
+export const SeriesExcerpt = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+
+  h3 {
+    font-size: 1.75em;
   }
 `;

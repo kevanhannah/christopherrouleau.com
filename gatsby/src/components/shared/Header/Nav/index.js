@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { NavStyles } from './Styles';
+import { HighlightItem, NavStyles } from './Styles';
 
 export default function Nav() {
   return (
@@ -11,7 +11,7 @@ export default function Nav() {
       <li>
         <Link to="/blog">Blog</Link>
       </li>
-      <li>
+      <HighlightItem>
         <a
           href="http://shop.christopherrouleau.com/"
           target="_blank"
@@ -19,7 +19,7 @@ export default function Nav() {
         >
           Shop
         </a>
-      </li>
+      </HighlightItem>
     </NavStyles>
   );
 }

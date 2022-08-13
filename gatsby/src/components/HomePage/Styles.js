@@ -28,17 +28,6 @@ export const HomePageIntroStyles = styled.div`
       & strong {
         font-weight: 400;
       }
-
-      & a {
-        color: var(--black);
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-          text-decoration-thickness: 0.125em;
-          text-underline-offset: 0.125em;
-        }
-      }
     }
   }
 
@@ -96,6 +85,7 @@ export const CategoryContainer = styled.div`
 
   @media (max-width: 600px) {
     align-items: stretch;
+    row-gap: 1.75em;
 
     h2 {
       font-size: 2.25em;
