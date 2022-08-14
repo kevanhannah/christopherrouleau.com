@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import WorkPage from '../components/WorkPage';
+import { SEO } from '../components/shared/SEO';
 
 export default function SeriesWorkTemplate({ data: { work, relatedWorks } }) {
   return (
@@ -19,6 +20,13 @@ export default function SeriesWorkTemplate({ data: { work, relatedWorks } }) {
     />
   );
 }
+
+export const Head = ({ data: { work } }) => (
+  <SEO
+    title={`${work.name} - Christopher Rouleau`}
+    description={`Part of ${work.series.name}. ${work.series.excerpt}`}
+  />
+);
 
 export const query = graphql`
   query ($id: String!, $seriesId: String) {

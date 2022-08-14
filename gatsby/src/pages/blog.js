@@ -1,10 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PostList from '../components/PostList';
+import { SEO } from '../components/shared/SEO';
 
 export default function BlogPage({ data: { posts } }) {
   return <PostList main title="Blog" posts={posts} />;
 }
+
+export const Head = () => (
+  <SEO
+    title="Blog - Christopher Rouleau"
+    description="All blog posts from Christopher Rouleau."
+  />
+);
 
 export const query = graphql`
   query {

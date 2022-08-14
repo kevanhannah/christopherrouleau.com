@@ -1,5 +1,7 @@
 module.exports = {
   siteMetadata: {
+    description:
+      'Graphic designer, letterer and visual artist living in Toronto',
     title: 'Christopher Rouleau',
     siteUrl: 'https://christopherrouleau.com',
     twitter: '@Chris_Rouleau',
@@ -13,18 +15,22 @@ module.exports = {
         dataset: 'production',
       },
     },
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-styled-components',
     'gatsby-transformer-sharp',
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'images',
-    //     path: './src/images/',
-    //   },
-    //   __key: 'images',
-    // },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/assets/images/favicon.png',
+        legacy: false,
+        name: 'Christopher Rouleau',
+        short_name: 'Christopher Rouleau',
+        start_url: '/',
+        background_color: '##ffffff',
+        theme_color: '#a2466c',
+        display: 'standalone',
+      },
+    },
   ],
 };

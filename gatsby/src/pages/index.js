@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import HomePage from '../components/HomePage';
+import { SEO } from '../components/shared/SEO';
 
 export default function Home({ data: { home, series, works } }) {
   const allCategories = home.categories.map((category) => {
@@ -30,6 +31,8 @@ export default function Home({ data: { home, series, works } }) {
 
   return <HomePage home={home} categoryContents={categoryContents} />;
 }
+
+export const Head = () => <SEO />;
 
 export const query = graphql`
   query {

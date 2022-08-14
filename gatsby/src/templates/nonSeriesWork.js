@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import WorkPage from '../components/WorkPage';
+import { SEO } from '../components/shared/SEO';
 
 export default function NonSeriesWorkTemplate({
   data: { relatedSeries, relatedWorks, work },
@@ -33,10 +34,18 @@ export default function NonSeriesWorkTemplate({
   );
 }
 
+export const Head = ({ data: { work } }) => (
+  <SEO
+    title={`${work.name} - Christopher Rouleau`}
+    description={work.excerpt}
+  />
+);
+
 export const query = graphql`
   query ($id: String!, $categoryId: String!) {
     work: sanityWork(id: { eq: $id }) {
       name
+      excerpt
       forSale
       description: _rawDescription
       releaseDate

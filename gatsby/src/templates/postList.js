@@ -1,13 +1,24 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { format, parseISO } from 'date-fns';
 import PostList from '../components/PostList';
+import { SEO } from '../components/shared/SEO';
 
 export default function PostListTemplate({ data: { posts } }) {
-  const year = format(parseISO(posts.nodes[0].publishedAt), 'yyyy');
+  const year = new Date(posts.nodes[0].publishedAt).getFullYear();
 
   return <PostList title={`${year} blog posts`} posts={posts} />;
 }
+
+export const Head = ({ data: { posts } }) => {
+  const year = new Date(posts.nodes[0].publishedAt).getFullYear();
+
+  return (
+    <SEO
+      title={`${year} blog posts - Christopher Rouleau`}
+      description={`All ${year} blog posts from Christopher Rouleau.`}
+    />
+  );
+};
 
 export const query = graphql`
   query ($yearStart: Date!, $yearEnd: Date!) {

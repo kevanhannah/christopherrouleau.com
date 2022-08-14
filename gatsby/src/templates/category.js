@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import WorkList from '../components/WorkList';
+import { SEO } from '../components/shared/SEO';
 
 export default function CategoryTemplate({
   data: { category, series, works },
@@ -11,6 +12,10 @@ export default function CategoryTemplate({
 
   return <WorkList title={category.name} works={categoryItems} />;
 }
+
+export const Head = ({ data: { category } }) => (
+  <SEO title={`${category.name} - Christopher Rouleau`} />
+);
 
 export const query = graphql`
   query ($id: String!) {
