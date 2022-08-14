@@ -14,7 +14,7 @@ export default function CategoryTemplate({
 }
 
 export const Head = ({ data: { category } }) => (
-  <SEO title={`${category.name} | Christopher Rouleau`} />
+  <SEO title={`${category.name} - Christopher Rouleau`} />
 );
 
 export const query = graphql`

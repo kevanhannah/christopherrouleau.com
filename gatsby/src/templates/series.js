@@ -21,7 +21,7 @@ export default function SeriesTemplate({ data: { series, works } }) {
 
 export const Head = ({ data: { series } }) => (
   <SEO
-    title={`${series.name} | Christopher Rouleau`}
+    title={`${series.name} - Christopher Rouleau`}
     description={series.excerpt}
   />
 );

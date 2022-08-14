@@ -36,7 +36,7 @@ export default function NonSeriesWorkTemplate({
 
 export const Head = ({ data: { work } }) => (
   <SEO
-    title={`${work.name} | Christopher Rouleau`}
+    title={`${work.name} - Christopher Rouleau`}
     description={work.excerpt}
   />
 );

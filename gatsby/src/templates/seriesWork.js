@@ -23,7 +23,7 @@ export default function SeriesWorkTemplate({ data: { work, relatedWorks } }) {
 
 export const Head = ({ data: { work } }) => (
   <SEO
-    title={`${work.name} | Christopher Rouleau`}
+    title={`${work.name} - Christopher Rouleau`}
     description={`Part of ${work.series.name}. ${work.series.excerpt}`}
   />
 );

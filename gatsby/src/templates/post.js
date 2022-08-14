@@ -1,10 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PostPage from '../components/PostPage';
+import { SEO } from '../components/shared/SEO';
 
 export default function PostTemplate({ data: { post } }) {
   return <PostPage post={post} />;
 }
+
+export const Head = ({ data: { post } }) => (
+  <SEO
+    title={`${post.title} - Christopher Rouleau`}
+    description={post.seo.excerpt}
+  />
+);
 
 export const query = graphql`
   query ($id: String!) {

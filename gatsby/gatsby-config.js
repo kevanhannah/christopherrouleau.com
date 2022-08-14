@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/assets/images/favicon.svg',
+        icon: 'src/assets/images/favicon.png',
         legacy: false,
         name: 'Christopher Rouleau',
         short_name: 'Christopher Rouleau',
