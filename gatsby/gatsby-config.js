@@ -15,9 +15,22 @@ module.exports = {
         dataset: 'production',
       },
     },
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-styled-components',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/assets/images/favicon.svg',
+        legacy: false,
+        name: 'Christopher Rouleau',
+        short_name: 'Christopher Rouleau',
+        start_url: '/',
+        background_color: '##ffffff',
+        theme_color: '#a2466c',
+        display: 'standalone',
+      },
+    },
   ],
 };

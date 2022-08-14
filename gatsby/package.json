@@ -27,6 +27,7 @@
     "date-fns": "^2.28.0",
     "gatsby": "^4.20.0",
     "gatsby-plugin-image": "^2.19.0",
+    "gatsby-plugin-manifest": "^4.20.0",
     "gatsby-plugin-sharp": "^4.19.0",
     "gatsby-plugin-styled-components": "^5.19.0",
     "gatsby-source-filesystem": "^4.19.0",

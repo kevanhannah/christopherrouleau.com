@@ -19,12 +19,17 @@ export const SEO = ({ title, description, pathname, children }) => {
   return (
     <>
       <title>{seo.title}</title>
+      <meta charSet="utf-8" />
+      <meta property="og:title" content={seo.title} key="ogtitle" />
+      <meta propery="og:site_name" content={seo.title} key="ogsitename" />
+      <meta property="og:description" content={seo.description} key="ogdesc" />
       <meta name="description" content={seo.description} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={seo.twitter} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       {children}
     </>
   );
