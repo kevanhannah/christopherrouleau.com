@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const LatestBlogPostStyles = styled.div`
   h5 {
     font-size: 2em;
-    font-weight: 700;
     margin: 0;
 
     & > a {
+      font-weight: 700;
       color: var(--black);
       text-decoration: none;
       background-color: var(--primary-yellow);

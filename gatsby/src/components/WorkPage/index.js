@@ -12,8 +12,8 @@ export default function WorkPage({
   images,
   name,
   pageType,
-  relatedWorks,
-  relatedWorksHeader,
+  relatedItems,
+  relatedItemsHeader,
   releaseDate,
   series,
   storeUrl,
@@ -34,11 +34,11 @@ export default function WorkPage({
         storeUrl={storeUrl}
         year={year}
       />
-      {relatedWorks.nodes.length > 0 && (
+      {relatedItems.length > 0 && (
         <RelatedWorkCards>
-          <h3>{relatedWorksHeader}</h3>
+          <h3>{relatedItemsHeader}</h3>
           <CardGrid>
-            {relatedWorks.nodes.map((work) => (
+            {relatedItems.map((work) => (
               <CardGridItem
                 imageData={work.images[0]}
                 key={work.id}

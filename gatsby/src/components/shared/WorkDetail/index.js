@@ -23,7 +23,6 @@ export default function WorkDetail({
   storeUrl,
   year,
 }) {
-  console.log(pageType);
   return (
     <WorkDetailStyles>
       <WorkInformationPanel>

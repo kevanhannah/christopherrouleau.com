@@ -10,8 +10,8 @@ export default function SeriesTemplate({ data: { series, works } }) {
       images={[series.coverImage]}
       name={series.name}
       pageType="series"
-      relatedWorks={works}
-      relatedWorksHeader="Works in this series"
+      relatedItems={works.nodes}
+      relatedItemsHeader="Works in this series"
       releaseDate={series.releaseDate}
       series={series}
     />

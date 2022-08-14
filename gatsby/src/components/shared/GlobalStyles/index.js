@@ -55,6 +55,10 @@ const GlobalStyles = createGlobalStyle`
     margin-bottom: 0.8rem;
   }
 
+  ol, ul {
+    margin-left: 1.5em;
+  }
+
   a {
     font-size: 1em;
     font-weight: 400;

@@ -11,8 +11,8 @@ export default function SeriesWorkTemplate({ data: { work, relatedWorks } }) {
       images={work.images}
       name={work.name}
       pageType="work"
-      relatedWorks={relatedWorks}
-      relatedWorksHeader="More in this series"
+      relatedItems={relatedWorks.nodes}
+      relatedItemsHeader="More in this series"
       releaseDate={work.series.releaseDate}
       series={work.series}
       storeUrl={work.storeUrl}
@@ -63,7 +63,7 @@ export const query = graphql`
     }
     relatedWorks: allSanityWork(
       filter: { series: { id: { eq: $seriesId } }, id: { ne: $id } }
-      limit: 3
+      limit: 4
     ) {
       nodes {
         id

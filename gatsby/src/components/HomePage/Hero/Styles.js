@@ -5,14 +5,14 @@ export const HeroOuterArea = styled.div`
   border-top: 1px solid var(--medium-grey);
   border-bottom: 1px solid var(--medium-grey);
   color: #ffffff;
-  padding: 4em 0;
+  padding: 3em 0;
 
   .gatsby-image-wrapper {
     overflow: visible;
   }
 
   @media (max-width: 700px) {
-    padding: 2em 1em;
+    padding: 2em 0;
   }
 `;
 
@@ -23,6 +23,10 @@ export const HeroInnerArea = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 3em;
   align-items: center;
+
+  @media (max-width: 970px) {
+    margin: 0 1em;
+  }
 
   @media (max-width: 700px) {
     display: flex;
