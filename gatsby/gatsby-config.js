@@ -2,10 +2,13 @@ module.exports = {
   siteMetadata: {
     description:
       'Graphic designer, letterer and visual artist living in Toronto',
-    title: 'Christopher Rouleau',
-    siteUrl: 'https://christopherrouleau.com',
-    twitter: '@Chris_Rouleau',
     instagram: '@chris_rouleau',
+    title: 'Christopher Rouleau',
+    twitter: '@Chris_Rouleau',
+    siteUrl:
+      process.env.NODE_ENV === 'production'
+        ? process.env.SITE_URL
+        : 'localhost:8000',
   },
   plugins: [
     {

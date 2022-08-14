@@ -21,8 +21,10 @@ export default function SeriesTemplate({ data: { series, works } }) {
 
 export const Head = ({ data: { series } }) => (
   <SEO
-    title={`${series.name} - Christopher Rouleau`}
     description={series.excerpt}
+    image={series.coverImage.asset.publicUrl}
+    pathname={`/${series.slug.current}`}
+    title={`${series.name} - Christopher Rouleau`}
   />
 );
 
@@ -39,6 +41,7 @@ export const query = graphql`
         alt
         asset {
           id
+          publicUrl
           gatsbyImageData(
             aspectRatio: 1
             width: 600

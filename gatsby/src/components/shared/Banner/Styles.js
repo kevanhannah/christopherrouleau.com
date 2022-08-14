@@ -4,7 +4,7 @@ export const BannerStyles = styled.aside`
   width: 100%;
   background-color: var(--primary-yellow);
   text-align: center;
-  padding: 0.75em;
+  padding: 0.5em;
 
   a {
     font-size: 1em;
