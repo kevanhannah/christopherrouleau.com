@@ -4,7 +4,7 @@ export const SubfooterStyles = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3em 0 2em;
+  margin: 2em 0;
   font-size: 0.75em;
   gap: 2em;
 
