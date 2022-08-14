@@ -17,7 +17,7 @@ export default function Home({ data: { home, series, works } }) {
 
     return {
       id: category.id,
-      items: categoryItems.slice(0, 4), // Max three items displayed
+      items: categoryItems.slice(0, 4), // Max four items displayed
       name: category.name,
       linkToMore: categoryItems.length > 4,
       slug: category.slug,

@@ -15,6 +15,7 @@ export const BadgeStyles = styled(Link)`
   user-select: none;
 
   &:hover {
+    color: #ffffff;
     background-color: var(--primary-blue-lighter);
   }
 `;
