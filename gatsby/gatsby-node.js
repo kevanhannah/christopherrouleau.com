@@ -1,4 +1,3 @@
-const { format, parseISO } = require('date-fns');
 const path = require('path');
 
 // Create category pages
