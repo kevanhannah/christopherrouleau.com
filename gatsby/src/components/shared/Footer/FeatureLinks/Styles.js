@@ -15,13 +15,6 @@ export const FeatureLinksStyles = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1em;
-
-    h4 {
-      font-size: 1em;
-      margin: 0;
-      display: block;
-      min-height: 2.5em;
-    }
   }
 
   @media (max-width: 970px) {
@@ -32,24 +25,12 @@ export const FeatureLinksStyles = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto;
     row-gap: 2em;
-
-    & > div {
-      h4 {
-        min-height: 1.5em;
-      }
-    }
   }
 
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
     gap: 2em;
-
-    & > div {
-      h4 {
-        min-height: inherit;
-      }
-    }
   }
 `;
 
@@ -59,7 +40,23 @@ export const FeatureLinkColumnContainer = styled.div`
   }
 `;
 
-export const FeatureLinkColumn = styled.ul`
+export const FeatureLinkColumnHeader = styled.h2`
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0;
+  display: block;
+  min-height: 2.5em;
+
+  @media (max-width: 800px) {
+    min-height: 1.5em;
+  }
+
+  @media (max-width: 600px) {
+    min-height: inherit;
+  }
+`;
+
+export const FeatureLinkColumnList = styled.ul`
   margin: 0;
 
   @media (max-width: 600px) {

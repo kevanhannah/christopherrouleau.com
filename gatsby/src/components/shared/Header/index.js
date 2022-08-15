@@ -7,8 +7,8 @@ import { HeaderStyles } from './Styles';
 export default function Header({ className }) {
   return (
     <HeaderStyles className={className}>
-      <Link to="/">
-        <Wordmark />
+      <Link to="/" aria-label="Homepage">
+        <Wordmark aria-hidden="true" />
       </Link>
       <Nav />
     </HeaderStyles>

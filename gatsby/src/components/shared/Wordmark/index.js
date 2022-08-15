@@ -9,7 +9,7 @@ const WordmarkStyles = styled.svg`
   }
 `;
 
-export default function Wordmark() {
+export default function Wordmark(props) {
   return (
     <WordmarkStyles
       width="100%"
@@ -21,7 +21,9 @@ export default function Wordmark() {
         strokeLinejoin: 'round',
         strokeMiterlimit: 2,
       }}
+      {...props}
     >
+      <title>Christopher</title>
       <g>
         <path
           d="M1206.59,368.31c19.61,12.857 39.74,24.87 60.974,37.858c2.792,1.753 6.559,0.129 7.143,-3.117c0.13,-0.974 0.195,-1.689 -0.065,-2.338c-5.195,-13.247 -1.104,-25.974 1.818,-38.831c3.637,-16.234 7.078,-32.533 10.065,-48.896c2.533,-14.091 0.909,-18.702 -11.753,-22.598c-17.468,-5.325 -35.52,-8.766 -53.442,-12.597c-6.428,-1.364 -11.363,1.493 -13.182,8.117c-4.545,16.558 -10,32.987 -12.987,49.87c-2.207,12.143 0,25.065 11.429,32.532Z"

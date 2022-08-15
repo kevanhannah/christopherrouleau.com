@@ -3,8 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import LatestBlogPost from './LatestBlogPost';
 import {
   FeatureItemStyles,
-  FeatureLinkColumn,
   FeatureLinkColumnContainer,
+  FeatureLinkColumnHeader,
+  FeatureLinkColumnList,
   FeatureLinksStyles,
 } from './Styles';
 import { renderFeatureItem } from './renderFeatureItem';
@@ -92,8 +93,8 @@ export default function FeatureLinks() {
       <LatestBlogPost post={latestPost} />
       {featureLists.map((list) => (
         <FeatureLinkColumnContainer key={list.title}>
-          <h4>{list.title}</h4>
-          <FeatureLinkColumn>
+          <FeatureLinkColumnHeader>{list.title}</FeatureLinkColumnHeader>
+          <FeatureLinkColumnList>
             {list.items.map((item) => {
               const renderedItem = renderFeatureItem(item);
               return (
@@ -102,7 +103,7 @@ export default function FeatureLinks() {
                 </FeatureItemStyles>
               );
             })}
-          </FeatureLinkColumn>
+          </FeatureLinkColumnList>
         </FeatureLinkColumnContainer>
       ))}
     </FeatureLinksStyles>

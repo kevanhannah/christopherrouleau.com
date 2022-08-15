@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const LatestBlogPostStyles = styled.div`
-  h5 {
+  h3 {
     font-size: 2em;
     margin: 0;
 
