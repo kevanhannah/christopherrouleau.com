@@ -8,15 +8,19 @@ export default function PostList({ main, title, posts }) {
     <PostListStyles>
       <h2>{title}</h2>
       <CardGrid>
-        {posts.nodes.map((post) => (
-          <CardGridItem
-            date={post.publishedAt}
-            imageData={post.heroImage}
-            key={post.id}
-            link={`../${main ? 'blog/' : ''}${post.slug.current}`}
-            name={post.title}
-          />
-        ))}
+        {posts.nodes.map((post) => {
+          const postYear = new Date(post.publishedAt).getFullYear();
+
+          return (
+            <CardGridItem
+              date={post.publishedAt}
+              imageData={post.heroImage}
+              key={post.id}
+              link={`../${main ? 'blog/' : ''}${postYear}/${post.slug.current}`}
+              name={post.title}
+            />
+          );
+        })}
       </CardGrid>
     </PostListStyles>
   );

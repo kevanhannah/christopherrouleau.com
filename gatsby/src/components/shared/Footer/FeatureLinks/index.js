@@ -20,14 +20,12 @@ export default function FeatureLinks() {
         sort: { fields: publishedAt, order: DESC }
       ) {
         nodes {
-          title
+          excerpt
           publishedAt
-          seo {
-            excerpt
-          }
           slug {
             current
           }
+          title
         }
       }
       sanitySettings {

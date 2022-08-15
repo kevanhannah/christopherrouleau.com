@@ -16,3 +16,7 @@ export function wrapPageElement({ element, props }) {
     </Fragment>
   );
 }
+
+export function onRenderBody({ setHtmlAttributes }) {
+  setHtmlAttributes({ lang: 'en-ca' });
+}

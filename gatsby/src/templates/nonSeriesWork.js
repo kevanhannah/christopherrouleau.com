@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { getSrc } from 'gatsby-plugin-image';
 import WorkPage from '../components/WorkPage';
 import { SEO } from '../components/shared/SEO';
 
@@ -34,27 +35,37 @@ export default function NonSeriesWorkTemplate({
   );
 }
 
-export const Head = ({ data: { work } }) => (
-  <SEO
-    title={`${work.name} - Christopher Rouleau`}
-    description={work.excerpt}
-  />
-);
+export const Head = ({ data: { work } }) => {
+  const imagePath = getSrc(work.metaImage[0].asset.gatsbyImageData);
+
+  return (
+    <SEO
+      description={work.excerpt}
+      image={imagePath}
+      pathname={`/${work.slug.current}`}
+      title={`${work.name} by Christopher Rouleau`}
+    />
+  );
+};
 
 export const query = graphql`
   query ($id: String!, $categoryId: String!) {
     work: sanityWork(id: { eq: $id }) {
-      name
+      category {
+        name
+        slug {
+          current
+        }
+      }
+      description: _rawDescription
       excerpt
       forSale
-      description: _rawDescription
-      releaseDate
-      storeUrl
       id
       images {
         alt
         asset {
           id
+          publicUrl
           gatsbyImageData(
             width: 700
             layout: CONSTRAINED
@@ -63,12 +74,17 @@ export const query = graphql`
           )
         }
       }
-      category {
-        name
-        slug {
-          current
+      metaImage: images {
+        asset {
+          gatsbyImageData(width: 1200, layout: CONSTRAINED, aspectRatio: 1.905)
         }
       }
+      name
+      releaseDate
+      slug {
+        current
+      }
+      storeUrl
     }
     relatedWorks: allSanityWork(
       filter: { category: { id: { eq: $categoryId } }, id: { ne: $id } }

@@ -28,7 +28,6 @@ import itemImage from './objects/itemImage';
 import linkExternal from './objects/linkExternal';
 import linkInternal from './objects/linkInternal';
 import plainTextItem from './objects/plainTextItem';
-import seo from './objects/seo';
 
 export default createSchema({
   name: 'default',
@@ -56,6 +55,5 @@ export default createSchema({
     linkExternal,
     linkInternal,
     plainTextItem,
-    seo,
   ]),
 });

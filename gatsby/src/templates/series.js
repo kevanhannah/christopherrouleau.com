@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { getSrc } from 'gatsby-plugin-image';
 import WorkPage from '../components/WorkPage';
 import { SEO } from '../components/shared/SEO';
 
@@ -19,14 +20,18 @@ export default function SeriesTemplate({ data: { series, works } }) {
   );
 }
 
-export const Head = ({ data: { series } }) => (
-  <SEO
-    description={series.excerpt}
-    image={series.coverImage.asset.publicUrl}
-    pathname={`/${series.slug.current}`}
-    title={`${series.name} - Christopher Rouleau`}
-  />
-);
+export const Head = ({ data: { series } }) => {
+  const imagePath = getSrc(series.metaImage.asset);
+
+  return (
+    <SEO
+      description={series.excerpt}
+      image={imagePath}
+      pathname={`/${series.slug.current}`}
+      title={`${series.name} by Christopher Rouleau`}
+    />
+  );
+};
 
 export const query = graphql`
   query ($id: String!) {
@@ -44,7 +49,7 @@ export const query = graphql`
           publicUrl
           gatsbyImageData(
             aspectRatio: 1
-            width: 600
+            width: 700
             layout: CONSTRAINED
             placeholder: BLURRED
           )
@@ -54,6 +59,11 @@ export const query = graphql`
         name
         slug {
           current
+        }
+      }
+      metaImage: coverImage {
+        asset {
+          gatsbyImageData(width: 1200, layout: CONSTRAINED, aspectRatio: 1.905)
         }
       }
       releaseDate

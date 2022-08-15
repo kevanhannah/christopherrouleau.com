@@ -1,5 +1,3 @@
-import { format } from 'date-fns';
-
 export default {
   name: 'post',
   title: 'Posts',
@@ -37,16 +35,8 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: (doc) => {
-          const date = format(new Date(doc.publishedAt), 'yyyy');
-          const title = doc.title
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/^-+|-+$/g, '');
-          return `${date}/${title}`;
-        },
-        slugify: (input) =>
-          input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+        source: 'title',
+        maxLength: 140,
       },
     },
     // Published At
@@ -70,25 +60,22 @@ export default {
       type: 'body',
       group: 'editorial',
     },
-    // SEO
+    // Excerpt
     {
-      name: 'seo',
-      title: 'SEO',
-      type: 'seo',
+      name: 'excerpt',
+      type: 'excerpt',
       group: 'seo',
     },
   ],
   preview: {
     select: {
       active: 'active',
-      // seoImage: 'seo.image',
       title: 'title',
     },
     prepare(selection) {
       const { title } = selection;
 
       return {
-        // media: seoImage,
         title,
       };
     },

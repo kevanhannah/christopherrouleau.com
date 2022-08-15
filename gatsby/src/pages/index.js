@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { getSrc } from 'gatsby-plugin-image';
 import HomePage from '../components/HomePage';
 import { SEO } from '../components/shared/SEO';
 
@@ -32,13 +33,33 @@ export default function Home({ data: { home, series, works } }) {
   return <HomePage home={home} categoryContents={categoryContents} />;
 }
 
-export const Head = () => <SEO />;
+export const Head = ({ data: { home } }) => {
+  const imagePath = getSrc(home.metaImage.asset.gatsbyImageData);
+
+  return <SEO image={imagePath} />;
+};
 
 export const query = graphql`
   query {
     home: sanityHome(_id: { eq: "home" }) {
       greeting
       introduction: _rawIntroduction
+      introImage {
+        alt
+        asset {
+          gatsbyImageData(
+            layout: CONSTRAINED
+            width: 400
+            placeholder: DOMINANT_COLOR
+            aspectRatio: 1
+          )
+        }
+      }
+      metaImage: introImage {
+        asset {
+          gatsbyImageData(layout: CONSTRAINED, width: 1200, aspectRatio: 1.905)
+        }
+      }
       ...HeroFragment
       categories {
         id

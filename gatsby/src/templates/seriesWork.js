@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { getSrc } from 'gatsby-plugin-image';
 import WorkPage from '../components/WorkPage';
 import { SEO } from '../components/shared/SEO';
 
@@ -21,21 +22,31 @@ export default function SeriesWorkTemplate({ data: { work, relatedWorks } }) {
   );
 }
 
-export const Head = ({ data: { work } }) => (
-  <SEO
-    title={`${work.name} - Christopher Rouleau`}
-    description={`Part of ${work.series.name}. ${work.series.excerpt}`}
-  />
-);
+export const Head = ({ data: { work } }) => {
+  const imagePath = getSrc(work.metaImage[0].asset.gatsbyImageData);
+
+  return (
+    <SEO
+      description={`Part of ${work.series.name}. ${work.series.excerpt}`}
+      image={imagePath}
+      pathname={`/${work.series.slug.current}/${work.slug.current}`}
+      title={`${work.name} by Christopher Rouleau`}
+    />
+  );
+};
 
 export const query = graphql`
   query ($id: String!, $seriesId: String) {
     work: sanityWork(id: { eq: $id }) {
-      id
-      name
+      category {
+        name
+        slug {
+          current
+        }
+      }
       description: _rawDescription
       forSale
-      storeUrl
+      id
       images {
         alt
         asset {
@@ -48,6 +59,12 @@ export const query = graphql`
           )
         }
       }
+      metaImage: images {
+        asset {
+          gatsbyImageData(width: 1200, layout: CONSTRAINED, aspectRatio: 1.905)
+        }
+      }
+      name
       series {
         name
         releaseDate
@@ -62,12 +79,10 @@ export const query = graphql`
           }
         }
       }
-      category {
-        name
-        slug {
-          current
-        }
+      slug {
+        current
       }
+      storeUrl
     }
     relatedWorks: allSanityWork(
       filter: { series: { id: { eq: $seriesId } }, id: { ne: $id } }

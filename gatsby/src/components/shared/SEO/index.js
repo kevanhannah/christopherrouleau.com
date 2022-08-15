@@ -11,7 +11,7 @@ export const SEO = ({ children, description, image, pathname, title }) => {
 
   const seo = {
     description: description || defaultDescription,
-    image: `${siteUrl}${image || '/meta_image.jpg'}`,
+    image: image || '/meta_image.jpg',
     title: title || defaultTitle,
     twitter,
     url: `${siteUrl}${pathname || ``}`,
@@ -20,18 +20,20 @@ export const SEO = ({ children, description, image, pathname, title }) => {
   return (
     <>
       <title>{seo.title}</title>
-      <meta property="og:description" content={seo.description} />
-      <meta property="og:image" content={seo.image} />
-      <meta property="og:title" content={seo.title} />
-      <meta propery="og:site_name" content={seo.title} />
-      <meta property="og:url" content={seo.url} />
+      <link rel="canonical" href={seo.url} />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={seo.twitter} />
       <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:image" content={seo.image} />
+      <meta property="og:title" content={seo.title} />
+      <meta propery="og:site_name" content={seo.title} />
+      <meta property="og:url" content={seo.url} />
       {children}
     </>
   );

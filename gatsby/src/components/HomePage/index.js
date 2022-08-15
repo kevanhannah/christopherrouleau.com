@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import { PortableText } from '@portabletext/react';
 import GlobalStyles from '../shared/GlobalStyles';
 import Typography from '../shared/Typography';
@@ -29,7 +29,11 @@ export default function HomePage({ categoryContents, home }) {
             <PortableText value={home.introduction} />
             <PrimaryButton internal link="/about" text="Say hi" />
           </div>
-          <StaticImage
+          <GatsbyImage
+            alt={home.introImage.alt}
+            image={home.introImage.asset.gatsbyImageData}
+          />
+          {/* <StaticImage
             src="../../assets/images/chris_hero.jpg"
             alt="Christopher Rouleau"
             placeholder="blurred"
@@ -37,7 +41,7 @@ export default function HomePage({ categoryContents, home }) {
             width={400}
             aspectRatio={16 / 9}
             layout="constrained"
-          />
+          /> */}
         </HomePageIntroStyles>
         <Hero heroContent={home.hero} />
         <div style={{ maxWidth: '60.75em', margin: '0 auto' }}>

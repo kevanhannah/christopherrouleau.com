@@ -50,14 +50,14 @@ async function createBlogPages({ graphql, actions }) {
   const postYears = [];
 
   data.posts.nodes.forEach((p) => {
-    const postYear = format(parseISO(p.publishedAt), 'yyyy');
+    const postYear = new Date(p.publishedAt).getFullYear();
 
     if (!postYears.includes(postYear)) {
       postYears.push(postYear);
     }
 
     createPage({
-      path: `blog/${p.slug.current}`,
+      path: `blog/${postYear}/${p.slug.current}`,
       component: path.resolve('./src/templates/post.js'),
       context: {
         id: p.id,

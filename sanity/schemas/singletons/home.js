@@ -2,12 +2,28 @@ export default {
   name: 'home',
   title: 'Home',
   type: 'document',
+  groups: [
+    {
+      default: true,
+      name: 'introduction',
+      title: 'Introduction',
+    },
+    {
+      name: 'hero',
+      title: 'Spotlight Content',
+    },
+    {
+      name: 'categories',
+      title: 'Categories',
+    },
+  ],
   fields: [
     {
       name: 'greeting',
       title: 'Greeting',
       type: 'string',
       description: 'Large greeting at the top the page',
+      group: 'introduction',
       validation: (Rule) =>
         Rule.max(20).warning(`A title shouldn't be more than 20 characters.`),
     },
@@ -15,6 +31,7 @@ export default {
       name: 'introduction',
       title: 'Introduction',
       type: 'array',
+      group: 'introduction',
       of: [
         {
           type: 'block',
@@ -30,11 +47,27 @@ export default {
       ],
       description: 'Introductory paragraph at the top of the page',
     },
-    { name: 'hero', type: 'hero' },
+    {
+      name: 'introImage',
+      title: 'Feature image',
+      type: 'itemImage',
+      group: 'introduction',
+      description:
+        'Feature image next to the introductory paragraph at the top of the page',
+    },
+    {
+      name: 'hero',
+      title: 'Spotlight Content',
+      description:
+        'Featured content or items that are displayed in the blue banner on the home page',
+      type: 'hero',
+      group: 'hero',
+    },
     {
       name: 'categories',
       title: 'Category ordering',
       type: 'array',
+      group: 'categories',
       of: [
         {
           title: 'Series',
