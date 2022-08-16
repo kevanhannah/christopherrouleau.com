@@ -1,7 +1,10 @@
+import { IoNewspaperOutline } from 'react-icons/io5';
+
 export default {
   name: 'post',
   title: 'Posts',
   type: 'document',
+  icon: IoNewspaperOutline,
   groups: [
     {
       default: true,

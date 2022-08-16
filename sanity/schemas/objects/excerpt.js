@@ -6,5 +6,7 @@ export default {
   description:
     'This ends up on summary pages, on Google, when people share your post in social media.',
   validation: (Rule) =>
-    Rule.max(200).warning('Shorter excerpts are usually better.'),
+    Rule.max(150).warning(
+      'Longer descriptions may be truncated by search engines'
+    ),
 };

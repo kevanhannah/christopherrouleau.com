@@ -1,7 +1,11 @@
+import { IoSettingsOutline } from 'react-icons/io5';
+
 export default {
   name: 'settings',
   title: 'Settings',
   type: 'document',
+  icon: IoSettingsOutline,
+  __experimental_actions: ['update', 'publish'],
   groups: [
     {
       name: 'banner',

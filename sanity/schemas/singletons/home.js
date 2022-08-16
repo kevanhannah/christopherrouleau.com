@@ -1,7 +1,11 @@
+import { IoHomeOutline } from 'react-icons/io5';
+
 export default {
   name: 'home',
   title: 'Home',
   type: 'document',
+  icon: IoHomeOutline,
+  __experimental_actions: ['update', 'publish'],
   groups: [
     {
       default: true,
