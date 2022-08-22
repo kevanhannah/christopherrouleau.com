@@ -24,7 +24,7 @@ export default function Banner() {
   }
 
   return (
-    <BannerStyles>
+    <BannerStyles role="banner">
       <a href={link}>{text}</a>
     </BannerStyles>
   );

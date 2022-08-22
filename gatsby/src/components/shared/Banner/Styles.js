@@ -17,6 +17,7 @@ export const BannerStyles = styled.aside`
       text-decoration-thickness: 0.125em;
       text-underline-offset: 0.125em;
       cursor: pointer;
+      color: var(--black);
     }
   }
 `;

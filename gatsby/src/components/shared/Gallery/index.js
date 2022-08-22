@@ -26,6 +26,7 @@ export default function Gallery({ images }) {
           <ImageSelectWrapper
             tabIndex="0"
             role="button"
+            aria-label="Change feature picture"
             key={img.id}
             onClick={() => setIndex(imgIndex)}
             onKeyPress={(event) => event.key === 'Enter' && setIndex(imgIndex)}
