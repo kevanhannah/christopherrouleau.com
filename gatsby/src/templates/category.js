@@ -16,3 +16,49 @@ export default function CategoryTemplate({
 export function Head({ data: { category } }) {
   return <SEO title={`${category.name} - Christopher Rouleau`} />;
 }
+
+export const query = graphql`
+  query ($id: String!) {
+    category: sanityCategory(id: { eq: $id }) {
+      name
+    }
+    series: allSanitySeries(
+      filter: { category: { id: { eq: $id } } }
+      sort: { fields: releaseDate, order: DESC }
+    ) {
+      nodes {
+        id
+        name
+        slug {
+          current
+        }
+        images: coverImage {
+          asset {
+            altText
+            gatsbyImageData(aspectRatio: 1)
+          }
+        }
+        releaseDate
+      }
+    }
+    works: allSanityWork(
+      filter: { category: { id: { eq: $id } } }
+      sort: { fields: releaseDate, order: DESC }
+    ) {
+      nodes {
+        id
+        name
+        slug {
+          current
+        }
+        images {
+          asset {
+            altText
+            gatsbyImageData(aspectRatio: 1)
+          }
+        }
+        releaseDate
+      }
+    }
+  }
+`;
