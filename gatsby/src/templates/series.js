@@ -20,7 +20,7 @@ export default function SeriesTemplate({ data: { series, works } }) {
   );
 }
 
-export const Head = ({ data: { series } }) => {
+export function Head({ data: { series } }) {
   const imagePath = getSrc(series.metaImage.asset);
 
   return (
@@ -31,7 +31,7 @@ export const Head = ({ data: { series } }) => {
       title={`${series.name} by Christopher Rouleau`}
     />
   );
-};
+}
 
 export const query = graphql`
   query ($id: String!) {

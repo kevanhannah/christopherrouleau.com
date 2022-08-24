@@ -33,11 +33,11 @@ export default function Home({ data: { home, series, works } }) {
   return <HomePage home={home} categoryContents={categoryContents} />;
 }
 
-export const Head = ({ data: { home } }) => {
+export function Head({ data: { home } }) {
   const imagePath = getSrc(home.metaImage.asset.gatsbyImageData);
 
   return <SEO image={imagePath} />;
-};
+}
 
 export const query = graphql`
   query {

@@ -1,3 +1,4 @@
+const { differenceInDays } = require('date-fns');
 const path = require('path');
 
 // Create category pages
@@ -112,6 +113,7 @@ async function createWorkPages({ graphql, actions }) {
     query {
       works: allSanityWork {
         nodes {
+          updated: _updatedAt
           id
           inSeries
           slug {
@@ -132,10 +134,13 @@ async function createWorkPages({ graphql, actions }) {
   `);
 
   data.works.nodes.forEach((work) => {
+    const updateDelta = differenceInDays(new Date(), new Date(work.updated));
+
     const page = {
       context: {
         id: work.id,
       },
+      defer: updateDelta <= 5,
     };
 
     if (work.series) {

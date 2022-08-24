@@ -8,7 +8,7 @@ export default function PostTemplate({ data: { post } }) {
   return <PostPage post={post} />;
 }
 
-export const Head = ({ data: { post } }) => {
+export function Head({ data: { post } }) {
   const imagePath = getSrc(post.metaImage.asset);
   const postYear = new Date(post.publishedAt).getFullYear();
 
@@ -20,7 +20,7 @@ export const Head = ({ data: { post } }) => {
       title={`${post.title} by Christopher Rouleau`}
     />
   );
-};
+}
 
 export const query = graphql`
   query ($id: String!) {

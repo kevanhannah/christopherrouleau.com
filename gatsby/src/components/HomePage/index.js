@@ -33,15 +33,6 @@ export default function HomePage({ categoryContents, home }) {
             alt={home.introImage.alt}
             image={home.introImage.asset.gatsbyImageData}
           />
-          {/* <StaticImage
-            src="../../assets/images/chris_hero.jpg"
-            alt="Christopher Rouleau"
-            placeholder="blurred"
-            loading="eager"
-            width={400}
-            aspectRatio={16 / 9}
-            layout="constrained"
-          /> */}
         </HomePageIntroStyles>
         <Hero heroContent={home.hero} />
         <div style={{ maxWidth: '60.75em', margin: '0 auto' }}>

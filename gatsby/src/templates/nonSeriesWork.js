@@ -35,7 +35,7 @@ export default function NonSeriesWorkTemplate({
   );
 }
 
-export const Head = ({ data: { work } }) => {
+export function Head({ data: { work } }) {
   const imagePath = getSrc(work.metaImage[0].asset.gatsbyImageData);
 
   return (
@@ -46,7 +46,7 @@ export const Head = ({ data: { work } }) => {
       title={`${work.name} by Christopher Rouleau`}
     />
   );
-};
+}
 
 export const query = graphql`
   query ($id: String!, $categoryId: String!) {

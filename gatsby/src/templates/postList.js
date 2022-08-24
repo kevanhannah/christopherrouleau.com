@@ -9,7 +9,7 @@ export default function PostListTemplate({ data: { posts } }) {
   return <PostList title={`${year} blog posts`} posts={posts} />;
 }
 
-export const Head = ({ data: { posts } }) => {
+export function Head({ data: { posts } }) {
   const year = new Date(posts.nodes[0].publishedAt).getFullYear();
 
   return (
@@ -18,7 +18,7 @@ export const Head = ({ data: { posts } }) => {
       description={`All ${year} blog posts from Christopher Rouleau.`}
     />
   );
-};
+}
 
 export const query = graphql`
   query ($yearStart: Date!, $yearEnd: Date!) {

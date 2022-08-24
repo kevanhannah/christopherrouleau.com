@@ -7,12 +7,14 @@ export default function BlogPage({ data: { posts } }) {
   return <PostList main title="Blog" posts={posts} />;
 }
 
-export const Head = () => (
-  <SEO
-    title="Blog - Christopher Rouleau"
-    description="All blog posts from Christopher Rouleau."
-  />
-);
+export function Head() {
+  return (
+    <SEO
+      title="Blog - Christopher Rouleau"
+      description="All blog posts from Christopher Rouleau."
+    />
+  );
+}
 
 export const query = graphql`
   query {
