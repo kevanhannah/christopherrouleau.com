@@ -19,25 +19,9 @@ export default function ShareButton({ description, image, pathname }) {
   };
   const pinterestLink = createPinterestLink(shareContent);
 
-  function openShareWindow(url) {
-    window.open(
-      url,
-      'mywin',
-      'left=20,top=20,width=1050,height=825,toolbar=1,resizable=0'
-    );
-    return false;
-  }
-
   return (
-    <button
-      type="button"
-      tabIndex={0}
-      onClick={() => openShareWindow(pinterestLink)}
-      onKeyPress={(event) =>
-        event.key === 'Enter' && openShareWindow(pinterestLink)
-      }
-    >
+    <a href={pinterestLink} target="_blank" rel="noreferrer">
       Pin me
-    </button>
+    </a>
   );
 }
