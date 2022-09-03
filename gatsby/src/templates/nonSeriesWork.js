@@ -2,12 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { getSrc } from 'gatsby-plugin-image';
 import WorkPage from '../components/WorkPage';
-import { SEO } from '../components/shared/SEO';
+import SEO from '../components/shared/SEO';
 
 export default function NonSeriesWorkTemplate({
   data: { relatedSeries, relatedWorks, work },
 }) {
   // Because related items for non-series works can be either a work or a series, we grab four of each, sort them by date, and then grab the latest four to display
+  const metaImageURL = getSrc(work.metaImage[0].asset.gatsbyImageData);
   const relatedItems = [...relatedSeries.nodes, ...relatedWorks.nodes]
     .sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
     .map((item) => ({
@@ -25,7 +26,10 @@ export default function NonSeriesWorkTemplate({
       description={work.description}
       forSale={work.forSale}
       images={work.images}
+      metaDescription={work.excerpt}
+      metaImageURL={metaImageURL}
       name={work.name}
+      pathname={`/${work.slug.current}`}
       pageType="work"
       relatedItems={relatedItems}
       relatedItemsHeader={`More ${work.category.name}`}
@@ -76,7 +80,7 @@ export const query = graphql`
       }
       metaImage: images {
         asset {
-          gatsbyImageData(width: 1200, layout: CONSTRAINED, aspectRatio: 1.905)
+          gatsbyImageData(width: 1200, layout: CONSTRAINED, aspectRatio: 1)
         }
       }
       name

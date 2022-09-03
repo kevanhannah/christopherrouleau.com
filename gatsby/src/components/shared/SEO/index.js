@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSiteMetadata } from '../../../hooks/useSiteMetadata';
 
-export const SEO = ({ children, description, image, pathname, title }) => {
+export default function SEO({ children, description, image, pathname, title }) {
   const {
     description: defaultDescription,
     title: defaultTitle,
@@ -37,4 +37,4 @@ export const SEO = ({ children, description, image, pathname, title }) => {
       {children}
     </>
   );
-};
+}

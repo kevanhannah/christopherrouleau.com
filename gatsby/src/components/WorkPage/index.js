@@ -3,6 +3,7 @@ import WorkDetail from '../shared/WorkDetail';
 import CardGrid from '../shared/CardGrid';
 import CardGridItem from '../shared/CardGrid/CardGridItem';
 import { RelatedWorkCards, WorkPageStyles } from './Styles';
+import ShareButton from '../shared/ShareButton';
 
 export default function WorkPage({
   category,
@@ -10,7 +11,10 @@ export default function WorkPage({
   excerpt,
   forSale,
   images,
+  metaDescription,
+  metaImageURL,
   name,
+  pathname,
   pageType,
   relatedItems,
   relatedItemsHeader,
@@ -33,6 +37,11 @@ export default function WorkPage({
         series={series}
         storeUrl={storeUrl}
         year={year}
+      />
+      <ShareButton
+        description={metaDescription}
+        image={metaImageURL}
+        pathname={pathname}
       />
       {relatedItems.length > 0 && (
         <RelatedWorkCards>

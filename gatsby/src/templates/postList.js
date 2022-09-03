@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PostList from '../components/PostList';
-import { SEO } from '../components/shared/SEO';
+import SEO from '../components/shared/SEO';
 
 export default function PostListTemplate({ data: { posts } }) {
   const year = new Date(posts.nodes[0].publishedAt).getFullYear();

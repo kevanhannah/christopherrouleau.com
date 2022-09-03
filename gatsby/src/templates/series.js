@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { getSrc } from 'gatsby-plugin-image';
 import WorkPage from '../components/WorkPage';
-import { SEO } from '../components/shared/SEO';
+import SEO from '../components/shared/SEO';
 
 export default function SeriesTemplate({ data: { series, works } }) {
   return (

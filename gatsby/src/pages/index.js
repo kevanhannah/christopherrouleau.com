@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { getSrc } from 'gatsby-plugin-image';
 import HomePage from '../components/HomePage';
-import { SEO } from '../components/shared/SEO';
+import SEO from '../components/shared/SEO';
 
 export default function Home({ data: { home, series, works } }) {
   const allCategories = home.categories.map((category) => {

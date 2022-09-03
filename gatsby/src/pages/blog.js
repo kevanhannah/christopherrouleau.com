@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PostList from '../components/PostList';
-import { SEO } from '../components/shared/SEO';
+import SEO from '../components/shared/SEO';
 
 export default function BlogPage({ data: { posts } }) {
   return <PostList main title="Blog" posts={posts} />;

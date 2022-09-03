@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { getSrc } from 'gatsby-plugin-image';
 import PostPage from '../components/PostPage';
-import { SEO } from '../components/shared/SEO';
+import SEO from '../components/shared/SEO';
 
 export default function PostTemplate({ data: { post } }) {
   return <PostPage post={post} />;

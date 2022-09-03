@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import WorkList from '../components/WorkList';
-import { SEO } from '../components/shared/SEO';
+import SEO from '../components/shared/SEO';
 
 export default function CategoryTemplate({
   data: { category, series, works },
