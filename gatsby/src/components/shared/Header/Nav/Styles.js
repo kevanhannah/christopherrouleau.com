@@ -14,7 +14,7 @@ export const NavStyles = styled.ul`
   li {
     margin: 0;
     padding: 1px 4px;
-    border-radius: 4px;
+    border-radius: 0.25em;
 
     a {
       font-size: 0.75rem;
@@ -25,13 +25,6 @@ export const NavStyles = styled.ul`
       letter-spacing: 0.05em;
       color: var(--black);
       text-align: right;
-
-      /* &:hover {
-      color: var(--primary-blue);
-      text-decoration: underline;
-      text-decoration-thickness: 0.125em;
-      text-underline-offset: 0.125em;
-    } */
     }
 
     &:hover {

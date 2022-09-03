@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ShareButtonStyles = styled.a`
-  padding: 0.75em 1.5em;
+  padding: calc(0.75em - 2px) calc(1.5em - 2px);
   font-weight: 400;
   color: var(--black);
   border: 2px solid var(--black);
