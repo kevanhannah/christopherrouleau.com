@@ -7,18 +7,23 @@ import Gallery from '../Gallery';
 import {
   ItemTitle,
   SeriesExcerpt,
+  WorkButtonRow,
   WorkDetailsHeader,
   WorkDetailStyles,
   WorkInformationPanel,
 } from './Styles';
+import ShareButton from '../ShareButton';
 
 export default function WorkDetail({
   category,
   description,
   forSale,
   images,
+  metaDescription,
+  metaImageURL,
   name,
   pageType,
+  pathname,
   series,
   storeUrl,
   year,
@@ -36,15 +41,26 @@ export default function WorkDetail({
         <div>
           <PortableText value={description} />
         </div>
-        {forSale && storeUrl && (
-          <PrimaryButton link={storeUrl} text="Buy in store" />
-        )}
-        {pageType === 'work' && series && (
-          <SeriesExcerpt>
-            <h3>From {series.name}</h3>
-            <p>{series.excerpt}</p>
-            <Link to="../">More about {series.name}</Link>
-          </SeriesExcerpt>
+        {pageType === 'work' && (
+          <>
+            <WorkButtonRow>
+              {forSale && storeUrl && (
+                <PrimaryButton link={storeUrl} text="Buy in store" />
+              )}
+              <ShareButton
+                description={metaDescription}
+                image={metaImageURL}
+                pathname={pathname}
+              />
+            </WorkButtonRow>
+            {series && (
+              <SeriesExcerpt>
+                <h3>From {series.name}</h3>
+                <p>{series.excerpt}</p>
+                <Link to="../">More about {series.name}</Link>
+              </SeriesExcerpt>
+            )}
+          </>
         )}
       </WorkInformationPanel>
       <Gallery images={images} />

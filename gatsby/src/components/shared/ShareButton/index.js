@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSiteMetadata } from '../../../hooks/useSiteMetadata';
 import objectToGetParams from '../../../utils/objectToGetParams';
+import { Pinterest } from './Icons';
+import { ShareButtonContent, ShareButtonStyles } from './Styles';
 
 function createPinterestLink({ url, media, description }) {
   return `https://pinterest.com/pin/create/button/${objectToGetParams({
@@ -20,8 +22,16 @@ export default function ShareButton({ description, image, pathname }) {
   const pinterestLink = createPinterestLink(shareContent);
 
   return (
-    <a href={pinterestLink} target="_blank" rel="noreferrer">
-      Pin me
-    </a>
+    <ShareButtonStyles
+      href={pinterestLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Save to Pinterest"
+    >
+      <ShareButtonContent>
+        <Pinterest />
+        <span>Save</span>
+      </ShareButtonContent>
+    </ShareButtonStyles>
   );
 }

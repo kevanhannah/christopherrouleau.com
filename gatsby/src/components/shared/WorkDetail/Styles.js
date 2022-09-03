@@ -53,6 +53,12 @@ export const WorkDetailsHeader = styled.div`
   }
 `;
 
+export const WorkButtonRow = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 1em;
+`;
+
 export const ItemTitle = styled.h2`
   font-size: 2.25em;
   font-weight: 700;
