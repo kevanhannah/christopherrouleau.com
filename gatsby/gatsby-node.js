@@ -134,13 +134,13 @@ async function createWorkPages({ graphql, actions }) {
   `);
 
   data.works.nodes.forEach((work) => {
-    const updateDelta = differenceInDays(new Date(), new Date(work.updated));
+    // const updateDelta = differenceInDays(new Date(), new Date(work.updated));
 
     const page = {
       context: {
         id: work.id,
       },
-      defer: updateDelta <= 5,
+      // defer: updateDelta <= 5,
     };
 
     if (work.series) {
