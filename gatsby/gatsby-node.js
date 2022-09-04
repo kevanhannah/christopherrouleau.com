@@ -1,4 +1,4 @@
-// const { differenceInDays } = require('date-fns');
+const { differenceInDays } = require('date-fns');
 const path = require('path');
 
 // Create category pages
@@ -62,6 +62,7 @@ async function createBlogPages({ graphql, actions }) {
       context: {
         id: p.id,
       },
+      defer: differenceInDays(new Date(), new Date(p.publishedAt)) > 90,
     });
   });
 
@@ -86,6 +87,7 @@ async function createSeriesPages({ graphql, actions }) {
       series: allSanitySeries {
         nodes {
           id
+          releaseDate
           slug {
             current
           }
@@ -101,6 +103,7 @@ async function createSeriesPages({ graphql, actions }) {
       context: {
         id: s.id,
       },
+      defer: differenceInDays(new Date(), new Date(s.releaseDate)) > 90,
     });
   });
 }
@@ -113,9 +116,9 @@ async function createWorkPages({ graphql, actions }) {
     query {
       works: allSanityWork {
         nodes {
-          updated: _updatedAt
           id
           inSeries
+          releaseDate
           slug {
             current
           }
@@ -124,6 +127,7 @@ async function createWorkPages({ graphql, actions }) {
           }
           series {
             id
+            releaseDate
             slug {
               current
             }
@@ -134,23 +138,24 @@ async function createWorkPages({ graphql, actions }) {
   `);
 
   data.works.nodes.forEach((work) => {
-    // const updateDelta = differenceInDays(new Date(), new Date(work.updated));
-
     const page = {
       context: {
         id: work.id,
       },
-      // defer: updateDelta <= 5,
     };
 
     if (work.series) {
       page.component = path.resolve('./src/templates/seriesWork.js');
       page.path = `${work.series.slug.current}/${work.slug.current}`;
       page.context.seriesId = work.series.id;
+      page.defer =
+        differenceInDays(new Date(), new Date(work.series.releaseDate)) > 90;
     } else {
       page.component = path.resolve('./src/templates/nonSeriesWork.js');
       page.path = `${work.slug.current}`;
       page.context.categoryId = work.category.id;
+      page.defer =
+        differenceInDays(new Date(), new Date(work.releaseDate)) > 90;
     }
 
     createPage(page);
