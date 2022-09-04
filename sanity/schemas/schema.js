@@ -12,6 +12,7 @@ import series from './documents/series';
 import work from './documents/work';
 
 // Singletons
+import about from './singletons/about';
 import home from './singletons/home';
 import settings from './singletons/settings';
 
@@ -41,6 +42,7 @@ export default createSchema({
     series,
     work,
     // Singletons
+    about,
     home,
     settings,
     // Block content
