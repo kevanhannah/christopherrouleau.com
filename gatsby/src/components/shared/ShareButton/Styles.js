@@ -10,6 +10,10 @@ export const ShareButtonStyles = styled.a`
   border-radius: 0.25em;
   user-select: none;
 
+  svg {
+    max-width: 100%;
+  }
+
   &:hover {
     color: var(--primary-red-darker);
     border: 2px solid var(--primary-red-darker);
