@@ -58,6 +58,10 @@ export const SubfooterLink = styled.li`
     font-weight: 400;
   }
 
+  svg {
+    max-width: 100%;
+  }
+
   &:hover {
     cursor: pointer;
 
