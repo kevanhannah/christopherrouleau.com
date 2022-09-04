@@ -18,6 +18,7 @@ export default function Subfooter() {
           <TertiaryButton
             link="https://christopherrouleau.faire.com/welcome/r/personal?signUp=widget&widgetToken=bw_5luuqz5njm"
             text="Shop wholesale"
+            ariaLabel="Shop wholesale"
           />
         </div>
         <div>
@@ -27,6 +28,7 @@ export default function Subfooter() {
                 href="http://christopherrouleau.us11.list-manage2.com/subscribe?u=b1b927bb82834df5ac175e16b&id=32a2f3432e"
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="Newsletter"
               >
                 <Newsletter />
                 Newsletter
@@ -37,6 +39,7 @@ export default function Subfooter() {
                 href="http://instagram.com/chris_rouleau/"
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="Instagram"
               >
                 <Instagram />
                 Instagram
@@ -47,6 +50,7 @@ export default function Subfooter() {
                 href="http://twitter.com/Chris_Rouleau"
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="Twitter"
               >
                 <Twitter />
                 Twitter
