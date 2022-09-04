@@ -62,6 +62,7 @@ async function createBlogPages({ graphql, actions }) {
       context: {
         id: p.id,
       },
+      defer: differenceInDays(new Date(), new Date(p.publishedAt)) > 90,
     });
   });
 
@@ -86,6 +87,7 @@ async function createSeriesPages({ graphql, actions }) {
       series: allSanitySeries {
         nodes {
           id
+          releaseDate
           slug {
             current
           }
@@ -101,6 +103,7 @@ async function createSeriesPages({ graphql, actions }) {
       context: {
         id: s.id,
       },
+      defer: differenceInDays(new Date(), new Date(s.releaseDate)) > 90,
     });
   });
 }
@@ -146,13 +149,13 @@ async function createWorkPages({ graphql, actions }) {
       page.path = `${work.series.slug.current}/${work.slug.current}`;
       page.context.seriesId = work.series.id;
       page.defer =
-        differenceInDays(new Date(), new Date(work.series.releaseDate)) > 30;
+        differenceInDays(new Date(), new Date(work.series.releaseDate)) > 90;
     } else {
       page.component = path.resolve('./src/templates/nonSeriesWork.js');
       page.path = `${work.slug.current}`;
       page.context.categoryId = work.category.id;
       page.defer =
-        differenceInDays(new Date(), new Date(work.releaseDate)) > 30;
+        differenceInDays(new Date(), new Date(work.releaseDate)) > 90;
     }
 
     createPage(page);
