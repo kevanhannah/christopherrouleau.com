@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ShareIconStyles = styled.svg`
-  max-width: 1.25em;
+  /* max-width: 1.25em; */
 `;
 
 export const Pinterest = function () {

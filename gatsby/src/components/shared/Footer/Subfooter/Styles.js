@@ -45,21 +45,17 @@ export const SubfooterLinkList = styled.ul`
 `;
 
 export const SubfooterLink = styled.li`
-  display: flex;
-  align-items: center;
   margin: 0;
 
   a {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1em auto;
+    align-items: center;
+    gap: 0.5em;
     color: var(--black);
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 400;
-  }
-
-  svg {
-    width: 1em;
-    margin-right: 0.5em;
   }
 
   &:hover {

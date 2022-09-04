@@ -2,7 +2,9 @@ import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 
 const PrimaryButtonStyles = css`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.75em 1.5em;
   font-weight: 400;
   background-color: var(--primary-blue);
@@ -21,7 +23,9 @@ const PrimaryButtonStyles = css`
 `;
 
 const SecondaryButtonStyles = css`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.75em 1.5em;
   font-weight: 400;
   background-color: var(--primary-blue);
@@ -41,7 +45,9 @@ const SecondaryButtonStyles = css`
 `;
 
 const TertiaryButtonStyles = css`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.75em 1.5em;
   font-weight: 400;
   background-color: var(--black);

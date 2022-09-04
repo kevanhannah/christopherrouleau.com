@@ -15,10 +15,6 @@ const Typography = createGlobalStyle`
     font-weight: 300;
     font-size: 1em;
     margin-bottom: 1em;
-
-    /* &:last-of-type {
-      margin-bottom: 0;
-    } */
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -34,6 +30,10 @@ const Typography = createGlobalStyle`
   h2 {
     font-weight: 400;
     font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1em;
   }
 
   strong {
