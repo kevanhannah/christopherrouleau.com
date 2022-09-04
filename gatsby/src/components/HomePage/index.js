@@ -32,6 +32,10 @@ export default function HomePage({ categoryContents, home }) {
           <GatsbyImage
             alt={home.introImage.alt}
             image={home.introImage.asset.gatsbyImageData}
+            style={{
+              boxShadow: '0.5em 0.5em 0 var(--primary-blue-darker)',
+              userSelect: 'none',
+            }}
           />
         </HomePageIntroStyles>
         <Hero heroContent={home.hero} />

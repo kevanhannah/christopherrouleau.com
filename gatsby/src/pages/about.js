@@ -27,7 +27,7 @@ export const query = graphql`
       introImage {
         asset {
           gatsbyImageData(
-            aspectRatio: 0.85
+            aspectRatio: 0.9
             placeholder: DOMINANT_COLOR
             width: 400
           )

@@ -10,7 +10,10 @@ export default function AboutPage({ content, heading, image, lead }) {
       <GatsbyImage
         image={image.asset.gatsbyImageData}
         alt={image.alt}
-        // style={{ float: 'right', marginBottom: '1em', marginLeft: '1em' }}
+        style={{
+          boxShadow: '0.5em 0.5em 0 var(--primary-blue-darker)',
+          userSelect: 'none',
+        }}
       />
       <AboutPageTitle>{heading}</AboutPageTitle>
       <AboutPageLead>{lead}</AboutPageLead>

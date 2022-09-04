@@ -16,7 +16,7 @@ export default function Hero({
         <GatsbyImage
           image={image.asset.gatsbyImageData}
           alt={image.alt}
-          imgStyle={{
+          style={{
             boxShadow: '0.5em 0.5em 0 var(--primary-blue-darker)',
             userSelect: 'none',
           }}
