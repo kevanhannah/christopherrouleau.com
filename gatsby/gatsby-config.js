@@ -16,7 +16,7 @@ module.exports = {
       resolve: 'gatsby-source-sanity',
       options: {
         projectId: '9oo09ljx',
-        dataset: 'production',
+        dataset: 'development',
       },
     },
     'gatsby-plugin-image',

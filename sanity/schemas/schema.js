@@ -8,7 +8,6 @@ import annotationLinkInternal from './annotations/annotationLinkInternal';
 // Documents
 import category from './documents/category';
 import post from './documents/post';
-import series from './documents/series';
 import work from './documents/work';
 
 // Singletons
@@ -39,7 +38,6 @@ export default createSchema({
     // Documents
     category,
     post,
-    series,
     work,
     // Singletons
     about,

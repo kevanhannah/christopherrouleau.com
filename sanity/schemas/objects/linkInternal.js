@@ -16,7 +16,7 @@ export default {
       name: 'reference',
       type: 'reference',
       validation: (Rule) => Rule.required(),
-      to: [{ type: 'category' }, { type: 'series' }, { type: 'work' }],
+      to: [{ type: 'category' }, { type: 'work' }],
     },
   ],
   preview: {

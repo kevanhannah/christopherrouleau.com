@@ -34,30 +34,18 @@ export default {
       description: 'Name of the work',
       validation: (Rule) => Rule.required(),
     },
-    // In series
+    // Parent
     {
-      name: 'inSeries',
-      title: 'Part of a series',
-      type: 'boolean',
-      group: 'information',
-      initialValue: false,
-    },
-    // Series
-    {
-      name: 'series',
-      title: 'Series',
+      name: 'parentWork',
+      title: 'Parent Work',
       type: 'reference',
       group: 'information',
       description:
         'If this work is part of a series, you can associate it here.',
-      to: [{ type: 'series' }],
-      hidden: ({ document }) => !document?.inSeries,
-      validation: (Rule) =>
-        Rule.custom((field, context) =>
-          context.document.inSeries && field === undefined
-            ? 'This field must not be empty.'
-            : true
-        ),
+      to: [{ type: 'work' }],
+      options: {
+        filter: '!defined(parentWork)',
+      },
     },
     // Category
     {
@@ -66,11 +54,11 @@ export default {
       type: 'reference',
       group: 'information',
       to: [{ type: 'category' }],
-      hidden: ({ document }) => document?.inSeries,
+      readOnly: ({ document }) => document?.parent,
       // validation: (Rule) => Rule.required(),
       validation: (Rule) =>
         Rule.custom((field, context) =>
-          !context.document.inSeries && field === undefined
+          !context.document.parent && field === undefined
             ? 'This field must not be empty.'
             : true
         ),
@@ -117,10 +105,10 @@ export default {
       type: 'date',
       group: 'settings',
       description: 'Initial date the work was published or released',
-      hidden: ({ document }) => document?.inSeries,
+      readOnly: ({ document }) => document?.parent,
       validation: (Rule) =>
         Rule.custom((field, context) =>
-          !context.document.inSeries && field === undefined
+          !context.document.parent && field === undefined
             ? 'Release date must be set.'
             : true
         ),
@@ -155,4 +143,14 @@ export default {
       validation: (Rule) => Rule.required(),
     },
   ],
+  preview: {
+    select: {
+      name: 'name',
+      parentName: 'parentWork.name',
+    },
+    prepare: ({ name, parentName }) => ({
+      title: name,
+      subtitle: parentName ? `${parentName}` : ``,
+    }),
+  },
 };

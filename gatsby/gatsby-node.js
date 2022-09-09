@@ -84,9 +84,10 @@ async function createSeriesPages({ graphql, actions }) {
 
   const { data } = await graphql(`
     query {
-      series: allSanitySeries {
+      series: allSanityWorks {
         nodes {
-          id
+          id: _id
+          name
           releaseDate
           slug {
             current
@@ -161,6 +162,32 @@ async function createWorkPages({ graphql, actions }) {
     createPage(page);
   });
 }
+
+exports.createResolvers = ({ createResolvers }) => {
+  const resolvers = {
+    SanityWork: {
+      childWorks: {
+        type: ['SanityWork'],
+        resolve: async (source, args, context) => {
+          const { entries } = await context.nodeModel.findAll({
+            query: {
+              filter: {
+                parentWork: {
+                  _id: { eq: source._id },
+                },
+              },
+            },
+            type: 'SanityWork',
+          });
+
+          return entries;
+        },
+      },
+    },
+  };
+
+  createResolvers(resolvers);
+};
 
 exports.createPages = async (params) => {
   await createCategoryPages(params);
