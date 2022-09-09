@@ -9,7 +9,7 @@ async function createCategoryPages({ graphql, actions }) {
     query {
       categories: allSanityCategory {
         nodes {
-          id
+          id: _id
           slug {
             current
           }
@@ -78,93 +78,81 @@ async function createBlogPages({ graphql, actions }) {
   });
 }
 
-// Create series pages
-async function createSeriesPages({ graphql, actions }) {
-  const { createPage } = actions;
-
-  const { data } = await graphql(`
-    query {
-      series: allSanityWork {
-        nodes {
-          childWorks {
-            id
-          }
-          id: _id
-          name
-          releaseDate
-          slug {
-            current
-          }
-        }
-      }
-    }
-  `);
-
-  data.series.nodes
-    .filter((s) => s.childWorks.length >= 1) // If the work has child works, use the series template
-    .forEach((s) => {
-      createPage({
-        path: `${s.slug.current}`,
-        component: path.resolve('./src/templates/series.js'),
-        context: {
-          id: s.id,
-        },
-        defer: differenceInDays(new Date(), new Date(s.releaseDate)) > 90,
-      });
-    });
-}
-
 // Create work pages
 async function createWorkPages({ graphql, actions }) {
   const { createPage } = actions;
 
   const { data } = await graphql(`
     query {
-      works: allSanityWork {
+      allSanityWork {
         nodes {
-          id
-          inSeries
-          releaseDate
-          slug {
-            current
-          }
           category {
-            id
+            id: _id
           }
-          series {
-            id
-            releaseDate
+          childWorks {
+            id: _id
+          }
+          id: _id
+          name
+          parentWork {
+            id: _id
             slug {
               current
             }
+          }
+          releaseDate
+          slug {
+            current
           }
         }
       }
     }
   `);
 
-  data.works.nodes.forEach((work) => {
-    const page = {
+  // If the work has child works, it is a series
+  const series = data.allSanityWork.nodes.filter((s) => s.childWorks.length);
+
+  // If the work has a parent work, it is a series work
+  const seriesWorks = data.allSanityWork.nodes.filter((sw) => sw.parentWork);
+
+  // If the work no parent work and no child works, it is a non-series work
+  const nonSeriesWorks = data.allSanityWork.nodes.filter(
+    (nsw) => !nsw.parentWork && !nsw.childWorks.length
+  );
+
+  series.forEach((s) => {
+    createPage({
+      path: `${s.slug.current}`,
+      component: path.resolve('./src/templates/series.js'),
       context: {
-        id: work.id,
+        id: s.id,
       },
-    };
+      defer: differenceInDays(new Date(), new Date(s.releaseDate)) > 90,
+    });
+  });
 
-    if (work.series) {
-      page.component = path.resolve('./src/templates/seriesWork.js');
-      page.path = `${work.series.slug.current}/${work.slug.current}`;
-      page.context.seriesId = work.series.id;
-      page.defer =
-        differenceInDays(new Date(), new Date(work.series.releaseDate)) > 90;
-    } else {
-      page.component = path.resolve('./src/templates/nonSeriesWork.js');
-      page.path = `${work.slug.current}`;
-      page.context.categoryId = work.category.id;
-      page.defer =
-        differenceInDays(new Date(), new Date(work.releaseDate)) > 90;
-    }
+  seriesWorks.forEach((sw) => {
+    createPage({
+      path: `${sw.parentWork.slug.current}/${sw.slug.current}`,
+      component: path.resolve('./src/templates/seriesWork.js'),
+      context: {
+        id: sw.id,
+        parentId: sw.parentWork.id,
+      },
+      defer: differenceInDays(new Date(), new Date(sw.releaseDate)) > 90,
+    });
+  });
 
-    createPage(page);
+  nonSeriesWorks.forEach((nsw) => {
+    createPage({
+      path: `${nsw.slug.current}`,
+      component: path.resolve('./src/templates/nonSeriesWork.js'),
+      context: {
+        id: nsw.id,
+        categoryId: nsw.category.id,
+      },
+      defer: differenceInDays(new Date(), new Date(nsw.releaseDate)) > 90,
+    });
   });
 }
 
@@ -195,8 +183,7 @@ exports.createResolvers = ({ createResolvers }) => {
 };
 
 exports.createPages = async (params) => {
-  // await createCategoryPages(params);
-  // await createBlogPages(params);
-  await createSeriesPages(params);
-  // await createWorkPages(params);
+  await createCategoryPages(params);
+  await createBlogPages(params);
+  await createWorkPages(params);
 };

@@ -5,18 +5,22 @@ import WorkPage from '../components/WorkPage';
 import SEO from '../components/shared/SEO';
 
 export default function SeriesWorkTemplate({ data: { work, relatedWorks } }) {
+  const metaImageURL = getSrc(work.metaImage[0].asset.gatsbyImageData);
+
   return (
     <WorkPage
-      category={work.category || work.series.category}
+      category={work.category}
       description={work.description}
       forSale={work.forSale}
       images={work.images}
+      metaDescription={work.excerpt}
+      metaImageURL={metaImageURL}
       name={work.name}
       pageType="work"
       relatedItems={relatedWorks.nodes}
       relatedItemsHeader="More in this series"
-      releaseDate={work.series.releaseDate}
-      series={work.series}
+      releaseDate={work.releaseDate}
+      series={work.parentWork}
       storeUrl={work.storeUrl}
     />
   );
@@ -27,16 +31,16 @@ export function Head({ data: { work } }) {
 
   return (
     <SEO
-      description={`Part of ${work.series.name}. ${work.series.excerpt}`}
+      description={`Part of ${work.parentWork.name}. ${work.parentWork.excerpt}`}
       image={imagePath}
-      pathname={`/${work.series.slug.current}/${work.slug.current}`}
+      pathname={`/${work.parentWork.slug.current}/${work.slug.current}`}
       title={`${work.name} by Christopher Rouleau`}
     />
   );
 }
 
 export const query = graphql`
-  query ($id: String!) {
+  query ($id: String!, $parentId: String!) {
     work: sanityWork(_id: { eq: $id }) {
       category {
         name
@@ -66,8 +70,8 @@ export const query = graphql`
       }
       name
       parentWork {
+        excerpt
         name
-        releaseDate
         slug {
           current
         }
@@ -79,34 +83,35 @@ export const query = graphql`
           }
         }
       }
+      releaseDate
       slug {
         current
       }
       storeUrl
     }
-    # relatedWorks: allSanityWork(
-    #   filter: { parentWork: { _id: { eq: $seriesId } }, id: { ne: $id } }
-    #   limit: 4
-    # ) {
-    #   nodes {
-    #     id
-    #     name
-    #     slug {
-    #       current
-    #     }
-    #     images {
-    #       alt
-    #       asset {
-    #         id
-    #         gatsbyImageData(
-    #           width: 500
-    #           layout: CONSTRAINED
-    #           aspectRatio: 1
-    #           placeholder: BLURRED
-    #         )
-    #       }
-    #     }
-    #   }
-    # }
+    relatedWorks: allSanityWork(
+      filter: { parentWork: { _id: { eq: $parentId } }, _id: { ne: $id } }
+      limit: 4
+    ) {
+      nodes {
+        id: _id
+        name
+        slug {
+          current
+        }
+        images {
+          alt
+          asset {
+            id
+            gatsbyImageData(
+              width: 500
+              layout: CONSTRAINED
+              aspectRatio: 1
+              placeholder: BLURRED
+            )
+          }
+        }
+      }
+    }
   }
 `;
