@@ -40,7 +40,7 @@ export default function WorkPage({
         storeUrl={storeUrl}
         year={year}
       />
-      {relatedItems.length > 0 && (
+      {relatedItems?.length > 0 && (
         <RelatedWorkCards>
           <h3>{relatedItemsHeader}</h3>
           <CardGrid>

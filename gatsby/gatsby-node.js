@@ -84,8 +84,11 @@ async function createSeriesPages({ graphql, actions }) {
 
   const { data } = await graphql(`
     query {
-      series: allSanityWorks {
+      series: allSanityWork {
         nodes {
+          childWorks {
+            id
+          }
           id: _id
           name
           releaseDate
@@ -97,16 +100,18 @@ async function createSeriesPages({ graphql, actions }) {
     }
   `);
 
-  data.series.nodes.forEach((s) => {
-    createPage({
-      path: `${s.slug.current}`,
-      component: path.resolve('./src/templates/series.js'),
-      context: {
-        id: s.id,
-      },
-      defer: differenceInDays(new Date(), new Date(s.releaseDate)) > 90,
+  data.series.nodes
+    .filter((s) => s.childWorks.length >= 1) // If the work has child works, use the series template
+    .forEach((s) => {
+      createPage({
+        path: `${s.slug.current}`,
+        component: path.resolve('./src/templates/series.js'),
+        context: {
+          id: s.id,
+        },
+        defer: differenceInDays(new Date(), new Date(s.releaseDate)) > 90,
+      });
     });
-  });
 }
 
 // Create work pages
@@ -190,8 +195,8 @@ exports.createResolvers = ({ createResolvers }) => {
 };
 
 exports.createPages = async (params) => {
-  await createCategoryPages(params);
-  await createBlogPages(params);
+  // await createCategoryPages(params);
+  // await createBlogPages(params);
   await createSeriesPages(params);
-  await createWorkPages(params);
+  // await createWorkPages(params);
 };

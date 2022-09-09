@@ -115,30 +115,30 @@ export const query = graphql`
         }
       }
     }
-    relatedSeries: allSanitySeries(
-      filter: { category: { id: { eq: $categoryId } } }
-      limit: 4
-    ) {
-      nodes {
-        id
-        name
-        releaseDate
-        slug {
-          current
-        }
-        coverImage {
-          alt
-          asset {
-            id
-            gatsbyImageData(
-              width: 500
-              layout: CONSTRAINED
-              aspectRatio: 1
-              placeholder: BLURRED
-            )
-          }
-        }
-      }
-    }
+    # relatedSeries: allSanitySeries(
+    #   filter: { category: { id: { eq: $categoryId } } }
+    #   limit: 4
+    # ) {
+    #   nodes {
+    #     id
+    #     name
+    #     releaseDate
+    #     slug {
+    #       current
+    #     }
+    #     coverImage {
+    #       alt
+    #       asset {
+    #         id
+    #         gatsbyImageData(
+    #           width: 500
+    #           layout: CONSTRAINED
+    #           aspectRatio: 1
+    #           placeholder: BLURRED
+    #         )
+    #       }
+    #     }
+    #   }
+    # }
   }
 `;

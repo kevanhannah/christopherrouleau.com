@@ -45,17 +45,10 @@ export default function FeatureLinks() {
                 _type
                 linkText
                 reference {
-                  ... on SanitySeries {
-                    name
-                    slug {
-                      current
-                    }
-                    id
-                  }
                   ... on SanityWork {
                     id
                     name
-                    series {
+                    series: parentWork {
                       slug {
                         current
                       }

@@ -69,29 +69,26 @@ export const query = graphql`
         }
       }
     }
-    series: allSanitySeries(sort: { fields: releaseDate, order: DESC }) {
-      nodes {
-        id
-        name
-        releaseDate
-        slug {
-          current
-        }
-        category {
-          id
-        }
-        images: coverImage {
-          alt
-          asset {
-            gatsbyImageData(aspectRatio: 1)
-          }
-        }
-      }
-    }
-    works: allSanityWork(
-      filter: { inSeries: { eq: false } }
-      sort: { fields: releaseDate, order: DESC }
-    ) {
+    # series: allSanityWork(sort: { fields: releaseDate, order: DESC }) {
+    #   nodes {
+    #     id
+    #     name
+    #     releaseDate
+    #     slug {
+    #       current
+    #     }
+    #     category {
+    #       id
+    #     }
+    #     images {
+    #       alt
+    #       asset {
+    #         gatsbyImageData(aspectRatio: 1)
+    #       }
+    #     }
+    #   }
+    # }
+    works: allSanityWork(sort: { fields: releaseDate, order: DESC }) {
       nodes {
         id
         name

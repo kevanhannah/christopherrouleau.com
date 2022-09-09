@@ -5,11 +5,10 @@ module.exports = {
     instagram: '@chris_rouleau',
     title: 'Christopher Rouleau',
     twitter: '@Chris_Rouleau',
-    siteUrl: 'https://cute-yeot-a52e29.netlify.app/',
-    // siteUrl:
-    //   process.env.NODE_ENV === 'production'
-    //     ? process.env.SITE_URL
-    //     : 'localhost:8000',
+    siteUrl:
+      process.env.NODE_ENV === 'production'
+        ? process.env.SITE_URL
+        : 'localhost:8000',
   },
   plugins: [
     {

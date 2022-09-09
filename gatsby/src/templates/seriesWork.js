@@ -36,8 +36,8 @@ export function Head({ data: { work } }) {
 }
 
 export const query = graphql`
-  query ($id: String!, $seriesId: String) {
-    work: sanityWork(id: { eq: $id }) {
+  query ($id: String!) {
+    work: sanityWork(_id: { eq: $id }) {
       category {
         name
         slug {
@@ -65,7 +65,7 @@ export const query = graphql`
         }
       }
       name
-      series {
+      parentWork {
         name
         releaseDate
         slug {
@@ -84,29 +84,29 @@ export const query = graphql`
       }
       storeUrl
     }
-    relatedWorks: allSanityWork(
-      filter: { series: { id: { eq: $seriesId } }, id: { ne: $id } }
-      limit: 4
-    ) {
-      nodes {
-        id
-        name
-        slug {
-          current
-        }
-        images {
-          alt
-          asset {
-            id
-            gatsbyImageData(
-              width: 500
-              layout: CONSTRAINED
-              aspectRatio: 1
-              placeholder: BLURRED
-            )
-          }
-        }
-      }
-    }
+    # relatedWorks: allSanityWork(
+    #   filter: { parentWork: { _id: { eq: $seriesId } }, id: { ne: $id } }
+    #   limit: 4
+    # ) {
+    #   nodes {
+    #     id
+    #     name
+    #     slug {
+    #       current
+    #     }
+    #     images {
+    #       alt
+    #       asset {
+    #         id
+    #         gatsbyImageData(
+    #           width: 500
+    #           layout: CONSTRAINED
+    #           aspectRatio: 1
+    #           placeholder: BLURRED
+    #         )
+    #       }
+    #     }
+    #   }
+    # }
   }
 `;
