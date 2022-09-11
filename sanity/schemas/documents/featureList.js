@@ -1,11 +1,15 @@
-import { UlistIcon } from '@sanity/icons';
+import {
+  orderRankField,
+  orderRankOrdering,
+} from '@sanity/orderable-document-list';
 
 export default {
   name: 'featureList',
   title: 'Feature list',
   type: 'document',
-  icon: UlistIcon,
+  icon: false,
   __experimental_actions: ['update', 'publish'],
+  orderings: [orderRankOrdering],
   fields: [
     {
       name: 'title',
@@ -13,6 +17,7 @@ export default {
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
+    orderRankField({ type: 'featureList', hidden: false }),
     {
       name: 'items',
       title: 'List items',

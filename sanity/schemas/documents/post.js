@@ -77,6 +77,18 @@ export default {
       group: 'seo',
     },
   ],
+  orderings: [
+    {
+      title: 'Last published',
+      name: 'publishDateDesc',
+      by: [{ field: 'publishedAt', direction: 'desc' }],
+    },
+    {
+      title: 'First published',
+      name: 'publishDateAsc',
+      by: [{ field: 'publishedAt', direction: 'asc' }],
+    },
+  ],
   preview: {
     select: {
       publishedAt: 'publishedAt',

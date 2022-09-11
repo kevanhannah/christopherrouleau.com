@@ -1,4 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder';
+import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import { IoSettingsOutline, IoLibraryOutline } from 'react-icons/io5';
 import { UlistIcon } from '@sanity/icons';
 
@@ -36,23 +37,29 @@ export const settings = S.listItem()
                 S.document().documentId(id).views(views).schemaType('category')
               )
           ),
-        S.listItem()
-          .id('feature-lists')
-          .title('Feature Lists')
-          .icon(UlistIcon)
-          .child(() =>
-            S.documentTypeList('featureList')
-              .title('Feature Lists')
-              .canHandleIntent(() =>
-                S.documentTypeList('featureList').getCanHandleIntent()
-              )
-              .showIcons(true)
-              .child((id) =>
-                S.document()
-                  .documentId(id)
-                  .views(views)
-                  .schemaType('featureList')
-              )
-          ),
+        orderableDocumentListDeskItem({
+          type: 'featureList',
+          title: 'Feature Lists',
+          icon: UlistIcon,
+          id: 'feature-lists',
+        }),
+        // S.listItem()
+        //   .id('feature-lists')
+        //   .title('Feature Lists')
+        //   .icon(UlistIcon)
+        //   .child(() =>
+        //     S.documentTypeList('featureList')
+        //       .title('Feature Lists')
+        //       .canHandleIntent(() =>
+        //         S.documentTypeList('featureList').getCanHandleIntent()
+        //       )
+        //       .showIcons(true)
+        //       .child((id) =>
+        //         S.document()
+        //           .documentId(id)
+        //           .views(views)
+        //           .schemaType('featureList')
+        //       )
+        //   ),
       ])
   );
