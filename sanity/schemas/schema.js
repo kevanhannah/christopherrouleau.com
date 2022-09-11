@@ -7,6 +7,7 @@ import annotationLinkInternal from './annotations/annotationLinkInternal';
 
 // Documents
 import category from './documents/category';
+import featureList from './documents/featureList';
 import post from './documents/post';
 import work from './documents/work';
 
@@ -21,7 +22,6 @@ import body from './blocks/body';
 // Objects
 import description from './objects/description';
 import excerpt from './objects/excerpt';
-import featuresList from './objects/featuresList';
 import featureListItem from './objects/featureListItem';
 import hero from './objects/hero';
 import itemImage from './objects/itemImage';
@@ -37,6 +37,7 @@ export default createSchema({
     annotationLinkExternal,
     // Documents
     category,
+    featureList,
     post,
     work,
     // Singletons
@@ -48,7 +49,6 @@ export default createSchema({
     // Objects
     description,
     excerpt,
-    featuresList,
     featureListItem,
     hero,
     itemImage,

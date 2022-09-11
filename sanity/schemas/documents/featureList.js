@@ -3,8 +3,9 @@ import { UlistIcon } from '@sanity/icons';
 export default {
   name: 'featureList',
   title: 'Feature list',
-  type: 'object',
+  type: 'document',
   icon: UlistIcon,
+  __experimental_actions: ['update', 'publish'],
   fields: [
     {
       name: 'title',
@@ -20,18 +21,20 @@ export default {
       validation: (Rule) => Rule.min(1),
     },
   ],
-  preview: {
-    select: {
-      title: 'title',
-      items: 'items',
-    },
-    prepare(selection) {
-      const { title, items } = selection;
+  // preview: {
+  //   select: {
+  //     title: 'title',
+  //     items: 'items',
+  //   },
+  //   prepare(selection) {
+  //     const { title, items } = selection;
 
-      return {
-        title,
-        subtitle: `${items.length} item${items.length === 1 ? '' : 's'}`,
-      };
-    },
-  },
+  //     return {
+  //       title,
+  //       subtitle: `${items.length ? items.length : '0'} item${
+  //         items.length === 1 ? '' : 's'
+  //       }`,
+  //     };
+  //   },
+  // },
 };

@@ -29,7 +29,7 @@ export default {
       title: 'Year completed',
       type: 'number',
       description:
-        'For items that span multiple years. Leave blank if item only ranged for single year.',
+        'For items that span multiple years. Leave blank if item only spans a single year.',
       validation: (Rule) => Rule.min(2000).max(2100).integer(),
     },
   ],

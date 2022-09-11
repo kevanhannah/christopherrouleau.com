@@ -183,7 +183,7 @@ exports.createResolvers = ({ createResolvers }) => {
 };
 
 exports.createPages = async (params) => {
-  await createCategoryPages(params);
   await createBlogPages(params);
+  await createCategoryPages(params);
   await createWorkPages(params);
 };

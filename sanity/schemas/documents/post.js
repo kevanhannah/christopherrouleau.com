@@ -1,3 +1,4 @@
+import { format, parseISO } from 'date-fns';
 import { IoNewspaperOutline } from 'react-icons/io5';
 
 export default {
@@ -10,6 +11,10 @@ export default {
       default: true,
       name: 'editorial',
       title: 'Editorial',
+    },
+    {
+      name: 'settings',
+      title: 'Settings',
     },
     {
       name: 'seo',
@@ -37,10 +42,12 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      group: 'settings',
       options: {
         source: 'title',
         maxLength: 140,
       },
+      validation: (Rule) => Rule.required(),
     },
     // Published At
     {
@@ -72,14 +79,14 @@ export default {
   ],
   preview: {
     select: {
-      active: 'active',
+      publishedAt: 'publishedAt',
       title: 'title',
     },
     prepare(selection) {
-      const { title } = selection;
-
+      const { publishedAt, title } = selection;
       return {
         title,
+        subtitle: format(parseISO(publishedAt), 'MMMM d, yyyy'),
       };
     },
   },
