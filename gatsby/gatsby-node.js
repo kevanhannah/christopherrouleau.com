@@ -177,6 +177,25 @@ exports.createResolvers = ({ createResolvers }) => {
         },
       },
     },
+    SanityFeatureList: {
+      items: {
+        type: ['SanityFeatureItem'],
+        resolve: async (source, args, context) => {
+          const { entries } = await context.nodeModel.findAll({
+            query: {
+              filter: {
+                list: {
+                  _id: { eq: source._id },
+                },
+              },
+            },
+            type: 'SanityFeatureItem',
+          });
+
+          return entries;
+        },
+      },
+    },
   };
 
   createResolvers(resolvers);

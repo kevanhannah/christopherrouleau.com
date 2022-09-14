@@ -8,6 +8,7 @@ import { works } from './desk/works';
 
 const DOCUMENT_TYPES_IN_STRUCTURE = [
   'about',
+  'category',
   'featureList',
   'home',
   'post',
@@ -22,14 +23,10 @@ export default () =>
       home,
       about,
       S.divider(),
-      // Automatically add new document types to the root pane
-      // ...S.documentTypeListItems().filter(
-      //   (listItem) => !DOCUMENT_TYPES_IN_STRUCTURE.includes(listItem.getId())
-      // ),
       works('work'),
       childWorks('work'),
       S.divider(),
       posts,
       S.divider(),
-      settings,
+      settings('featureList'),
     ]);

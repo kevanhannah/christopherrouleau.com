@@ -1,9 +1,9 @@
 export default function parseSanityLink(link) {
   const parsedLink = {
-    text: link.linkText,
+    text: link.linkText || link.text,
   };
 
-  if (link._type === 'linkExternal') {
+  if (link._type === 'linkExternal' || link.type === 'externalLink') {
     parsedLink.url = `${link.url}`;
     parsedLink.type = 'external';
     return parsedLink;
