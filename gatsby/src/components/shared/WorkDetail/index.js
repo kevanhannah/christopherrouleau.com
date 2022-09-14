@@ -63,7 +63,7 @@ export default function WorkDetail({
           </>
         )}
       </WorkInformationPanel>
-      <Gallery images={images} />
+      <Gallery images={pageType === 'series' ? images[0] : images} />
     </WorkDetailStyles>
   );
 }
