@@ -6,16 +6,6 @@ import { settings } from './desk/settings';
 import { childWorks } from './desk/childWorks';
 import { works } from './desk/works';
 
-const DOCUMENT_TYPES_IN_STRUCTURE = [
-  'about',
-  'category',
-  'featureList',
-  'home',
-  'post',
-  'work',
-  'settings',
-];
-
 export default () =>
   S.list()
     .title('Site Content')

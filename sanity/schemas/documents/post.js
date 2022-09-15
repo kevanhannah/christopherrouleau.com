@@ -75,6 +75,7 @@ export default {
       name: 'excerpt',
       type: 'excerpt',
       group: 'seo',
+      validation: (Rule) => Rule.required(),
     },
   ],
   orderings: [
@@ -97,8 +98,10 @@ export default {
     prepare(selection) {
       const { publishedAt, title } = selection;
       return {
-        title,
-        subtitle: format(parseISO(publishedAt), 'MMMM d, yyyy'),
+        title: title || 'Pending',
+        subtitle: publishedAt
+          ? format(parseISO(publishedAt), 'MMMM d, yyyy')
+          : 'Pending',
       };
     },
   },
