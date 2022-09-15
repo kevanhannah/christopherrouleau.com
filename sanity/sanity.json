@@ -3,10 +3,6 @@
   "project": {
     "name": "christopherrouleau.com"
   },
-  "api": {
-    "projectId": "9oo09ljx",
-    "dataset": "production"
-  },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
@@ -28,6 +24,10 @@
     {
       "implements": "part:@sanity/dashboard/config",
       "path": "./dashboardConfig.js"
+    },
+    {
+      "name": "part:@sanity/base/initial-value-templates",
+      "path": "./initialValueTemplates.js"
     }
   ]
 }

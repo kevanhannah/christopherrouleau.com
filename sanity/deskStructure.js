@@ -3,22 +3,20 @@ import { about } from './desk/about';
 import { home } from './desk/home';
 import { posts } from './desk/posts';
 import { settings } from './desk/settings';
-
-const DOCUMENT_TYPES_IN_STRUCTURE = ['about', 'home', 'post', 'settings'];
+import { childWorks } from './desk/childWorks';
+import { works } from './desk/works';
 
 export default () =>
   S.list()
-    .title('Content')
+    .title('Site Content')
     .items([
       home,
       about,
       S.divider(),
-      // Automatically add new document types to the root pane
-      ...S.documentTypeListItems().filter(
-        (listItem) => !DOCUMENT_TYPES_IN_STRUCTURE.includes(listItem.getId())
-      ),
+      works('work'),
+      childWorks('work'),
       S.divider(),
       posts,
       S.divider(),
-      settings,
+      settings('featureList'),
     ]);

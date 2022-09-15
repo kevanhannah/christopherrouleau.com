@@ -8,12 +8,9 @@ export default {
   __experimental_actions: ['update', 'publish'],
   groups: [
     {
+      default: true,
       name: 'banner',
       title: 'Banner',
-    },
-    {
-      name: 'lists',
-      title: 'Lists',
     },
   ],
   fields: [
@@ -39,15 +36,6 @@ export default {
       type: 'url',
       group: 'banner',
       hidden: ({ document }) => !document?.bannerActive,
-    },
-    // Lists
-    {
-      name: 'featureLists',
-      title: 'Lists of featured items',
-      type: 'array',
-      of: [{ type: 'featureList' }],
-      group: 'lists',
-      validation: (Rule) => Rule.max(3),
     },
   ],
 };

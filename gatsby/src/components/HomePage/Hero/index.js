@@ -60,17 +60,10 @@ export const query = graphql`
           _type
           linkText
           reference {
-            ... on SanitySeries {
-              name
-              slug {
-                current
-              }
-              id
-            }
             ... on SanityWork {
               id
               name
-              series {
+              parentWork {
                 slug {
                   current
                 }

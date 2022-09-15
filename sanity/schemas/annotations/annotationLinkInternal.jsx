@@ -24,12 +24,7 @@ export default {
     {
       name: 'reference',
       type: 'reference',
-      to: [
-        { type: 'category' },
-        { type: 'post' },
-        { type: 'series' },
-        { type: 'work' },
-      ],
+      to: [{ type: 'category' }, { type: 'post' }, { type: 'work' }],
       options: {
         disableNew: true,
       },

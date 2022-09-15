@@ -69,7 +69,7 @@ export default {
     },
     {
       name: 'categories',
-      title: 'Category ordering',
+      title: 'Display order for categories on the home page',
       type: 'array',
       group: 'categories',
       of: [

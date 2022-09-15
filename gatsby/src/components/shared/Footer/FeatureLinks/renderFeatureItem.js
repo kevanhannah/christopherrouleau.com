@@ -13,10 +13,10 @@ export function renderFeatureItem(item) {
     dateRange.push(`-${item.endDate.toString().substring(2, 4)}`);
   }
 
-  if (item.item[0]._type === 'plainTextItem') {
+  if (item.type === 'text') {
     return (
       <>
-        {item.item[0].text}
+        {item.text}
         {dateRange.length ? (
           <span style={{ fontWeight: '300' }}>{` (${dateRange.join(
             ''
@@ -28,7 +28,7 @@ export function renderFeatureItem(item) {
     );
   }
 
-  const parsedLink = parseSanityLink(item.item[0]);
+  const parsedLink = parseSanityLink(item);
 
   return (
     <>

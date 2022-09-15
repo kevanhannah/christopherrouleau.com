@@ -7,8 +7,9 @@ import annotationLinkInternal from './annotations/annotationLinkInternal';
 
 // Documents
 import category from './documents/category';
+import featureList from './documents/featureList';
+import featureItem from './documents/featureItem';
 import post from './documents/post';
-import series from './documents/series';
 import work from './documents/work';
 
 // Singletons
@@ -22,8 +23,6 @@ import body from './blocks/body';
 // Objects
 import description from './objects/description';
 import excerpt from './objects/excerpt';
-import featuresList from './objects/featuresList';
-import featureListItem from './objects/featureListItem';
 import hero from './objects/hero';
 import itemImage from './objects/itemImage';
 import linkExternal from './objects/linkExternal';
@@ -38,8 +37,9 @@ export default createSchema({
     annotationLinkExternal,
     // Documents
     category,
+    featureList,
+    featureItem,
     post,
-    series,
     work,
     // Singletons
     about,
@@ -50,8 +50,6 @@ export default createSchema({
     // Objects
     description,
     excerpt,
-    featuresList,
-    featureListItem,
     hero,
     itemImage,
     linkExternal,

@@ -11,10 +11,7 @@ import {
 import { renderFeatureItem } from './renderFeatureItem';
 
 export default function FeatureLinks() {
-  const {
-    latestPost,
-    sanitySettings: { featureLists },
-  } = useStaticQuery(graphql`
+  const { latestPost, featureLists } = useStaticQuery(graphql`
     query {
       latestPost: allSanityPost(
         limit: 1
@@ -29,59 +26,28 @@ export default function FeatureLinks() {
           title
         }
       }
-      sanitySettings {
-        featureLists {
+      featureLists: allSanityFeatureList(
+        sort: { fields: orderRank, order: ASC }
+      ) {
+        nodes {
           title
           items {
-            item {
-              ... on SanityLinkExternal {
-                _type
-                linkText
-                newWindow
-                url
-                _key
-              }
-              ... on SanityLinkInternal {
-                _type
-                linkText
-                reference {
-                  ... on SanitySeries {
-                    name
-                    slug {
-                      current
-                    }
-                    id
-                  }
-                  ... on SanityWork {
-                    id
-                    name
-                    series {
-                      slug {
-                        current
-                      }
-                    }
-                    slug {
-                      current
-                    }
-                  }
-                  ... on SanityCategory {
-                    id
-                    name
-                    slug {
-                      current
-                    }
-                  }
+            endDate
+            id: _id
+            orderRank
+            reference {
+              ... on SanityWork {
+                id
+                name
+                slug {
+                  current
                 }
-                _key
-              }
-              ... on SanityPlainTextItem {
-                _type
-                text
-                _key
               }
             }
-            endDate
             startDate
+            type
+            text
+            url
           }
         }
       }
@@ -91,14 +57,14 @@ export default function FeatureLinks() {
   return (
     <FeatureLinksStyles>
       <LatestBlogPost post={latestPost} />
-      {featureLists.map((list) => (
+      {featureLists.nodes.map((list) => (
         <FeatureLinkColumnContainer key={list.title}>
           <FeatureLinkColumnHeader>{list.title}</FeatureLinkColumnHeader>
           <FeatureLinkColumnList>
             {list.items.map((item) => {
               const renderedItem = renderFeatureItem(item);
               return (
-                <FeatureItemStyles key={item.item[0]._key}>
+                <FeatureItemStyles key={item.id}>
                   {renderedItem}
                 </FeatureItemStyles>
               );

@@ -4,16 +4,13 @@ import { getSrc } from 'gatsby-plugin-image';
 import HomePage from '../components/HomePage';
 import SEO from '../components/shared/SEO';
 
-export default function Home({ data: { home, series, works } }) {
+export default function Home({ data: { home, works } }) {
   const allCategories = home.categories.map((category) => {
-    const seriesInCategory = series.nodes.filter(
-      (s) => s.category.id === category.id
-    );
     const worksInCategory = works.nodes.filter(
       (w) => w.category.id === category.id
     );
 
-    const categoryItems = [...seriesInCategory, ...worksInCategory].sort(
+    const categoryItems = worksInCategory.sort(
       (a, b) => new Date(b.releaseDate) - new Date(a.releaseDate)
     );
 
@@ -62,50 +59,36 @@ export const query = graphql`
       }
       ...HeroFragment
       categories {
-        id
+        id: _id
         name
         slug {
           current
-        }
-      }
-    }
-    series: allSanitySeries(sort: { fields: releaseDate, order: DESC }) {
-      nodes {
-        id
-        name
-        releaseDate
-        slug {
-          current
-        }
-        category {
-          id
-        }
-        images: coverImage {
-          alt
-          asset {
-            gatsbyImageData(aspectRatio: 1)
-          }
         }
       }
     }
     works: allSanityWork(
-      filter: { inSeries: { eq: false } }
+      filter: { parentWork: { _id: { eq: null } } }
       sort: { fields: releaseDate, order: DESC }
     ) {
       nodes {
-        id
+        id: _id
         name
         releaseDate
         slug {
           current
         }
         category {
-          id
+          id: _id
         }
         images {
           alt
           asset {
-            gatsbyImageData(aspectRatio: 1)
+            gatsbyImageData(
+              width: 500
+              layout: CONSTRAINED
+              aspectRatio: 1
+              placeholder: DOMINANT_COLOR
+            )
           }
         }
       }

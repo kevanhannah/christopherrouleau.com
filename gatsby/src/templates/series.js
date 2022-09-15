@@ -4,15 +4,15 @@ import { getSrc } from 'gatsby-plugin-image';
 import WorkPage from '../components/WorkPage';
 import SEO from '../components/shared/SEO';
 
-export default function SeriesTemplate({ data: { series, works } }) {
+export default function SeriesTemplate({ data: { series } }) {
   return (
     <WorkPage
       category={series.category}
       description={series.description}
-      images={[series.coverImage]}
+      images={series.images}
       name={series.name}
       pageType="series"
-      relatedItems={works.nodes}
+      relatedItems={series.childWorks}
       relatedItemsHeader="Works in this series"
       releaseDate={series.releaseDate}
       series={series}
@@ -21,7 +21,7 @@ export default function SeriesTemplate({ data: { series, works } }) {
 }
 
 export function Head({ data: { series } }) {
-  const imagePath = getSrc(series.metaImage.asset);
+  const imagePath = getSrc(series.metaImage[0].asset);
 
   return (
     <SEO
@@ -35,53 +35,54 @@ export function Head({ data: { series } }) {
 
 export const query = graphql`
   query ($id: String!) {
-    series: sanitySeries(id: { eq: $id }) {
-      name
-      description: _rawDescription
-      excerpt
-      slug {
-        current
-      }
-      coverImage {
-        alt
-        asset {
-          id
-          publicUrl
-          gatsbyImageData(
-            aspectRatio: 1
-            width: 700
-            layout: CONSTRAINED
-            placeholder: BLURRED
-          )
-        }
-      }
+    series: sanityWork(_id: { eq: $id }) {
       category {
         name
         slug {
           current
         }
       }
-      metaImage: coverImage {
-        asset {
-          gatsbyImageData(width: 1200, layout: CONSTRAINED, aspectRatio: 1.905)
-        }
-      }
-      releaseDate
-    }
-    works: allSanityWork(filter: { series: { id: { eq: $id } } }) {
-      nodes {
-        id
-        images {
-          alt
-          asset {
-            id
-            gatsbyImageData(aspectRatio: 1)
-          }
-        }
+      childWorks {
+        id: _id
         name
         slug {
           current
         }
+        images {
+          alt
+          asset {
+            gatsbyImageData(
+              aspectRatio: 1
+              width: 500
+              placeholder: DOMINANT_COLOR
+              layout: CONSTRAINED
+            )
+          }
+        }
+      }
+      description: _rawDescription
+      excerpt
+      id: _id
+      images {
+        alt
+        asset {
+          gatsbyImageData(
+            aspectRatio: 1
+            width: 700
+            layout: CONSTRAINED
+            placeholder: DOMINANT_COLOR
+          )
+        }
+      }
+      metaImage: images {
+        asset {
+          gatsbyImageData(width: 1200, layout: CONSTRAINED, aspectRatio: 1.905)
+        }
+      }
+      name
+      releaseDate
+      slug {
+        current
       }
     }
   }

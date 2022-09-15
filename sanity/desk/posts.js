@@ -1,6 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder';
 
 export const posts = S.listItem()
-  .title('Posts')
+  .title('Blog Posts')
   .schemaType('post')
   .child(S.documentTypeList('post'));
