@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     description:
@@ -5,17 +9,14 @@ module.exports = {
     instagram: '@chris_rouleau',
     title: 'Christopher Rouleau',
     twitter: '@Chris_Rouleau',
-    siteUrl:
-      process.env.NODE_ENV === 'production'
-        ? process.env.SITE_URL
-        : 'localhost:8000',
+    siteUrl: process.env.GATSBY_SITE_URL,
   },
   plugins: [
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: '9oo09ljx',
-        dataset: 'development',
+        projectId: process.env.GATSBY_SANITY_PROJECT_ID,
+        dataset: process.env.GATSBY_SANITY_DATASET,
       },
     },
     'gatsby-plugin-image',
