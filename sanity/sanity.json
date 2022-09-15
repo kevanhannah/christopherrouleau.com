@@ -3,10 +3,6 @@
   "project": {
     "name": "christopherrouleau.com"
   },
-  "api": {
-    "projectId": "9oo09ljx",
-    "dataset": "development"
-  },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
