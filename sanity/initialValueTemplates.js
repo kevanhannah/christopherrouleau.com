@@ -29,6 +29,7 @@ export default [
       category: { _type: 'reference', _ref: parentWorkCategoryId },
       parentWork: { _type: 'reference', _ref: parentWorkId },
       releaseDate: parentWorkReleaseDate,
+      hasChildWorks: false,
     }),
   }),
   ...T.defaults(),

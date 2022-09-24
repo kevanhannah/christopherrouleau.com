@@ -113,6 +113,22 @@ export default {
             : true
         ),
     },
+    // Has child works
+    {
+      name: 'hasChildWorks',
+      title: 'Has child works',
+      description: 'Turn this on to enable child works for this item',
+      type: 'boolean',
+      group: 'settings',
+      initialValue: false,
+      hidden: ({ document }) => document.parentWork || document.forSale,
+      validation: (Rule) =>
+        Rule.custom((field, context) =>
+          context.document.forSale && field === true
+            ? 'Parent items cannot be listed for sale.'
+            : true
+        ),
+    },
     // For sale
     {
       name: 'forSale',
@@ -120,6 +136,7 @@ export default {
       type: 'boolean',
       group: 'settings',
       initialValue: false,
+      hidden: ({ document }) => document.hasChildWorks,
     },
     // Store URL
     {

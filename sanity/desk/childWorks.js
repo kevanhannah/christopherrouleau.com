@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { IoImagesOutline } from 'react-icons/io5';
 
 export const childWorks = (schemaType = 'work') => {
-  const workParents = `_type == "${schemaType}" && !defined(parentWork) && !(_id in path("drafts.**"))`;
+  const workParents = `_type == "${schemaType}" && !defined(parentWork) && hasChildWorks == true && !(_id in path("drafts.**"))`;
 
   return S.listItem(schemaType)
     .title('Child Works')
