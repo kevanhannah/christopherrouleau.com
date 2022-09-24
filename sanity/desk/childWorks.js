@@ -13,7 +13,7 @@ export const childWorks = (schemaType = 'work') => {
       documentStore.listenQuery(`*[${workParents}]`).pipe(
         map((parents) =>
           S.list()
-            .title('Works')
+            .title('Parent Works')
             .items([
               ...parents.map((parent) =>
                 S.listItem({
