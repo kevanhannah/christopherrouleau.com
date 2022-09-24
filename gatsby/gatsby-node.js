@@ -62,7 +62,7 @@ async function createBlogPages({ graphql, actions }) {
       context: {
         id: p.id,
       },
-      defer: differenceInDays(new Date(), new Date(p.publishedAt)) > 90,
+      // defer: differenceInDays(new Date(), new Date(p.publishedAt)) > 90,
     });
   });
 
@@ -127,7 +127,7 @@ async function createWorkPages({ graphql, actions }) {
       context: {
         id: s.id,
       },
-      defer: differenceInDays(new Date(), new Date(s.releaseDate)) > 90,
+      // defer: differenceInDays(new Date(), new Date(s.releaseDate)) > 90,
     });
   });
 
@@ -139,7 +139,7 @@ async function createWorkPages({ graphql, actions }) {
         id: sw.id,
         parentId: sw.parentWork.id,
       },
-      defer: differenceInDays(new Date(), new Date(sw.releaseDate)) > 90,
+      // defer: differenceInDays(new Date(), new Date(sw.releaseDate)) > 90,
     });
   });
 
@@ -151,7 +151,7 @@ async function createWorkPages({ graphql, actions }) {
         id: nsw.id,
         categoryId: nsw.category.id,
       },
-      defer: differenceInDays(new Date(), new Date(nsw.releaseDate)) > 90,
+      // defer: differenceInDays(new Date(), new Date(nsw.releaseDate)) > 90,
     });
   });
 }
