@@ -76,7 +76,7 @@ export const query = graphql`
       }
       metaImage: images {
         asset {
-          gatsbyImageData(width: 1200, layout: CONSTRAINED, aspectRatio: 1.905)
+          gatsbyImageData(width: 1200, layout: CONSTRAINED, aspectRatio: 1)
         }
       }
       name
