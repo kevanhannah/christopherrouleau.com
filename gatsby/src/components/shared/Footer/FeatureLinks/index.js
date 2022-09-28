@@ -30,11 +30,11 @@ export default function FeatureLinks() {
         sort: { fields: orderRank, order: ASC }
       ) {
         nodes {
+          id: _id
           title
           items {
             endDate
             id: _id
-            orderRank
             reference {
               ... on SanityWork {
                 id
@@ -57,27 +57,21 @@ export default function FeatureLinks() {
   return (
     <FeatureLinksStyles>
       <LatestBlogPost post={latestPost} />
-      {featureLists.nodes.map((list) => {
-        // Double-check that the list items are sorted in ascending order
-        const orderedItems = list.items.sort(
-          (a, b) => a.orderRank - b.orderRank
-        );
-        return (
-          <FeatureLinkColumnContainer key={list.title}>
-            <FeatureLinkColumnHeader>{list.title}</FeatureLinkColumnHeader>
-            <FeatureLinkColumnList>
-              {orderedItems.map((item) => {
-                const renderedItem = renderFeatureItem(item);
-                return (
-                  <FeatureItemStyles key={item.id}>
-                    {renderedItem}
-                  </FeatureItemStyles>
-                );
-              })}
-            </FeatureLinkColumnList>
-          </FeatureLinkColumnContainer>
-        );
-      })}
+      {featureLists.nodes.map((list) => (
+        <FeatureLinkColumnContainer key={list.id}>
+          <FeatureLinkColumnHeader>{list.title}</FeatureLinkColumnHeader>
+          <FeatureLinkColumnList>
+            {list.items.map((item) => {
+              const renderedItem = renderFeatureItem(item);
+              return (
+                <FeatureItemStyles key={item.id}>
+                  {renderedItem}
+                </FeatureItemStyles>
+              );
+            })}
+          </FeatureLinkColumnList>
+        </FeatureLinkColumnContainer>
+      ))}
     </FeatureLinksStyles>
   );
 }

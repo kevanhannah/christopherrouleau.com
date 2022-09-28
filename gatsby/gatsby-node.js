@@ -188,10 +188,13 @@ exports.createResolvers = ({ createResolvers }) => {
                   _id: { eq: source._id },
                 },
               },
+              sort: {
+                fields: ['orderRank'],
+                order: ['ASC'],
+              },
             },
             type: 'SanityFeatureItem',
           });
-
           return entries;
         },
       },
