@@ -31,7 +31,7 @@ export const query = graphql`
           asset {
             altText
             gatsbyImageData(
-              width: 500
+              width: 150
               layout: CONSTRAINED
               aspectRatio: 1
               placeholder: DOMINANT_COLOR

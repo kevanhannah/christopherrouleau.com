@@ -4,6 +4,8 @@ export const CardGridItemStyles = styled.li`
   display: block;
   list-style-type: none;
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   a {
     display: flex;
