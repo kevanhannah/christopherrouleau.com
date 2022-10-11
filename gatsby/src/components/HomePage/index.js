@@ -25,7 +25,7 @@ export default function HomePage({ categoryContents, home }) {
       <main>
         <HomePageIntroStyles>
           <div>
-            <h1>{home.greeting}</h1>
+            <h1 style={{ fontWeight: '700' }}>{home.greeting}</h1>
             <PortableText value={home.introduction} />
             <PrimaryButton internal link="/about" text="Say hi" />
           </div>
