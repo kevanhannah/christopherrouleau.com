@@ -4,7 +4,6 @@ import WorkList from '../components/WorkList';
 import SEO from '../components/shared/SEO';
 
 export default function CategoryTemplate({ data: { category, works } }) {
-  console.log(works);
   return <WorkList title={category.name} works={works.nodes} />;
 }
 

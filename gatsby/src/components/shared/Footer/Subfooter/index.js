@@ -20,6 +20,11 @@ export default function Subfooter() {
             text="Shop wholesale"
             ariaLabel="Shop wholesale"
           />
+          <TertiaryButton
+            link="https://swishembassy.ca/collections/christopher-rouleau"
+            text="Shop T-shirts"
+            ariaLabel="Shop T-shirts"
+          />
         </div>
         <div>
           <SubfooterLinkList>
