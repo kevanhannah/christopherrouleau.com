@@ -23,27 +23,38 @@ export const NavStyles = styled.ul`
       font-weight: 400;
       display: block;
       letter-spacing: 0.05em;
-      color: var(--black);
       text-align: right;
-    }
-
-    &:hover {
-      background-color: var(--primary-yellow-lighter);
-      a {
-        color: var(--black);
-        text-decoration: none;
-      }
     }
   }
 `;
 
-export const HighlightItem = styled.li`
-  background-color: var(--primary-yellow);
+export const MenuItem = styled.li`
+  > a {
+    color: var(--black);
+  }
 
   &:hover {
     background-color: var(--primary-yellow-lighter);
+
     a {
       color: var(--black);
+      text-decoration: none;
+    }
+  }
+`;
+
+export const HighlightedMenuItem = styled.li`
+  background-color: var(--primary-red-darker);
+
+  > a {
+    color: #ffffff;
+  }
+
+  &:hover {
+    background-color: var(--primary-red);
+
+    a {
+      color: #ffffff;
       text-decoration: none;
     }
   }
