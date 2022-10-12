@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { HighlightItem, NavStyles } from './Styles';
+import { HighlightedMenuItem, MenuItem, NavStyles } from './Styles';
 
 export default function Nav() {
   return (
     <nav role="navigation">
       <NavStyles>
-        <li>
+        <MenuItem>
           <Link to="/about">About</Link>
-        </li>
-        <li>
+        </MenuItem>
+        <MenuItem>
           <Link to="/blog">Blog</Link>
-        </li>
-        <HighlightItem>
+        </MenuItem>
+        <HighlightedMenuItem>
           <a
             href="http://shop.christopherrouleau.com/"
             target="_blank"
@@ -20,7 +20,7 @@ export default function Nav() {
           >
             Shop
           </a>
-        </HighlightItem>
+        </HighlightedMenuItem>
       </NavStyles>
     </nav>
   );
