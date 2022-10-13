@@ -85,6 +85,7 @@ export const query = graphql`
         _id: { ne: $id }
         parentWork: { _id: { eq: null } }
       }
+      sort: { fields: releaseDate, order: DESC }
       limit: 4
     ) {
       nodes {
