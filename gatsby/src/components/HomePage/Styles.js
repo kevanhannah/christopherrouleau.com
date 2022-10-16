@@ -85,10 +85,10 @@ export const CategoryContainer = styled.div`
 
   @media (max-width: 600px) {
     align-items: stretch;
-    row-gap: 1.75em;
+    padding: 2em 0;
 
     h2 {
-      font-size: 2.25em;
+      font-size: 1.75em;
     }
   }
 `;

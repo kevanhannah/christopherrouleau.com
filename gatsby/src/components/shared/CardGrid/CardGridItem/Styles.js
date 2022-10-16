@@ -52,7 +52,7 @@ export const CardGridItemStyles = styled.li`
   @media (max-width: 800px) {
     a {
       p {
-        font-size: 1.5em;
+        font-size: 1.25em;
       }
     }
   }
@@ -60,7 +60,7 @@ export const CardGridItemStyles = styled.li`
   @media (max-width: 600px) {
     a {
       p {
-        font-size: 1.25em;
+        font-size: 1em;
       }
     }
   }
