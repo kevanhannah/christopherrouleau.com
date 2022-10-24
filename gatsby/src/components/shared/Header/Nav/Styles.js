@@ -26,6 +26,18 @@ export const NavStyles = styled.ul`
       text-align: right;
     }
   }
+
+  @media (max-width: 800px) {
+    gap: 1em;
+  }
+
+  @media (max-width: 600px) {
+    li {
+      a {
+        font-size: 0.5rem;
+      }
+    }
+  }
 `;
 
 export const MenuItem = styled.li`
