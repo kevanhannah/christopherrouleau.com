@@ -33,7 +33,7 @@ export const query = graphql`
               width: 350
               layout: CONSTRAINED
               placeholder: BLURRED
-              aspectRatio: 1.6
+              aspectRatio: 1
             )
           }
         }
