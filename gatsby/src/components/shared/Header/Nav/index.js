@@ -4,13 +4,16 @@ import { HighlightedMenuItem, MenuItem, NavStyles } from './Styles';
 
 export default function Nav() {
   return (
-    <nav role="navigation">
+    <nav role="navigation" style={{ display: 'flex' }}>
       <NavStyles>
         <MenuItem>
           <Link to="/about">About</Link>
         </MenuItem>
         <MenuItem>
           <Link to="/blog">Blog</Link>
+        </MenuItem>
+        <MenuItem>
+          <a href="http://instagram.com/chris_rouleau/">Instagram</a>
         </MenuItem>
         <HighlightedMenuItem>
           <a

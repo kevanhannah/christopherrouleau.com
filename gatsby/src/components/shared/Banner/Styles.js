@@ -20,4 +20,10 @@ export const BannerStyles = styled.aside`
       color: var(--black);
     }
   }
+
+  @media (max-width: 700px) {
+    a {
+      font-size: 0.75em;
+    }
+  }
 `;

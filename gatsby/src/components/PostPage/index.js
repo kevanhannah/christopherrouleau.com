@@ -22,6 +22,7 @@ export default function Post({ post }) {
           alt={post.heroImage.alt}
           style={{
             userSelect: 'none',
+            boxShadow: '0.5em 0.5em 0 var(--primary-blue-darker)',
           }}
         />
         <TextAreaStyles>

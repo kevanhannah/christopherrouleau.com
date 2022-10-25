@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const PostPageStyles = styled.div`
-  max-width: 50em;
+  max-width: 43.75em;
   margin: 0 auto 3em;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@ export const PostPageStyles = styled.div`
 `;
 
 export const TextAreaStyles = styled.div`
-  max-width: 43.75em;
+  max-width: 40em;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

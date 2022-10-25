@@ -31,7 +31,7 @@ export const query = graphql`
         alt
         asset {
           gatsbyImageData(
-            aspectRatio: 1.78
+            aspectRatio: 1
             placeholder: BLURRED
             layout: CONSTRAINED
             width: 800
@@ -40,7 +40,7 @@ export const query = graphql`
       }
       metaImage: heroImage {
         asset {
-          gatsbyImageData(width: 1200, layout: CONSTRAINED, aspectRatio: 1.905)
+          gatsbyImageData(width: 1200, layout: CONSTRAINED, aspectRatio: 1)
         }
       }
       publishedAt
