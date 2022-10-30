@@ -139,7 +139,6 @@ export default {
       url: 'url',
     },
     prepare(selection) {
-      console.log(selection);
       const { endDate, startDate, text, type, url } = selection;
 
       if (!type) {

@@ -35,7 +35,6 @@ export default {
           dataset: process.env.GATSBY_SANITY_DATASET,
         }
       );
-      console.log(value);
       return <GatsbyImage image={imageData} alt={value.alt} />;
     },
   },
