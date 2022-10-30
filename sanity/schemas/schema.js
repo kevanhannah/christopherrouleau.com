@@ -21,6 +21,7 @@ import settings from './singletons/settings';
 import body from './blocks/body';
 
 // Objects
+import blockImage from './objects/blockImage';
 import description from './objects/description';
 import excerpt from './objects/excerpt';
 import hero from './objects/hero';
@@ -48,6 +49,7 @@ export default createSchema({
     // Block content
     body,
     // Objects
+    blockImage,
     description,
     excerpt,
     hero,
