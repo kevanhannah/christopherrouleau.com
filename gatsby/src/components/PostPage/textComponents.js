@@ -1,3 +1,5 @@
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { getGatsbyImageData } from 'gatsby-source-sanity';
 import React from 'react';
 import { TextLink } from '../shared/Buttons';
 
@@ -21,6 +23,20 @@ export default {
           {children}
         </TextLink>
       );
+    },
+  },
+  types: {
+    blockImage: ({ value }) => {
+      const imageData = getGatsbyImageData(
+        value?.image?.asset?.id,
+        { width: 800 },
+        {
+          projectId: process.env.GATSBY_SANITY_PROJECT_ID,
+          dataset: process.env.GATSBY_SANITY_DATASET,
+        }
+      );
+      console.log(value);
+      return <GatsbyImage image={imageData} alt={value.alt} />;
     },
   },
 };

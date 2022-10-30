@@ -46,5 +46,9 @@ export default {
       // Paragraphs
       type: 'block',
     },
+    {
+      name: 'blockImage',
+      type: 'blockImage',
+    },
   ],
 };
