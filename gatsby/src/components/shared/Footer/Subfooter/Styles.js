@@ -84,7 +84,6 @@ export const CopyrightSection = styled.div`
   font-weight: 300;
 
   @media (max-width: 600px) {
-    font-size: 1em;
     margin: 0 1em;
   }
 `;
