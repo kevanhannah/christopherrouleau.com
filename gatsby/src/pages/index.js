@@ -54,7 +54,7 @@ export const query = graphql`
       }
       metaImage: introImage {
         asset {
-          gatsbyImageData(layout: CONSTRAINED, width: 1200, aspectRatio: 1.905)
+          gatsbyImageData(layout: CONSTRAINED, width: 1200, aspectRatio: 1)
         }
       }
       ...HeroFragment
