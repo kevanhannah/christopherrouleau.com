@@ -72,7 +72,7 @@ export default function Subfooter() {
         <p>
           Website: <a href="https://www.twitter.com/kevanh">Kevan Hannah</a>.{' '}
           Portrait photography:{' '}
-          <a href="https://brennansarich.com/">Brennan Sarich.</a> Typeface:{' '}
+          <a href="https://brennansarich.com/">Brennan Sarich</a>. Typeface:{' '}
           <a href="https://jonathanballdesign.com/work/basecoat/index.php/">
             Basecoat
           </a>{' '}
