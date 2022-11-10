@@ -76,6 +76,12 @@ export const SubfooterLink = styled.li`
       fill: var(--primary-blue);
     }
   }
+
+  @media (max-width: 600px) {
+    a {
+      font-size: 0.75em;
+    }
+  }
 `;
 
 export const CopyrightSection = styled.div`
