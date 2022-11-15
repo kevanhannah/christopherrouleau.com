@@ -70,10 +70,28 @@ export default function Subfooter() {
           don't steal my stuff.)
         </p>
         <p>
-          Website: <a href="https://www.twitter.com/kevanh">Kevan Hannah</a>.{' '}
-          Portrait photography:{' '}
-          <a href="https://brennansarich.com/">Brennan Sarich</a>. Typeface:{' '}
-          <a href="https://jonathanballdesign.com/work/basecoat/index.php/">
+          Website:{' '}
+          <a
+            href="https://www.twitter.com/kevanh"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Kevan Hannah
+          </a>
+          . Portrait photography:{' '}
+          <a
+            href="https://brennansarich.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Brennan Sarich
+          </a>
+          . Typeface:{' '}
+          <a
+            href="https://jonathanballdesign.com/work/basecoat/index.php/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Basecoat
           </a>{' '}
           by Jonathan Ball.
