@@ -13,7 +13,13 @@ export default function Nav() {
           <Link to="/blog">Blog</Link>
         </MenuItem>
         <MenuItem>
-          <a href="http://instagram.com/chris_rouleau/">Instagram</a>
+          <a
+            href="http://instagram.com/chris_rouleau/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
         </MenuItem>
         <HighlightedMenuItem>
           <a
