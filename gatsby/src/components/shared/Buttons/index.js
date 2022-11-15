@@ -12,7 +12,12 @@ import {
 export function PrimaryButton({ ariaLabel, internal, link, text }) {
   if (!internal) {
     return (
-      <ExternalPrimaryButton aria-label={ariaLabel} href={link}>
+      <ExternalPrimaryButton
+        aria-label={ariaLabel}
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {text}
       </ExternalPrimaryButton>
     );
@@ -28,7 +33,12 @@ export function PrimaryButton({ ariaLabel, internal, link, text }) {
 export function SecondaryButton({ ariaLabel, internal, link, text }) {
   if (!internal) {
     return (
-      <ExternalSecondaryButton aria-label={ariaLabel} href={link}>
+      <ExternalSecondaryButton
+        aria-label={ariaLabel}
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {text}
       </ExternalSecondaryButton>
     );
@@ -44,7 +54,12 @@ export function SecondaryButton({ ariaLabel, internal, link, text }) {
 export function TertiaryButton({ ariaLabel, internal, link, text }) {
   if (!internal) {
     return (
-      <ExternalTertiaryButton aria-label={ariaLabel} href={link}>
+      <ExternalTertiaryButton
+        aria-label={ariaLabel}
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {text}
       </ExternalTertiaryButton>
     );
@@ -60,7 +75,12 @@ export function TertiaryButton({ ariaLabel, internal, link, text }) {
 export function TextLink({ ariaLabel, children, internal, link, rel }) {
   if (!internal) {
     return (
-      <a aria-label={ariaLabel} href={link} rel={rel}>
+      <a
+        aria-label={ariaLabel}
+        href={link}
+        rel={rel || 'noreferrer noopener'}
+        target="_blank"
+      >
         {children}
       </a>
     );
