@@ -63,4 +63,14 @@ export const HeroTextStyles = styled.div`
   @media (max-width: 700px) {
     align-items: stretch;
   }
+
+  @media (max-width: 400px) {
+    h2 {
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 1em;
+    }
+  }
 `;
