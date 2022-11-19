@@ -30,5 +30,9 @@ export const LatestBlogPostStyles = styled.div`
 
   @media (max-width: 600px) {
     order: 4;
+
+    h3 {
+      font-size: 1.5em;
+    }
   }
 `;

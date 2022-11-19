@@ -20,6 +20,10 @@ const PrimaryButtonStyles = css`
     background-color: var(--primary-blue-lighter);
     cursor: pointer;
   }
+
+  @media (max-width: 400px) {
+    font-size: 0.75em;
+  }
 `;
 
 const SecondaryButtonStyles = css`
@@ -42,6 +46,10 @@ const SecondaryButtonStyles = css`
     background-color: var(--primary-blue-lighter);
     cursor: pointer;
   }
+
+  @media (max-width: 400px) {
+    font-size: 0.75em;
+  }
 `;
 
 const TertiaryButtonStyles = css`
@@ -62,6 +70,10 @@ const TertiaryButtonStyles = css`
     color: #ffffff;
     background-color: var(--black-lighter);
     cursor: pointer;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 0.75em;
   }
 `;
 
