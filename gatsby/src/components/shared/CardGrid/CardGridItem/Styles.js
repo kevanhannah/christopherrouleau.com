@@ -17,7 +17,7 @@ export const CardGridItemStyles = styled.li`
     user-select: none;
 
     p {
-      font-size: 1.25em;
+      font-size: 1em;
       font-weight: 400;
       line-height: 1.4;
       text-transform: uppercase;
@@ -46,22 +46,6 @@ export const CardGridItemStyles = styled.li`
 
     div.gatsby-image-wrapper {
       opacity: 0.8;
-    }
-  }
-
-  @media (max-width: 800px) {
-    a {
-      p {
-        font-size: 1.25em;
-      }
-    }
-  }
-
-  @media (max-width: 600px) {
-    a {
-      p {
-        font-size: 1em;
-      }
     }
   }
 

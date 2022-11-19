@@ -103,6 +103,12 @@ export const CategoryContainer = styled.div`
       font-size: 1.75em;
     }
   }
+
+  @media (max-width: 400px) {
+    h2 {
+      font-size: 1.5em;
+    }
+  }
 `;
 
 export const HomePageHeader = styled(Header)`
