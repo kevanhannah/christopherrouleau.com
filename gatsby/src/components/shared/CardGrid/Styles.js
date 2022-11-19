@@ -11,6 +11,11 @@ export const CardGridStyles = styled.ul`
     --columns: 2;
     gap: 2em;
   }
+
+  @media (max-width: 600px) {
+    gap: 1.25em;
+  }
+
   @media (max-width: 300px) {
     --columns: 1;
     justify-items: center;
