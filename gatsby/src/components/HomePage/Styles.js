@@ -59,6 +59,18 @@ export const HomePageIntroStyles = styled.div`
       display: none;
     }
   }
+
+  @media (max-width: 400px) {
+    & > div {
+      h1 {
+        font-size: 2.5em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+  }
 `;
 
 export const CategoryContainer = styled.div`
@@ -89,6 +101,12 @@ export const CategoryContainer = styled.div`
 
     h2 {
       font-size: 1.75em;
+    }
+  }
+
+  @media (max-width: 400px) {
+    h2 {
+      font-size: 1.5em;
     }
   }
 `;
