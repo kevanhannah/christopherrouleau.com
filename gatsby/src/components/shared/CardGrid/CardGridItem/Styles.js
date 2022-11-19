@@ -64,6 +64,14 @@ export const CardGridItemStyles = styled.li`
       }
     }
   }
+
+  @media (max-width: 400px) {
+    a {
+      p {
+        font-size: 0.75em;
+      }
+    }
+  }
 `;
 
 export const ItemDateStyles = styled.time`
