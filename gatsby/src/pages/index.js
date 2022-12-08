@@ -68,7 +68,7 @@ export const query = graphql`
     }
     works: allSanityWork(
       filter: { parentWork: { _id: { eq: null } } }
-      sort: { fields: releaseDate, order: DESC }
+      sort: { releaseDate: DESC }
     ) {
       nodes {
         id: _id

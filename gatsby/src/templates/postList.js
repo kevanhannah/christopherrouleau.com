@@ -25,7 +25,7 @@ export const query = graphql`
   query ($yearStart: Date!, $yearEnd: Date!) {
     posts: allSanityPost(
       filter: { publishedAt: { gte: $yearStart, lte: $yearEnd } }
-      sort: { fields: publishedAt, order: DESC }
+      sort: { publishedAt: DESC }
     ) {
       nodes {
         id
