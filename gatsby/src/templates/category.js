@@ -8,13 +8,22 @@ export default function CategoryTemplate({ data: { category, works } }) {
 }
 
 export function Head({ data: { category } }) {
-  return <SEO title={`${category.name} - Christopher Rouleau`} />;
+  return (
+    <SEO
+      description={`All ${category.name.toLowerCase()} by Christopher Rouleau.`}
+      pathname={`/${category.slug.current}`}
+      title={`${category.name} - Christopher Rouleau`}
+    />
+  );
 }
 
 export const query = graphql`
   query ($id: String!) {
     category: sanityCategory(_id: { eq: $id }) {
       name
+      slug {
+        current
+      }
     }
     works: allSanityWork(
       filter: {

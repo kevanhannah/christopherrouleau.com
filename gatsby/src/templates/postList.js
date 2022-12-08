@@ -16,6 +16,7 @@ export function Head({ data: { posts } }) {
     <SEO
       title={`${year} blog posts - Christopher Rouleau`}
       description={`All ${year} blog posts from Christopher Rouleau.`}
+      pathname={`/blog/${year}`}
     />
   );
 }
