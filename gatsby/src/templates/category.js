@@ -36,8 +36,8 @@ export const query = graphql`
         id: _id
         name
         images {
+          alt
           asset {
-            altText
             gatsbyImageData(
               width: 500
               layout: CONSTRAINED
