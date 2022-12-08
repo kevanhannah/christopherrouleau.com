@@ -30,7 +30,7 @@ export const query = graphql`
         category: { _id: { eq: $id } }
         parentWork: { _id: { eq: null } }
       }
-      sort: { fields: releaseDate, order: DESC }
+      sort: { releaseDate: DESC }
     ) {
       nodes {
         id: _id
