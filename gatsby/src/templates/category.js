@@ -8,27 +8,36 @@ export default function CategoryTemplate({ data: { category, works } }) {
 }
 
 export function Head({ data: { category } }) {
-  return <SEO title={`${category.name} - Christopher Rouleau`} />;
+  return (
+    <SEO
+      description={`All ${category.name.toLowerCase()} by Christopher Rouleau.`}
+      pathname={`/${category.slug.current}`}
+      title={`${category.name} - Christopher Rouleau`}
+    />
+  );
 }
 
 export const query = graphql`
   query ($id: String!) {
     category: sanityCategory(_id: { eq: $id }) {
       name
+      slug {
+        current
+      }
     }
     works: allSanityWork(
       filter: {
         category: { _id: { eq: $id } }
         parentWork: { _id: { eq: null } }
       }
-      sort: { fields: releaseDate, order: DESC }
+      sort: { releaseDate: DESC }
     ) {
       nodes {
         id: _id
         name
         images {
+          alt
           asset {
-            altText
             gatsbyImageData(
               width: 500
               layout: CONSTRAINED

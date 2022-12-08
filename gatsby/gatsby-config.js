@@ -21,7 +21,12 @@ module.exports = {
     },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-styled-components',
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: false,
+      },
+    },
     'gatsby-plugin-netlify',
     'gatsby-transformer-sharp',
     {

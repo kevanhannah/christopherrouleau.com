@@ -18,7 +18,7 @@ export function Head() {
 
 export const query = graphql`
   query {
-    posts: allSanityPost(sort: { fields: publishedAt, order: DESC }) {
+    posts: allSanityPost(sort: { publishedAt: DESC }) {
       nodes {
         id
         publishedAt

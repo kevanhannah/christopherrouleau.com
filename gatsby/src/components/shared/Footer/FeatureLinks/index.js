@@ -13,10 +13,7 @@ import { renderFeatureItem } from './renderFeatureItem';
 export default function FeatureLinks() {
   const { latestPost, featureLists } = useStaticQuery(graphql`
     query {
-      latestPost: allSanityPost(
-        limit: 1
-        sort: { fields: publishedAt, order: DESC }
-      ) {
+      latestPost: allSanityPost(limit: 1, sort: { publishedAt: DESC }) {
         nodes {
           excerpt
           publishedAt
@@ -26,9 +23,7 @@ export default function FeatureLinks() {
           title
         }
       }
-      featureLists: allSanityFeatureList(
-        sort: { fields: orderRank, order: ASC }
-      ) {
+      featureLists: allSanityFeatureList(sort: { orderRank: ASC }) {
         nodes {
           id: _id
           title

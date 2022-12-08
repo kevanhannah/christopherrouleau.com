@@ -16,6 +16,7 @@ export function Head({ data: { posts } }) {
     <SEO
       title={`${year} blog posts - Christopher Rouleau`}
       description={`All ${year} blog posts from Christopher Rouleau.`}
+      pathname={`/blog/${year}`}
     />
   );
 }
@@ -24,7 +25,7 @@ export const query = graphql`
   query ($yearStart: Date!, $yearEnd: Date!) {
     posts: allSanityPost(
       filter: { publishedAt: { gte: $yearStart, lte: $yearEnd } }
-      sort: { fields: publishedAt, order: DESC }
+      sort: { publishedAt: DESC }
     ) {
       nodes {
         id
