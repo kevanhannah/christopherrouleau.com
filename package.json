@@ -1,6 +1,6 @@
 {
   "name": "christopherrouleau.com",
-  "version": "1.0.1",
   "description": "A portfolio site for Toronto-based artist Christopher Rouleau. Built with Gatsby and Sanity.",
-  "author": "Kevan Hannah"
+  "author": "Kevan Hannah",
+  "license": "MIT"
 }

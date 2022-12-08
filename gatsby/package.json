@@ -1,7 +1,5 @@
 {
   "name": "christopherrouleau.com",
-  "version": "1.0.1",
-  "private": true,
   "description": "Front-end for christopherrouleau.com. Developed with Gatsby.",
   "author": "Kevan Hannah",
   "keywords": [
