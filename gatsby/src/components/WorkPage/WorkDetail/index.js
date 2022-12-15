@@ -56,7 +56,7 @@ export default function WorkDetail({
       <DescriptionWrapper>
         <PortableText value={description} />
       </DescriptionWrapper>
-      {series && (
+      {pageType === 'work' && series && (
         <SeriesExcerpt>
           <h3>From {series.name}</h3>
           <p>{series.excerpt}</p>
