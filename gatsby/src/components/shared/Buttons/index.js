@@ -75,6 +75,7 @@ export function TertiaryButton({ ariaLabel, internal, link, text }) {
 export function TextLink({ ariaLabel, children, internal, link, rel }) {
   if (!internal) {
     return (
+      // eslint-disable-next-line react/jsx-no-target-blank
       <a
         aria-label={ariaLabel}
         href={link}
