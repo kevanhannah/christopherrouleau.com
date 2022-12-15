@@ -1,32 +1,35 @@
 import styled from 'styled-components';
 
 export const WorkDetailStyles = styled.div`
-  --columns: 2;
-  display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
-  gap: 3em;
-  align-items: start;
-
   @media (max-width: 600px) {
-    --columns: 1;
-    gap: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
   }
 `;
 
-export const WorkInformationPanel = styled.div`
+export const GalleryWrapper = styled.div`
+  float: right;
+  max-width: calc(50% - 2em);
+  margin: 0 0 2em 2em;
   display: flex;
   flex-direction: column;
-  gap: 1.25em;
-  align-items: start;
-  order: -1;
-
-  div > p:last-of-type {
-    margin-bottom: 0;
-  }
+  gap: 1em;
 
   @media (max-width: 600px) {
-    order: 1;
-    align-items: stretch;
+    float: none;
+    max-width: 100%;
+    margin: 0;
+    order: 2;
+  }
+`;
+
+export const DescriptionWrapper = styled.div`
+  max-width: 75%;
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+    order: 3;
   }
 `;
 
@@ -36,6 +39,9 @@ export const WorkDetailsHeader = styled.div`
   gap: 1em;
   align-items: start;
   width: 100%;
+  max-width: 50%;
+  float: left;
+  margin-bottom: 1.25em;
 
   div {
     time {
@@ -50,6 +56,10 @@ export const WorkDetailsHeader = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     gap: 0.75em;
+    margin-bottom: 0;
+    float: none;
+    max-width: 100%;
+    order: 1;
   }
 `;
 
@@ -80,5 +90,11 @@ export const SeriesExcerpt = styled.div`
 
   h3 {
     font-size: 1.75em;
+  }
+
+  @media (max-width: 600px) {
+    margin-top: 0;
+    margin-bottom: 0;
+    order: 4;
   }
 `;
