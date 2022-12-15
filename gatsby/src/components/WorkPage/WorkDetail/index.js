@@ -1,9 +1,9 @@
 import React from 'react';
 import { PortableText } from '@portabletext/react';
 import { Link } from 'gatsby';
-import Badge from '../Badge';
-import { PrimaryButton } from '../Buttons';
-import Gallery from '../Gallery';
+import Badge from '../../shared/Badge';
+import { PrimaryButton } from '../../shared/Buttons';
+import Gallery from '../../shared/Gallery';
 import {
   DescriptionWrapper,
   GalleryWrapper,
@@ -13,7 +13,7 @@ import {
   WorkDetailsHeader,
   WorkDetailStyles,
 } from './Styles';
-import ShareButton from '../ShareButton';
+import ShareButton from '../../shared/ShareButton';
 
 export default function WorkDetail({
   category,
