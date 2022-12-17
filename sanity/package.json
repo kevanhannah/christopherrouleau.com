@@ -1,11 +1,8 @@
 {
   "name": "christopherrouleaucom",
-  "private": true,
-  "version": "1.0.1",
   "description": "Content management studio for christopherrouleau.com.",
   "main": "package.json",
   "author": "Kevan Hannah",
-  "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
     "build": "sanity build",

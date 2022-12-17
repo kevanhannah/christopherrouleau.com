@@ -1,5 +1,5 @@
 import React from 'react';
-import WorkDetail from '../shared/WorkDetail';
+import WorkDetail from './WorkDetail';
 import CardGrid from '../shared/CardGrid';
 import CardGridItem from '../shared/CardGrid/CardGridItem';
 import { RelatedWorkCards, WorkPageStyles } from './Styles';
