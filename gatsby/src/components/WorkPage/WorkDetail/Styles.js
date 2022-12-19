@@ -68,6 +68,10 @@ export const WorkButtonRow = styled.div`
   display: flex;
   align-items: stretch;
   gap: 1em;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export const ItemTitle = styled.h2`
