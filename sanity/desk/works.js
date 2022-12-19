@@ -1,8 +1,6 @@
-import S from '@sanity/desk-tool/structure-builder';
-
-const views = [S.view.form()];
-
-export const works = (schemaType = 'work') => {
+export const works = (S, context) => {
+  const { schemaType } = context;
+  const views = [S.view.form()];
   const workParents = `_type == "${schemaType}" && !defined(parentWork) && !(_id in path("drafts.**"))`;
 
   return S.listItem()

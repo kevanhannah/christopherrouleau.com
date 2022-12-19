@@ -1,9 +1,8 @@
-import S from '@sanity/desk-tool/structure-builder';
-import documentStore from 'part:@sanity/base/datastore/document';
 import { map } from 'rxjs/operators';
 import { IoImagesOutline } from 'react-icons/io5';
 
-export const childWorks = (schemaType = 'work') => {
+export const childWorks = (S, context) => {
+  const { documentStore, schemaType } = context;
   const workParents = `_type == "${schemaType}" && !defined(parentWork) && hasChildWorks == true && !(_id in path("drafts.**"))`;
 
   return S.listItem(schemaType)

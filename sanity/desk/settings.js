@@ -1,13 +1,11 @@
-import S from '@sanity/desk-tool/structure-builder';
-import documentStore from 'part:@sanity/base/datastore/document';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import { IoSettingsOutline, IoLibraryOutline } from 'react-icons/io5';
 import { UlistIcon } from '@sanity/icons';
 import { map } from 'rxjs/operators';
 
-const views = [S.view.form()];
-
-export const settings = (schemaType = 'featureList') => {
+export const settings = (S, context) => {
+  const { documentStore, schemaType } = context;
+  const views = [S.view.form()];
   const query = `*[_type == $type]`;
 
   return S.listItem()
