@@ -1,8 +1,8 @@
 import { map } from 'rxjs/operators';
 import { IoImagesOutline } from 'react-icons/io5';
 
-export const childWorks = (S, context) => {
-  const { documentStore, schemaType } = context;
+export default function childWorks(S, context, schemaType) {
+  const { documentStore } = context;
   const workParents = `_type == "${schemaType}" && !defined(parentWork) && hasChildWorks == true && !(_id in path("drafts.**"))`;
 
   return S.listItem(schemaType)
@@ -48,4 +48,4 @@ export const childWorks = (S, context) => {
         )
       )
     );
-};
+}

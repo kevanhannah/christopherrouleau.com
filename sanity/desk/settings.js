@@ -3,8 +3,8 @@ import { IoSettingsOutline, IoLibraryOutline } from 'react-icons/io5';
 import { UlistIcon } from '@sanity/icons';
 import { map } from 'rxjs/operators';
 
-export const settings = (S, context) => {
-  const { documentStore, schemaType } = context;
+export default function settings(S, context, schemaType) {
+  const { documentStore } = context;
   const views = [S.view.form()];
   const query = `*[_type == $type]`;
 
@@ -85,6 +85,8 @@ export const settings = (S, context) => {
                                   },
                                   title: 'List items',
                                   type: 'featureItem',
+                                  S,
+                                  context,
                                 }),
                               ])
                           )
@@ -95,4 +97,4 @@ export const settings = (S, context) => {
             ),
         ])
     );
-};
+}

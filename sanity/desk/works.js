@@ -1,5 +1,4 @@
-export const works = (S, context) => {
-  const { schemaType } = context;
+export default function works(S, schemaType) {
   const views = [S.view.form()];
   const workParents = `_type == "${schemaType}" && !defined(parentWork) && !(_id in path("drafts.**"))`;
 
@@ -18,4 +17,4 @@ export const works = (S, context) => {
           S.document().documentId(id).views(views).schemaType(schemaType)
         )
     );
-};
+}

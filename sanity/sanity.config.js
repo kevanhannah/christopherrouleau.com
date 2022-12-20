@@ -5,8 +5,8 @@ import deskStructure from './deskStructure';
 
 export default defineConfig({
   title: 'christopherrouleau.com',
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID,
-  dataset: process.env.SANITY_STUDIO_DATASET,
+  projectId: import.meta.env.SANITY_STUDIO_PROJECT_ID,
+  dataset: import.meta.env.SANITY_STUDIO_DATASET,
   plugins: [
     deskTool({
       structure: deskStructure,
