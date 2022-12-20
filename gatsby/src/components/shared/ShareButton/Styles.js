@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const ShareButtonStyles = styled.a`
-  padding: 0.75em 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: calc(0.75em - 2px) 1.5em;
   font-weight: 400;
   color: var(--black);
   border: 2px solid var(--black);
@@ -21,6 +24,10 @@ export const ShareButtonStyles = styled.a`
     svg {
       fill: var(--primary-red-darker);
     }
+  }
+
+  @media (max-width: 400px) {
+    font-size: 0.75em;
   }
 `;
 
