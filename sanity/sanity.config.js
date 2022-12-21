@@ -1,13 +1,18 @@
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
+import { dashboardTool } from '@sanity/dashboard';
 import schemas from './schemas/schema';
 import deskStructure from './deskStructure';
+import dashboardConfig from './dashboardConfig';
 
 export default defineConfig({
   title: 'christopherrouleau.com',
   projectId: import.meta.env.SANITY_STUDIO_PROJECT_ID,
   dataset: import.meta.env.SANITY_STUDIO_DATASET,
   plugins: [
+    dashboardTool({
+      widgets: dashboardConfig,
+    }),
     deskTool({
       structure: deskStructure,
     }),
