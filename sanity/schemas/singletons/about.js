@@ -55,7 +55,7 @@ export default {
     prepare() {
       return {
         subtitle: 'About page content',
-        title: 'About page',
+        title: 'About Page',
       };
     },
   },

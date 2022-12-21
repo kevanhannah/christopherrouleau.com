@@ -17,8 +17,8 @@ export default function settings(S, context, schemaType) {
         .items([
           S.listItem()
             .id('site-settings')
+            .icon(IoSettingsOutline)
             .title('Site Settings')
-            .schemaType('settings')
             .child(
               S.document()
                 .title('Site Settings')

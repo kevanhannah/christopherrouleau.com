@@ -32,7 +32,7 @@ export default {
     prepare() {
       return {
         subtitle: 'Site configuration and options',
-        title: 'Site settings',
+        title: 'Site Settings',
       };
     },
   },
