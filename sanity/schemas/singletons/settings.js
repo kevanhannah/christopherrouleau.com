@@ -6,13 +6,6 @@ export default {
   type: 'document',
   icon: IoSettingsOutline,
   __experimental_actions: ['update', 'publish'],
-  groups: [
-    {
-      default: true,
-      name: 'banner',
-      title: 'Banner',
-    },
-  ],
   fields: [
     // Banner
     {
@@ -20,13 +13,11 @@ export default {
       title: 'Activate banner',
       type: 'boolean',
       initialValue: false,
-      group: 'banner',
     },
     {
       name: 'bannerText',
       title: 'Banner text',
       type: 'string',
-      group: 'banner',
       validation: (Rule) => Rule.max(80),
       hidden: ({ document }) => !document?.bannerActive,
     },
@@ -34,8 +25,15 @@ export default {
       name: 'bannerLink',
       title: 'Banner URL',
       type: 'url',
-      group: 'banner',
       hidden: ({ document }) => !document?.bannerActive,
     },
   ],
+  preview: {
+    prepare() {
+      return {
+        subtitle: 'Site configuration and options',
+        title: 'Site settings',
+      };
+    },
+  },
 };

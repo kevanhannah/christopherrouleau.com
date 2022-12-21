@@ -20,7 +20,7 @@ export default function settings(S, context, schemaType) {
             .title('Site Settings')
             .schemaType('settings')
             .child(
-              S.editor()
+              S.document()
                 .title('Site Settings')
                 .schemaType('settings')
                 .documentId('settings')
