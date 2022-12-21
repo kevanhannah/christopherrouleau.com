@@ -51,4 +51,12 @@ export default {
       description: 'Hero image displayed on the page',
     },
   ],
+  preview: {
+    prepare() {
+      return {
+        subtitle: 'About page content',
+        title: 'About page',
+      };
+    },
+  },
 };
