@@ -1,8 +1,5 @@
-import S from '@sanity/desk-tool/structure-builder';
-
-const views = [S.view.form()];
-
-export const works = (schemaType = 'work') => {
+export default function works(S, schemaType) {
+  const views = [S.view.form()];
   const workParents = `_type == "${schemaType}" && !defined(parentWork) && !(_id in path("drafts.**"))`;
 
   return S.listItem()
@@ -20,4 +17,4 @@ export const works = (schemaType = 'work') => {
           S.document().documentId(id).views(views).schemaType(schemaType)
         )
     );
-};
+}

@@ -1,6 +1,3 @@
-import createSchema from 'part:@sanity/base/schema-creator';
-import schemaTypes from 'all:part:@sanity/base/schema-type';
-
 // Rich text annotations used in the block content editor
 import annotationLinkExternal from './annotations/annotationLinkExternal';
 import annotationLinkInternal from './annotations/annotationLinkInternal';
@@ -30,32 +27,29 @@ import linkExternal from './objects/linkExternal';
 import linkInternal from './objects/linkInternal';
 import plainTextItem from './objects/plainTextItem';
 
-export default createSchema({
-  name: 'default',
-  types: schemaTypes.concat([
-    // Annotations
-    annotationLinkInternal,
-    annotationLinkExternal,
-    // Documents
-    category,
-    featureList,
-    featureItem,
-    post,
-    work,
-    // Singletons
-    about,
-    home,
-    settings,
-    // Block content
-    body,
-    // Objects
-    blockImage,
-    description,
-    excerpt,
-    hero,
-    itemImage,
-    linkExternal,
-    linkInternal,
-    plainTextItem,
-  ]),
-});
+export default [
+  // Annotations
+  annotationLinkInternal,
+  annotationLinkExternal,
+  // Documents
+  category,
+  featureList,
+  featureItem,
+  post,
+  work,
+  // Singletons
+  about,
+  home,
+  settings,
+  // Block content
+  body,
+  // Objects
+  blockImage,
+  description,
+  excerpt,
+  hero,
+  itemImage,
+  linkExternal,
+  linkInternal,
+  plainTextItem,
+];

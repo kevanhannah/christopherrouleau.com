@@ -1,13 +1,11 @@
-import S from '@sanity/desk-tool/structure-builder';
-import documentStore from 'part:@sanity/base/datastore/document';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import { IoSettingsOutline, IoLibraryOutline } from 'react-icons/io5';
 import { UlistIcon } from '@sanity/icons';
 import { map } from 'rxjs/operators';
 
-const views = [S.view.form()];
-
-export const settings = (schemaType = 'featureList') => {
+export default function settings(S, context, schemaType) {
+  const { documentStore } = context;
+  const views = [S.view.form()];
   const query = `*[_type == $type]`;
 
   return S.listItem()
@@ -19,10 +17,10 @@ export const settings = (schemaType = 'featureList') => {
         .items([
           S.listItem()
             .id('site-settings')
+            .icon(IoSettingsOutline)
             .title('Site Settings')
-            .schemaType('settings')
             .child(
-              S.editor()
+              S.document()
                 .title('Site Settings')
                 .schemaType('settings')
                 .documentId('settings')
@@ -87,6 +85,8 @@ export const settings = (schemaType = 'featureList') => {
                                   },
                                   title: 'List items',
                                   type: 'featureItem',
+                                  S,
+                                  context,
                                 }),
                               ])
                           )
@@ -97,4 +97,4 @@ export const settings = (schemaType = 'featureList') => {
             ),
         ])
     );
-};
+}

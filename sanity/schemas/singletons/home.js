@@ -86,7 +86,7 @@ export default {
     prepare() {
       return {
         subtitle: 'Home page content',
-        title: 'Home page',
+        title: 'Home Page',
       };
     },
   },

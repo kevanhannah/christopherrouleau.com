@@ -1,22 +1,21 @@
-import S from '@sanity/desk-tool/structure-builder';
-import { about } from './desk/about';
-import { home } from './desk/home';
-import { posts } from './desk/posts';
-import { settings } from './desk/settings';
-import { childWorks } from './desk/childWorks';
-import { works } from './desk/works';
+import about from './desk/about';
+import home from './desk/home';
+import posts from './desk/posts';
+import settings from './desk/settings';
+import childWorks from './desk/childWorks';
+import works from './desk/works';
 
-export default () =>
+export default (S, context) =>
   S.list()
     .title('Site Content')
     .items([
-      home,
-      about,
+      home(S),
+      about(S),
       S.divider(),
-      works('work'),
-      childWorks('work'),
+      works(S, 'work'),
+      childWorks(S, context, 'work'),
       S.divider(),
-      posts,
+      posts(S),
       S.divider(),
-      settings('featureList'),
+      settings(S, context, 'featureList'),
     ]);
