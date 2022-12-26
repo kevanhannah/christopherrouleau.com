@@ -19,6 +19,15 @@ module.exports = {
         dataset: process.env.GATSBY_SANITY_DATASET,
       },
     },
+    {
+      resolve: 'gatsby-source-shopify',
+      options: {
+        password: process.env.SHOPIFY_ADMIN_API,
+        storeUrl: process.env.GATSBY_MYSHOPIFY_URL,
+        salesChannel: process.env.SHOPIFY_APP_ID,
+        shopifyConnections: ['collections'],
+      },
+    },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     {
