@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { useCartItems } from '../../../../context/siteContext';
-import { CartStyles } from './Styles';
+import { CartStyles, EmptyCartStyles } from './Styles';
 
 export default function Cart() {
   const lineItems = useCartItems();
@@ -17,7 +17,9 @@ export default function Cart() {
           ))}
         </div>
       ) : (
-        <div>Your cart is currently empty.</div>
+        <EmptyCartStyles>
+          <p>Your cart is empty.</p>
+        </EmptyCartStyles>
       )}
     </CartStyles>
   );

@@ -8,9 +8,9 @@ export default function CartDrawer() {
   const toggleCart = useToggleCart();
 
   return (
-    <CartDrawerStyles cartIsOpen={cartIsOpen}>
+    <CartDrawerStyles cartIsOpen={cartIsOpen} aria-hidden={cartIsOpen}>
       <CartDrawerHeader>
-        <h2>Your cart</h2>
+        <h2>Cart</h2>
         <button onClick={toggleCart} type="button">
           Close
         </button>

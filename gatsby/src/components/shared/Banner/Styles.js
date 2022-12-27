@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const BannerStyles = styled.aside`
   width: 100%;
-  background-color: var(--primary-blue);
+  background-color: var(--primary-yellow);
   text-align: center;
   padding: 0.5em;
 
   a {
     font-size: 0.75em;
     font-weight: 400;
-    color: #ffffff;
+    color: var(--black);
     text-decoration: none;
 
     &:hover {
@@ -17,7 +17,7 @@ export const BannerStyles = styled.aside`
       text-decoration-thickness: 0.125em;
       text-underline-offset: 0.125em;
       cursor: pointer;
-      color: #ffffff;
+      color: var(--black);
     }
   }
 
