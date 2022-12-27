@@ -16,22 +16,16 @@ export default function Nav() {
           <Link to="/blog">Blog</Link>
         </MenuItem>
         <MenuItem>
-          <a
+          <Link
             href="http://instagram.com/chris_rouleau/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Instagram
-          </a>
+          </Link>
         </MenuItem>
         <HighlightedMenuItem>
-          <a
-            href="http://shop.christopherrouleau.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Shop
-          </a>
+          <Link to="/shop">Shop</Link>
         </HighlightedMenuItem>
         <button onClick={toggleCart} type="button">
           Cart
