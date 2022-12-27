@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { StoreContextProvider } from './src/context/siteContext';
 import GlobalStyles from './src/components/shared/GlobalStyles';
 import Typography from './src/components/shared/Typography';
 import Layout from './src/components/shared/Layout';
@@ -15,4 +16,8 @@ export function wrapPageElement({ element, props }) {
       <Layout>{element}</Layout>
     </>
   );
+}
+
+export function wrapRootElement({ element }) {
+  return <StoreContextProvider>{element}</StoreContextProvider>;
 }
