@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSiteMetadata } from '../../../hooks/useSiteMetadata';
+import { useSiteMetadata } from '../../../utils/useSiteMetadata';
 import objectToGetParams from '../../../utils/objectToGetParams';
 import { Pinterest } from './Icons';
 import { ShareButtonContent, ShareButtonStyles } from './Styles';

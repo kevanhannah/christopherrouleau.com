@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSiteMetadata } from '../../../hooks/useSiteMetadata';
+import { useSiteMetadata } from '../../../utils/useSiteMetadata';
 
 export default function SEO({ children, description, image, pathname, title }) {
   const {
@@ -32,7 +32,7 @@ export default function SEO({ children, description, image, pathname, title }) {
       <meta property="og:description" content={seo.description} />
       <meta property="og:image" content={seo.image} />
       <meta property="og:title" content={seo.title} />
-      <meta propery="og:site_name" content={seo.title} />
+      <meta property="og:site_name" content={seo.title} />
       <meta property="og:url" content={seo.url} />
       {children}
     </>
