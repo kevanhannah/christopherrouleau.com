@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { HighlightedMenuItem, MenuItem, NavStyles } from './Styles';
+import { useToggleCart } from '../../../../context/siteContext';
 
 export default function Nav() {
+  const toggleCart = useToggleCart();
+
   return (
     <nav role="navigation" style={{ display: 'flex' }}>
       <NavStyles>
@@ -30,6 +33,9 @@ export default function Nav() {
             Shop
           </a>
         </HighlightedMenuItem>
+        <button onClick={toggleCart} type="button">
+          Cart
+        </button>
       </NavStyles>
     </nav>
   );

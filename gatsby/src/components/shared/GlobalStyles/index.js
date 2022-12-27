@@ -72,6 +72,18 @@ const GlobalStyles = createGlobalStyle`
       color: var(--primary-blue);
     }
   }
+
+  button {
+    font-family: Basecoat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+    background: none;
+    border: none;
+    display: inline-block;
+    font-size: 1em;
+  }
+
+  button, input[type=submit] {
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyles;

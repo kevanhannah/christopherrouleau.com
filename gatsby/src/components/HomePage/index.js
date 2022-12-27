@@ -4,6 +4,7 @@ import { PortableText } from '@portabletext/react';
 import GlobalStyles from '../shared/GlobalStyles';
 import Typography from '../shared/Typography';
 import Banner from '../shared/Banner';
+import CartDrawer from '../shared/CartDrawer';
 import Footer from '../shared/Footer';
 import { PrimaryButton } from '../shared/Buttons';
 import Hero from './Hero';
@@ -14,12 +15,15 @@ import {
   HomePageHeader,
   HomePageIntroStyles,
 } from './Styles';
+import PageOverlay from '../shared/PageOverlay';
 
 export default function HomePage({ categoryContents, home }) {
   return (
     <>
       <GlobalStyles />
       <Typography />
+      <CartDrawer />
+      <PageOverlay />
       <Banner />
       <HomePageHeader />
       <main>
