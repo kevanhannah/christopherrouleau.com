@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const WorkPageStyles = styled.main`
-  display: grid;
-  grid-template-rows: auto auto;
+  display: flex;
+  flex-direction: column;
   gap: 2em;
   margin-bottom: 3em;
 `;
