@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStore, useToggleCart } from '../../../context/siteContext';
 import Cart from './Cart';
-import { CartDrawerHeader, CartDrawerStyles } from './Styles';
+import { CartDrawerHeader, CartDrawerStyles, CloseCartButton } from './Styles';
 
 export default function CartDrawer() {
   const { cartIsOpen } = useStore();
@@ -11,9 +11,9 @@ export default function CartDrawer() {
     <CartDrawerStyles cartIsOpen={cartIsOpen} aria-hidden={cartIsOpen}>
       <CartDrawerHeader>
         <h2>Cart</h2>
-        <button onClick={toggleCart} type="button">
+        <CloseCartButton onClick={toggleCart} type="button">
           Close
-        </button>
+        </CloseCartButton>
       </CartDrawerHeader>
       <Cart />
     </CartDrawerStyles>

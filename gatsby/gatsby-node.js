@@ -29,6 +29,31 @@ async function createCategoryPages({ graphql, actions }) {
   });
 }
 
+// Create shop product pages
+async function createShopProductPages({ graphql, actions: { createPage } }) {
+  const { data } = await graphql(`
+    query {
+      allShopifyProduct {
+        nodes {
+          id
+          handle
+        }
+      }
+    }
+  `);
+
+  data.allShopifyProduct.nodes.forEach((product) => {
+    createPage({
+      path: `/shop/products/${product.handle}`,
+      component: path.resolve('./src/templates/shopProduct.js'),
+      context: {
+        id: product.id,
+        handle: product.handle,
+      },
+    });
+  });
+}
+
 // Create blog pages
 async function createBlogPages({ graphql, actions }) {
   const { createPage } = actions;
@@ -208,4 +233,5 @@ exports.createPages = async (params) => {
   await createBlogPages(params);
   await createCategoryPages(params);
   await createWorkPages(params);
+  await createShopProductPages(params);
 };

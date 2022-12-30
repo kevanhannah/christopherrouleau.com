@@ -1,8 +1,20 @@
-import React, { Fragment } from 'react';
-import { StoreContextProvider } from './src/context/siteContext';
+import React from 'react';
+import { StoreContextProvider, useStore } from './src/context/siteContext';
 import GlobalStyles from './src/components/shared/GlobalStyles';
 import Typography from './src/components/shared/Typography';
 import Layout from './src/components/shared/Layout';
+
+function PageWrapper({ element }) {
+  const { cartIsOpen } = useStore();
+
+  return (
+    <>
+      <GlobalStyles noScroll={cartIsOpen} />
+      <Typography />
+      <Layout>{element}</Layout>
+    </>
+  );
+}
 
 export function onRenderBody({ setHtmlAttributes }) {
   setHtmlAttributes({ lang: 'en-ca' });
@@ -13,13 +25,7 @@ export function wrapPageElement({ element, props }) {
     return;
   }
 
-  return (
-    <Fragment {...props}>
-      <GlobalStyles />
-      <Typography />
-      <Layout>{element}</Layout>
-    </Fragment>
-  );
+  return <PageWrapper element={element} />;
 }
 
 export function wrapRootElement({ element }) {

@@ -49,6 +49,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: 62.5%;
+    overflow: ${(props) => (props.noScroll ? 'hidden' : 'auto')};
   }
 
   hr, ol, p, pre, ul {

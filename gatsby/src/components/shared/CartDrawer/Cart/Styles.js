@@ -2,8 +2,17 @@ import styled from 'styled-components';
 
 export const CartStyles = styled.div`
   width: 100%;
-  height: 100%;
-  padding: 2em 1.5em;
+  height: calc(100% - 90px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+`;
+
+export const CartItemList = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow: auto;
 `;
 
 export const EmptyCartStyles = styled.div`
