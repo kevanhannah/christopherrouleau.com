@@ -207,6 +207,25 @@ function useRemoveItemFromCart() {
   return removeItemFromCart;
 }
 
+function useUpdateItemsFromCart() {
+  const {
+    store: { checkout, shopifyClient },
+    setStore,
+  } = useContext(StoreContext);
+
+  async function updateItemsFromCart(items) {
+    const updatedItems = [].concat(items);
+    const newCheckout = await shopifyClient.checkout.updateLineItems(
+      checkout.id,
+      updatedItems
+    );
+
+    setStore((prevState) => ({ ...prevState, checkout: newCheckout }));
+  }
+
+  return updateItemsFromCart;
+}
+
 function useAddCoupon() {
   const {
     store: { checkout, shopifyClient },
@@ -276,6 +295,7 @@ export {
   useAdding,
   useCartCount,
   useRemoveItemFromCart,
+  useUpdateItemsFromCart,
   useAddCoupon,
   useRemoveCoupon,
   useCheckout,

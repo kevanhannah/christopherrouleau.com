@@ -15,13 +15,13 @@ export const ProductWrapper = styled.div`
 `;
 
 export const ProductInfo = styled.div`
-  width: 60%;
-  padding: 0 2em;
+  max-width: 40%;
+  padding: 0;
 `;
 
 export const ProductInfoTitle = styled.h2`
   font-size: 2.25em;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
 `;
 
@@ -41,16 +41,18 @@ export const ProductOptionsList = styled.ul`
 
 export const ProductOptionButton = styled.button`
   padding: 0.25em 0.5em;
-  color: ${(props) =>
-    props.selected ? 'var(--black)' : 'var(--black-lightest)'};
+  color: ${(props) => (props.selected ? '#ffffff' : 'var(--black-lightest)')};
+  background: ${(props) =>
+    props.selected ? 'var(--primary-blue)' : '#ffffff'};
   border: 1px solid
-    ${(props) => (props.selected ? 'var(--black)' : 'var(--black-lightest)')};
+    ${(props) =>
+      props.selected ? 'var(--primary-blue)' : 'var(--black-lightest)'};
   border-radius: 4px;
   font-size: 1em;
   font-weight: 300;
 
   &:hover {
-    color: var(--primary-blue);
+    color: ${(props) => (props.selected ? '#ffffff' : 'var(--primary-blue)')};
     border: 1px solid var(--primary-blue);
   }
 `;

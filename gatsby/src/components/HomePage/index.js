@@ -16,11 +16,14 @@ import {
   HomePageIntroStyles,
 } from './Styles';
 import PageOverlay from '../shared/PageOverlay';
+import { useStore } from '../../context/siteContext';
 
 export default function HomePage({ categoryContents, home }) {
+  const { cartIsOpen } = useStore();
+
   return (
     <>
-      <GlobalStyles />
+      <GlobalStyles noScroll={cartIsOpen} />
       <Typography />
       <CartDrawer />
       <PageOverlay />

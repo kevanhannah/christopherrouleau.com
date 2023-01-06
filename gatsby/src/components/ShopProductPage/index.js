@@ -49,6 +49,7 @@ export default function ShopProductPage({ product }) {
           >
             Add to cart
           </ExternalPrimaryButton>
+          <div dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
         </ProductInfo>
       </ProductWrapper>
     </ShopProductPageStyles>

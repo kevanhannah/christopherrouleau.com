@@ -9,7 +9,7 @@ export const CartDrawerStyles = styled.div`
   z-index: 30;
   max-width: 95%;
   transform: ${(props) => (props.cartIsOpen ? 'translate(-450px)' : 'none')};
-  transition-duration: 0.45s;
+  transition-duration: 0.35s;
   background: #ffffff;
 `;
 
@@ -29,10 +29,13 @@ export const CloseCartButton = styled.button`
   font-weight: 300;
   font-size: 0.75em;
   text-transform: uppercase;
-  letter-spacing: 0.25px;
+  letter-spacing: 0.05em;
+  padding: 0.25em;
+  border-radius: 4px;
+  user-select: none;
+  transition: background 0.2s ease-in-out;
 
   &:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.25em;
+    background-color: var(--primary-yellow);
   }
 `;
