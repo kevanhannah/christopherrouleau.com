@@ -1,0 +1,33 @@
+# Dependencies
+*/node_modules
+*/.pnp
+.pnp.js
+
+# Enviornment variables
+*.env
+*.env.*
+
+# Gatsby build files
+*/public
+*/.cache
+
+# Sanity Studio build files
+*/dist
+*/.sanity
+
+# Logs
+/logs
+*.log
+
+# Coverage directory used by testing tools
+/coverage
+
+# Misc
+.DS_Store
+*.pem
+
+# Typescript
+*.tsbuildinfo
+
+# VS Code
+*/.vscode
