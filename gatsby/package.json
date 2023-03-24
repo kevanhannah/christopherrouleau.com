@@ -13,14 +13,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
-  "eslintConfig": {
-    "extends": [
-      "wesbos"
-    ],
-    "rules": {
-      "react/prop-types": 0
-    }
-  },
   "dependencies": {
     "@netlify/plugin-gatsby": "^3.5.0",
     "@portabletext/react": "^2.0.0",
