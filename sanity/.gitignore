@@ -2,7 +2,7 @@
 node_modules
 
 # Enviornment variables
-.env
+.env*
 
 # Sanity Studio build files
 dist
