@@ -1,2 +1,13 @@
+[build]
+  base = "gatsby"
+  command = "npm run build"
+  publish = "public"
+
+[[redirects]]
+  from = "https://cute-yeot-a52e29.netlify.app/*"
+  to = "https://christopherrouleau.com"
+  status = 301
+  force = true
+
 [[plugins]]
   package = "@netlify/plugin-gatsby"

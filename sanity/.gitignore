@@ -1,0 +1,15 @@
+# Dependencies
+node_modules
+
+# Enviornment variables
+.env*
+
+# Sanity Studio build files
+dist
+.sanity
+
+# Misc
+.DS_Store
+
+# VS Code
+.vscode
