@@ -1,6 +1,10 @@
 {
-  "name": "christopherrouleau.com",
-  "description": "A portfolio site for Toronto-based artist Christopher Rouleau. Built with Gatsby and Sanity.",
   "author": "Kevan Hannah",
-  "license": "MIT"
+  "description": "A portfolio site for Toronto-based artist Christopher Rouleau. Built with Next.js and Sanity.",
+  "license": "MIT",
+  "name": "christopherrouleau.com",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm"
+  },
+  "type": "module"
 }
