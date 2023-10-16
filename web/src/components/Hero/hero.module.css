@@ -1,0 +1,34 @@
+.heroOuter {
+	background-color: var(--primary-blue);
+  border-top: 1px solid var(--medium-grey);
+  border-bottom: 1px solid var(--medium-grey);
+  color: #ffffff;
+  padding: 3em 0;
+}
+
+.heroInner {
+	margin: 0 auto;
+  max-width: 60.75em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3em;
+  align-items: center;
+}
+
+@media (max-width: 970px) {
+	.heroInner {
+		margin: 0 1em;
+	}
+}
+
+@media (max-width: 700px) {
+	.heroOuter {
+		padding: 2em 0;
+	}
+
+	.heroInner {
+		display: flex;
+    flex-direction: column;
+    gap: 1.75em;
+	}
+}

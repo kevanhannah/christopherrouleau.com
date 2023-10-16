@@ -1,0 +1,26 @@
+{
+	"name": "web",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"build": "next build",
+		"dev": "next dev",
+		"format": "npx prettier --plugin-search-dir . --write .",
+		"lint": "next lint",
+		"start": "next start"
+	},
+	"dependencies": {
+		"@portabletext/react": "^2.0.0",
+		"@sanity/client": "^6.6.0",
+		"@sanity/image-url": "^1.0.2",
+		"next": "13.5.4",
+		"react": "^18",
+		"react-dom": "^18"
+	},
+	"devDependencies": {
+		"eslint": "^8",
+		"eslint-config-next": "13.5.4",
+		"eslint-config-prettier": "^9.0.0",
+		"prettier": "^3.0.3"
+	}
+}
