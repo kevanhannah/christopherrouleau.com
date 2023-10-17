@@ -1,6 +1,6 @@
 .layout {
 	margin: 0 auto;
-	max-width: 60.75em;
+	max-width: var(--page-max-width);
 }
 
 @media (max-width: 970px) {

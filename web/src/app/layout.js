@@ -1,7 +1,7 @@
 import './globals.css';
 import localFont from 'next/font/local';
 import Banner from '@/components/Banner';
-import Layout from '@/components/Layout';
+import Footer from '@/components/Footer';
 
 const Basecoat = localFont({
 	src: [
@@ -33,7 +33,8 @@ export default function RootLayout({ children }) {
 		<html lang="en" className={Basecoat.className}>
 			<body>
 				<Banner />
-				<Layout>{children}</Layout>
+				{children}
+				<Footer />
 			</body>
 		</html>
 	);

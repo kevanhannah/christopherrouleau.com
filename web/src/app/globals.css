@@ -31,6 +31,8 @@
 	--primary-yellow: hsl(var(--base-yellow), 64%);
 	--primary-yellow-lighter: hsl(var(--base-yellow), 74%);
 	--primary-yellow-darker: hsl(var(--base-yellow), 54%);
+
+	--page-max-width: 60.75em;
 }
 
 ::selection {
