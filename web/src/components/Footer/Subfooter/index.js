@@ -31,7 +31,7 @@ export default function Subfooter() {
 								target="_blank"
 								aria-label="Newsletter">
 								<Newsletter />
-							Newsletter
+								Newsletter
 							</a>
 						</li>
 						<li className={styles.link}>
@@ -41,7 +41,7 @@ export default function Subfooter() {
 								target="_blank"
 								aria-label="Instagram">
 								<Instagram />
-							Instagram
+								Instagram
 							</a>
 						</li>
 						<li className={styles.link}>
@@ -50,8 +50,7 @@ export default function Subfooter() {
 								rel="noopener noreferrer"
 								target="_blank"
 								aria-label="X (formerly Twitter)">
-								<X />
-							X (Twitter)
+								<X />X (Twitter)
 							</a>
 						</li>
 					</ul>

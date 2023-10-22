@@ -1,0 +1,28 @@
+.cardGrid {
+	--columns: 4;
+	width: 100%;
+  display: grid;
+  gap: 1.75em;
+  grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+	.cardGrid {
+		--columns: 2;
+		gap: 2em;
+	}
+}
+
+@media (max-width: 600px) {
+	.cardGrid {
+		gap: 1.25em;
+	}
+}
+
+@media (max-width: 300px) {
+	.cardGrid {
+		--columns: 1;
+    justify-items: center;
+	}
+}

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { urlFor } from '@/utils/sanityImage';
-import Button from '../Button';
+import Button from '../../Button';
 import styles from './hero.module.css';
 import { parseSanityLink } from '@/utils/parseSanityLink';
 

@@ -1,40 +1,19 @@
-import Image from 'next/image';
-import { PortableText } from '@portabletext/react';
 import { client } from '@/utils/sanityClient';
-import { urlFor } from '@/utils/sanityImage';
-import Button from '@/components/Button';
-import Hero from '@/components/Hero';
 import Header from '@/components/Header';
+import Hero from '@/components/HomePage/Hero';
+import IntroSection from '@/components/HomePage/IntroSection';
 import styles from './home.module.css';
+import CategoryList from '@/components/HomePage/CategoryList';
 
 export default async function Home() {
-	const home = await getHomePage();
+	const { categories, greeting, hero, introduction, introImage } = await getHomePage();
 
 	return (
 		<main className={styles.homePage}>
 			<Header />
-			<div className={styles.homePageIntro}>
-				<div className={styles.homePageTextWrapper}>
-					<h1 style={{ fontWeight: '700' }}>{home.greeting}</h1>
-					<PortableText value={home.introduction} />
-					<Button internal link="/about" text="Say hi" type="primary" />
-				</div>
-				<div className={styles.homePageImageWrapper}>
-					<Image
-						alt={home.introImage.alt}
-						fill
-						priority={true}
-						quality={100}
-						src={urlFor(home.introImage).url()}
-						style={{
-							boxShadow: '0.5em 0.5em 0 var(--primary-blue-darker)',
-							objectFit: 'cover',
-							userSelect: 'none',
-						}}
-					/>
-				</div>
-			</div>
-			<Hero content={home.hero} />
+			<IntroSection content={{ greeting, introduction, introImage }} />
+			<Hero content={hero} />
+			<CategoryList categories={categories} />
 		</main>
 	);
 }
@@ -47,7 +26,18 @@ async function getHomePage() {
     introImage {
       alt,
       asset
-    }
+    },
+		categories[]-> {
+			'id': _id,
+			name,
+			slug,
+			'works': *[_type == 'work' && references(^._id) && parentWork == null] | order(releaseDate desc)[0..3] {
+				'id': _id,
+				'image': images[0],
+				name,
+				slug
+			}
+		}
   }`;
 
 	const data = await client.fetch(query);

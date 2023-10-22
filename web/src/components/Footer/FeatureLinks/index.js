@@ -42,7 +42,7 @@ async function getFeatureLinkData() {
 			'featureLists': *[_type == 'featureList'] | order(orderRank asc) {
 				'id': _id,
 				title,
-					'items': *[_type == 'featureItem' && references(^._id)] | order(orderRank asc) {
+				'items': *[_type == 'featureItem' && references(^._id)] | order(orderRank asc) {
 					endDate,
 					'id': _id,
 					reference-> {
