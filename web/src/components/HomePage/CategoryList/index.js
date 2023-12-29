@@ -14,19 +14,17 @@ export default function CategoryList({ categories }) {
 							<ItemCard
 								image={work.image}
 								key={work.id}
-								link={work.slug.current}
+								link={`${category.slug.current}/${work.slug.current}`}
 								name={work.name}
 							/>
 						))}
 					</CardGrid>
-					{category.linkToMore && (
-						<Button
-							internal
-							link={category.slug.current}
-							text={`All ${category.name}`}
-							type="primary"
-						/>
-					)}
+					<Button
+						internal
+						link={category.slug.current}
+						text={`All ${category.name}`}
+						type="primary"
+					/>
 				</div>
 			))}
 		</div>

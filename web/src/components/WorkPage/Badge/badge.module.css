@@ -1,0 +1,18 @@
+.badge {
+	display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.75em;
+  white-space: nowrap;
+  color: #ffffff;
+  background-color: var(--primary-blue);
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  user-select: none;
+}
+
+.badge:hover {
+	color: #ffffff;
+	background-color: var(--primary-blue-lighter);
+}

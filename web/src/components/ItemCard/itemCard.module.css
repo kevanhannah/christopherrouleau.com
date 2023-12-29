@@ -1,9 +1,9 @@
 .itemCard {
 	display: block;
-  list-style-type: none;
-  margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .itemCard a {
@@ -16,7 +16,8 @@
 	user-select: none;
 }
 
-.itemCard a:active, .itemCard a:visited {
+.itemCard a:active,
+.itemCard a:visited {
 	color: var(--black);
 }
 
@@ -50,8 +51,8 @@
 
 .dateDisplay {
 	text-transform: uppercase;
-  font-size: 0.75em;
-  font-weight: 400;
+	font-size: 0.75em;
+	font-weight: 400;
 }
 
 @media (max-width: 400px) {

@@ -1,6 +1,6 @@
-import { urlFor } from "@/utils/sanityImage";
-import Image from "next/image";
-import Link from "next/link";
+import { urlFor } from '@/utils/sanityImage';
+import Image from 'next/image';
+import Link from 'next/link';
 import styles from './itemCard.module.css';
 
 export default function ItemCard({ date, image, link, name }) {
@@ -20,7 +20,9 @@ export default function ItemCard({ date, image, link, name }) {
 					/>
 				</div>
 				{date && (
-					<time className={styles.dateDisplay} dateTime={date}>{formattedDate}</time>
+					<time className={styles.dateDisplay} dateTime={date}>
+						{formattedDate}
+					</time>
 				)}
 				<span>{name}</span>
 			</Link>

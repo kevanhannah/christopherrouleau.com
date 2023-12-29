@@ -1,5 +1,5 @@
 .layout {
-	margin: 0 auto;
+	margin: 0 auto 2em;
 	max-width: var(--page-max-width);
 }
 

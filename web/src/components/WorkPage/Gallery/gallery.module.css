@@ -1,0 +1,47 @@
+.galleryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.featureImageContainer {
+	position: relative;
+	aspect-ratio: 1;
+	grid-column: 1 / -1;
+}
+
+.galleryRow {
+	--columns: 6;
+	display: grid;
+	grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
+	gap: 1em;
+	user-select: none;
+}
+
+.imageWrapper {
+	position: relative;
+	aspect-ratio: 1;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.imageWrapper:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+.imageWrapper.selected {
+	border-color: var(--black);
+	box-shadow: 0 0 8px 2px var(--medium-grey);
+}
+
+
+@media (max-width: 600px) {
+	/* .galleryContainer {
+		float: none;
+		max-width: 100%;
+		margin: 0;
+		order: 2;
+	} */
+}

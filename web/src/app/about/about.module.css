@@ -1,5 +1,61 @@
-.btn {
-	background-color: #065f46;
-	color: #ffffff;
-	padding: 2rem 4rem;
+.about {
+	margin-bottom: 3em;
+}
+
+.aboutPageImageWrapper {
+	position: relative;
+	aspect-ratio: 1;
+	float: right;
+	margin-bottom: 2em;
+	margin-left: 2em;
+	width: 400px;
+}
+
+.title {
+	font-size: 3em;
+	margin-bottom: calc(1em / 3);
+}
+
+.lead {
+	font-size: 2em;
+	margin-bottom: 0.5em;
+	font-weight: 300;
+}
+
+.heading {
+	font-size: 1.5em;
+	font-weight: 400;
+	text-transform: none;
+	margin-bottom: 0.5em;
+}
+
+.subheading {
+	font-size: 1em;
+	font-weight: 700;
+	text-transform: none;
+	margin-bottom: 0.75em;
+}
+
+@media (max-width: 800px) {
+	.aboutPageImageWrapper {
+		float: none;
+		margin: 0 auto 2em;
+		width: 100%;
+	}
+
+	.aboutPageImageWrapper img {
+		object-position: top;
+	}
+}
+
+@media (max-width: 600px) {
+	.heading {
+		font-size: 2.5em;
+		margin-bottom: 0.5em;
+	}
+
+	.lead {
+		font-size: 1.5em;
+		margin-bottom: 1em;
+	}
 }

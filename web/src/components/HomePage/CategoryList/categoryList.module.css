@@ -5,11 +5,11 @@
 
 .categoryContainer {
 	display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 1.25em;
-  padding: 2em 0 2.75em;
-  /* border-bottom: 0.25em solid var(--black); */
+	flex-direction: column;
+	align-items: flex-start;
+	row-gap: 1.25em;
+	padding: 2em 0 2.75em;
+	/* border-bottom: 0.25em solid var(--black); */
 }
 
 .categoryContainer:not(:last-of-type) {
@@ -31,7 +31,7 @@
 @media (max-width: 600px) {
 	.categoryContainer {
 		align-items: stretch;
-    padding: 2em 0;
+		padding: 2em 0;
 	}
 
 	.categoryContainer h2 {

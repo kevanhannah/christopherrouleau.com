@@ -6,7 +6,8 @@ import styles from './home.module.css';
 import CategoryList from '@/components/HomePage/CategoryList';
 
 export default async function Home() {
-	const { categories, greeting, hero, introduction, introImage } = await getHomePage();
+	const { categories, greeting, hero, introduction, introImage } =
+		await getHomePage();
 
 	return (
 		<main className={styles.homePage}>

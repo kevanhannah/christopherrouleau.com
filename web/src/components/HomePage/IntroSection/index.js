@@ -4,7 +4,9 @@ import { urlFor } from '@/utils/sanityImage';
 import Button from '@/components/Button';
 import styles from './introSection.module.css';
 
-export default function IntroSection({ content: { greeting, introduction, introImage } }) {
+export default function IntroSection({
+	content: { greeting, introduction, introImage },
+}) {
 	return (
 		<div className={styles.homePageIntro}>
 			<div className={styles.homePageTextWrapper}>
