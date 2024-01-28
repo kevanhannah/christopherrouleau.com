@@ -1,23 +1,17 @@
-.categoryPage {
+.blogList {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
-	margin-bottom: 2em;
+	margin-bottom: 3em;
 }
 
-.categoryName {
+.title {
 	font-size: 2.25em;
 	font-weight: 700;
 }
 
 @media (max-width: 600px) {
-	.categoryName {
+	.title {
 		font-size: 1.75em;
-	}
-}
-
-@media (max-width: 400px) {
-	.categoryName {
-		font-size: 1.5em;
 	}
 }
