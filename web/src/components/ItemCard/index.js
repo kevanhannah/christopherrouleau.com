@@ -16,6 +16,7 @@ export default function ItemCard({ date, image, link, name }) {
 						fill={true}
 						quality={100}
 						role="presentation"
+						sizes="(max-width: 800px) 50vw, 25vw"
 						src={urlFor(image).url()}
 						style={{ objectFit: 'cover' }}
 					/>

@@ -15,7 +15,9 @@ export default async function BlogPost({ params }) {
 				<Image 
 					alt={heroImage.alt}
 					fill={true}
+					priority={true}
 					quality={100}
+					sizes="(max-width: 970px) 100vw, 800px"
 					src={urlFor(heroImage).url()}
 					style={{
 						userSelect: 'none',
@@ -50,12 +52,8 @@ const textComponents = {
 			);
 		},
 		annotationLinkInternal: ({ children, value }) => {
-			console.log(value);
-			const { type } = value;
-			const linkValue = type === 'post' ? `blog/${value.slug}` : `${value.slug}`;
-
 			return (
-				<TextLink internal link={`/${linkValue}`}>
+				<TextLink internal link={`/${value.slug}`}>
 					{children}
 				</TextLink>
 			);
@@ -70,8 +68,12 @@ async function getBlogPost(slug) {
 			markDefs[] {
 				...,
 				_type == "annotationLinkInternal" => {
+					...,
 					"type": reference->_type,
-					"slug": reference->slug.current,
+					"slug": select(
+						reference->_type == "post" => "blog/" + reference->slug.current,
+						reference->_type == "work" => reference->category->slug.current + "/" + reference->slug.current,
+					),
 				},
 			},
 		},

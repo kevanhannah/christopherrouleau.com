@@ -34,7 +34,7 @@
 
 @media (max-width: 600px) {
 	.navList li a {
-		font-size: 0.5rem;
+		/* font-size: 0.5rem; */
 	}
 }
 

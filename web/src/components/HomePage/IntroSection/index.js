@@ -20,6 +20,7 @@ export default function IntroSection({
 					fill
 					priority={true}
 					quality={100}
+					sizes="(max-width: 970px) 50vw, (max-width: 600px) 100vw, 25vw"
 					src={urlFor(introImage).url()}
 					style={{
 						boxShadow: '0.5em 0.5em 0 var(--primary-blue-darker)',

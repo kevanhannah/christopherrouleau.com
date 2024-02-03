@@ -11,7 +11,7 @@
 	margin: 0 auto;
 	max-width: var(--page-max-width);
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 3fr 2fr;
 	gap: 3em;
 	align-items: center;
 	position: relative;

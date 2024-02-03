@@ -16,6 +16,7 @@ export default function Hero({ content }) {
 						alt={image.alt}
 						fill={true}
 						quality={100}
+						sizes="(max-width: 700px) 100vw, 67vw"
 						src={urlFor(image).url()}
 						style={{
 							boxShadow: '0.5em 0.5em 0 var(--primary-blue-darker)',

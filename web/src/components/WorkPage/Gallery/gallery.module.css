@@ -1,7 +1,7 @@
 .galleryContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
 }
 
 .featureImageContainer {
@@ -36,12 +36,8 @@
 	box-shadow: 0 0 8px 2px var(--medium-grey);
 }
 
-
-@media (max-width: 600px) {
-	/* .galleryContainer {
-		float: none;
-		max-width: 100%;
-		margin: 0;
-		order: 2;
-	} */
+@media (max-width: 970px) {
+	.galleryRow {
+		--columns: 4;
+	}
 }
