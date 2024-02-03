@@ -1,36 +1,26 @@
 :root {
-	--base-black: 0, 0%;
-	--black: hsl(var(--base-black), 10%);
-	--black-light: hsl(var(--base-black), 20%);
-	--black-lighter: hsl(var(--base-black), 30%);
-	--black-lightest: hsl(var(--base-black), 40%);
+	--black: oklch(21.56% 0 0);
+	--black-light: oklch(32.11% 0 0);
+	--black-lighter: oklch(41.84% 0 0);
+	--black-lightest: oklch(51.03% 0 0);
 
-	--base-grey: 240, 26%;
-	--medium-grey: hsl(var(--base-grey), 87%);
-	--light-grey: hsl(var(--base-grey), 97%);
-	--dark-grey: hsl(var(--base-grey), 77%);
-	--darker-grey: hsl(var(--base-grey), 67%);
-	--darkest-grey: hsl(var(--base-grey), 57%);
+	--medium-grey: oklch(87.89% 0.024 285.91);
+	--light-grey: oklch(97.24% 0.005 286.3);
+	--dark-grey: oklch(78.34% 0.043 285.36);
+	--darker-grey: oklch(68.55% 0.064 284.58);
+	--darkest-grey: oklch(58.51% 0.087 283.39);
 
-	--base-primary-blue: 224, 76%;
-	--primary-blue: hsl(var(--base-primary-blue), 34%);
-	--primary-blue-lighter: hsl(var(--base-primary-blue), 44%);
-	--primary-blue-darker: hsl(var(--base-primary-blue), 24%);
+	--primary-blue: oklch(30.48% 0.15548497699524386 263.1214587013914);
+	--primary-blue-lighter: oklch(42.58% 0.21722487251260747 263.12033815109777);
+	--primary-blue-darker: oklch(20.59% 0.10501869782943557 263.1169886979366);
 
-	--base-secondary-blue: 207, 61%;
-	--secondary-blue: hsl(var(--base-secondary-blue), 52%);
-	--secondary-blue-lighter: hsl(var(--base-secondary-blue), 62%);
-	--secondary-blue-darker: hsl(var(--base-secondary-blue), 42%);
+	--primary-red: oklch(61.91% 0.25040756116992324 24.06053623910877);
+	--primary-red-lighter: oklch(68.38% 0.2049223279618732 24.0578706448522);
+	--primary-red-darker: oklch(55.61% 0.22492935528400101 24.060089187984133);
 
-	--base-red: 358, 74%;
-	--primary-red: hsl(var(--base-red), 59%);
-	--primary-red-lighter: hsl(var(--base-red), 69%);
-	--primary-red-darker: hsl(var(--base-red), 49%);
-
-	--base-yellow: 47, 94%;
-	--primary-yellow: hsl(var(--base-yellow), 64%);
-	--primary-yellow-lighter: hsl(var(--base-yellow), 74%);
-	--primary-yellow-darker: hsl(var(--base-yellow), 54%);
+	--primary-yellow: oklch(87.87% 0.1780687503275213 93.27818667908264);
+	--primary-yellow-lighter: oklch(91.61% 0.12279887524212461 93.269458290416);
+	--primary-yellow-darker: oklch(80.13% 0.16411164849814838 93.28161287093134);
 
 	--page-max-width: 60.75em;
 }
@@ -135,4 +125,20 @@ p {
 
 strong {
 	font-weight: 700;
+}
+
+@media (color-gamut: p3) {
+	:root {
+		--primary-blue: oklch(30.48% 0.1775 263.12);
+		--primary-blue-lighter: oklch(42.58% 0.2605 263.12);
+		--primary-blue-darker: oklch(20.59% 0.1288 263.12);
+
+		--primary-red: oklch(61.91% 0.2741 24.06);
+		--primary-red-lighter: oklch(68.38% 0.2595 24.06);
+		--primary-red-darker: oklch(55.61% 0.2486 24.06);
+
+		--primary-yellow: oklch(87.87% 0.2078 93.28);
+		--primary-yellow-lighter: oklch(91.61% 0.1485 93.27);
+		--primary-yellow-darker: oklch(80.13% 0.1893 93.28);
+	}
 }
