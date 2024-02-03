@@ -6,6 +6,12 @@
 	gap: 2em;
 }
 
+.blogPostImageWrapper {
+	position: relative;
+	aspect-ratio: 1;
+	width: 100%;
+}
+
 .content {
 	max-width: 40em;
 	margin: 0 auto;
@@ -27,6 +33,7 @@
 }
 
 .title {
+	margin-bottom: 0.5em;
 	font-size: 3em;
 	font-weight: 700;
 	color: var(--black);
