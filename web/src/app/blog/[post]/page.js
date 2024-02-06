@@ -21,7 +21,7 @@ export default async function BlogPost({ params }) {
 					src={urlFor(heroImage).url()}
 					style={{
 						userSelect: 'none',
-						boxShadow: '0.5em 0.5em 0 var(--primary-blue-darker)',
+						boxShadow: '0.5em 0.5em 0 var(--primary-blue)',
 					}}
 				/>
 			</div>

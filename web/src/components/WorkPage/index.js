@@ -15,7 +15,7 @@ export function WorkPage({ work }) {
 	return (
 		<div className={styles.workPage}>
 			<div className={styles.workDetails}>
-				<Badge link={work.category.slug.current} text={work.category.name} />
+				<Badge link={`/${work.category.slug}`} text={work.category.name} />
 				<div>
 					<h2 className={styles.workTitle}>{work.name}</h2>
 					<time className={styles.workYear} dateTime={year}>
@@ -38,7 +38,7 @@ export function WorkPage({ work }) {
 					{work.relatedWorks.map((relatedWork) => (
 						<ItemCard
 							image={relatedWork.image}
-							key={relatedWork._id}
+							key={relatedWork.id}
 							link={`${relatedWorksLinkPath}/${relatedWork.slug.current}`}
 							name={relatedWork.name}
 						/>

@@ -81,6 +81,7 @@
 
 	.linkList {
 		flex-direction: row;
+		font-size: 1.25em;
 	}
 
 	.link a {

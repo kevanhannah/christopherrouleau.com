@@ -18,7 +18,7 @@ export default async function AboutPage() {
 					sizes="(max-width: 800px) 100vw, 50w"
 					src={urlFor(image).url()}
 					style={{
-						boxShadow: '0.5em 0.5em 0 var(--primary-blue-darker)',
+						boxShadow: '0.5em 0.5em 0 var(--primary-blue)',
 						objectFit: 'cover',
 						userSelect: 'none',
 					}}

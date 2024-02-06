@@ -3,6 +3,6 @@ import styles from './badge.module.css';
 
 export default function Badge({ link, text }) {
 	return (
-		<Link className={styles.badge} href={`../${link}`}>{text}</Link>
+		<Link className={styles.badge} href={link}>{text}</Link>
 	);
 }
