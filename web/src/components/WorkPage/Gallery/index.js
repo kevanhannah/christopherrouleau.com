@@ -15,6 +15,8 @@ export default function Gallery({ images }) {
 					alt={images[index].alt}
 					fill={true}
 					quality={100}
+					placeholder="blur"
+					blurDataURL={images[index].lqip}
 					sizes="(max-width: 800px) 100vw, 50vw"
 					src={urlFor(images[index]).url()}
 					style={{ objectFit: 'cover' }}
@@ -29,6 +31,8 @@ export default function Gallery({ images }) {
 								aria-label="Change feature picture"
 								fill={true}
 								quality={100}
+								placeholder="blur"
+								blurDataURL={images[index].lqip}
 								role="button"
 								sizes="(max-width: 800px) 25vw, 200px"
 								src={urlFor(image).url()}

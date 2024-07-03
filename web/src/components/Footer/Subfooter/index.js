@@ -71,10 +71,10 @@ export default function Subfooter() {
 					</a>
 					. Portrait photography:{' '}
 					<a
-						href="https://brennansarich.com/"
+						href="https://www.johnalunan.com/"
 						target="_blank"
 						rel="noopener noreferrer">
-						Brennan Sarich
+						John Alunan
 					</a>
 					. Typeface:{' '}
 					<a

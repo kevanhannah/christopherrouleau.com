@@ -17,7 +17,10 @@ export async function getWork(slug, categorySlug) {
 		excerpt,
 		hasChildWorks,
 		'id': _id,
-		images,
+		images[] {
+			...,
+			"lqip": asset->metadata.lqip,
+		},
 		'metaImage': images[0],
 		name,
 		"relatedWorks": select(
