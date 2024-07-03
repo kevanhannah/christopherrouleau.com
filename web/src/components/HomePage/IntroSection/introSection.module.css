@@ -3,6 +3,7 @@
 	max-width: var(--page-max-width);
 	display: grid;
 	grid-template-columns: 3fr 2fr;
+	align-items: center;
 	gap: 2em;
 }
 
@@ -42,6 +43,12 @@
 
 	.homePageIntro h1 {
 		font-size: 3.25em;
+	}
+}
+
+@media (max-width: 800px) {
+	.homePageIntro {
+		grid-template-columns: 1fr 1fr;
 	}
 }
 

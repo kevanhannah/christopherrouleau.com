@@ -13,7 +13,11 @@ async function getCategory(slug) {
 		slug,
 		'works': *[_type == "work" && references(^._id) && parentWork == null] | order(releaseDate desc) {
 			'id': _id,
-			'image': images[0],
+			'image': images[0] {
+				alt,
+				"id": asset._ref,
+				"preview": asset->metadata.lqip,
+			},
 			name,
 			slug
 		}

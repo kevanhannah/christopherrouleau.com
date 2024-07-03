@@ -4,7 +4,7 @@ import { format, parseISO } from 'date-fns';
 import { urlFor } from '@/utils/sanityImage';
 import styles from './itemCard.module.css';
 
-export default function ItemCard({ date, image, link, name }) {
+export default function ItemCard({ date, image, link, name, priority = false }) {
 	const formattedDate = date && format(parseISO(date), 'MMMM d, yyyy');
 
 	return (
@@ -13,12 +13,13 @@ export default function ItemCard({ date, image, link, name }) {
 				<div className={styles.itemCardImageWrapper}>
 					<Image
 						alt={image.alt}
-						fill={true}
+						fill
 						quality={100}
-						role="presentation"
-						// placeholder="blur"
-						sizes="(max-width: 800px) 50vw, 25vw"
-						src={urlFor(image).url()}
+						placeholder="blur"
+						priority={priority}
+						blurDataURL={image.preview}
+						sizes="(max-width: 300px) 180px, (max-width: 800px) 380px, 240px"
+						src={urlFor(image.id).width(400).height(400).quality(80).dpr(2).auto('format').url()}
 						style={{ objectFit: 'cover' }}
 					/>
 				</div>

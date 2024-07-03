@@ -51,8 +51,9 @@ export async function getChild(slug, parentSlug) {
 		description,
 		'id': _id,
 		images[] {
-			...,
-			"lqip": asset->metadata.lqip,
+			alt,
+			"id": asset._ref,
+			"preview": asset->metadata.lqip,
 		},
 		'metaImage': images[0],
 		name,
@@ -62,7 +63,11 @@ export async function getChild(slug, parentSlug) {
 		},
 		"relatedWorks": *[_type == "work" && references(^.parentWork->_id) && (_id != ^._id)][0..3] {
 			"id": _id,
-			"image": images[0],
+			"image": images[0] {
+				alt,
+				"id": asset._ref,
+				"preview": asset->metadata.lqip,
+			},
 			name,
 			slug
 		},

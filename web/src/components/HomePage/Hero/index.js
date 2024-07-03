@@ -14,10 +14,13 @@ export default function Hero({ content }) {
 				<div className={styles.heroImageWrapper}>
 					<Image
 						alt={image.alt}
-						fill={true}
+						fill
+						placeholder="blur"
+						priority={true}
+						blurDataURL={image.preview}
 						quality={100}
-						sizes="(max-width: 700px) 100vw, 67vw"
-						src={urlFor(image).url()}
+						sizes="(max-width: 700px) 670px, 470px"
+						src={urlFor(image.id).width(680).height(382).quality(80).dpr(2).auto('format').url()}
 						style={{
 							boxShadow: '0.5em 0.5em 0 var(--primary-blue-darker)',
 							objectFit: 'cover',

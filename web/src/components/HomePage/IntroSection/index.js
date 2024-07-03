@@ -18,10 +18,12 @@ export default function IntroSection({
 				<Image
 					alt={introImage.alt}
 					fill
+					placeholder="blur"
 					priority={true}
+					blurDataURL={introImage.preview}
 					quality={100}
-					sizes="(max-width: 970px) 50vw, (max-width: 600px) 100vw, 25vw"
-					src={urlFor(introImage).url()}
+					sizes="(max-width: 700px) 670px, (max-width: 800px) 360px, 380px"
+					src={urlFor(introImage.id).width(680).height(680).quality(80).dpr(2).auto('format').url()}
 					style={{
 						boxShadow: '0.5em 0.5em 0 var(--primary-blue)',
 						objectFit: 'cover',

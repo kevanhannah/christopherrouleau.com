@@ -18,15 +18,20 @@ export async function getWork(slug, categorySlug) {
 		hasChildWorks,
 		'id': _id,
 		images[] {
-			...,
-			"lqip": asset->metadata.lqip,
+			alt,
+			"id": asset._ref,
+			"preview": asset->metadata.lqip,
 		},
 		'metaImage': images[0],
 		name,
 		"relatedWorks": select(
 			hasChildWorks == true => *[_type == "work" && defined(parentWork) && (parentWork._ref == ^._id)] {
 				'id': _id,
-				"image": images[0],
+				"image": images[0] {
+					alt,
+					"id": asset._ref,
+					"preview": asset->metadata.lqip,
+				},
 				name,
 				slug
 			},
@@ -35,7 +40,11 @@ export async function getWork(slug, categorySlug) {
 					slug
 				},
 				'id': _id,
-				"image": images[0],
+				"image": images[0] {
+					alt,
+					"id": asset._ref,
+					"preview": asset->metadata.lqip,
+				},
 				name,
 				slug
 			}

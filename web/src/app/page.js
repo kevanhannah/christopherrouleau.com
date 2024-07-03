@@ -22,11 +22,19 @@ export default async function Home() {
 async function getHomePage() {
 	const query = `*[_type == "home"][0] {
     greeting,
-		hero,
+		hero {
+			...,
+			image {
+				alt,
+				"id": asset._ref,
+				"preview": asset->metadata.lqip,
+			}
+		},
     introduction,
     introImage {
       alt,
-      asset
+      "id": asset._ref,
+			"preview": asset->metadata.lqip,
     },
 		categories[]-> {
 			'id': _id,
@@ -34,12 +42,16 @@ async function getHomePage() {
 			slug,
 			'works': *[_type == 'work' && references(^._id) && parentWork == null] | order(releaseDate desc)[0..3] {
 				'id': _id,
-				'image': images[0],
+				'image': images[0] {
+					alt,
+					"id": asset._ref,
+					"preview": asset->metadata.lqip,
+				},
 				name,
 				slug
 			}
 		}
-  }`;
+	}`;
 
 	const data = await client.fetch(query);
 
