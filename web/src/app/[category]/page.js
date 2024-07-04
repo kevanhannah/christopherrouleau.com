@@ -16,7 +16,6 @@ async function getCategory(slug) {
 			'image': images[0] {
 				alt,
 				"id": asset._ref,
-				"preview": asset->metadata.lqip,
 			},
 			name,
 			slug

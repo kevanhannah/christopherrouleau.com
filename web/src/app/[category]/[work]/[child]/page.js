@@ -53,7 +53,6 @@ export async function getChild(slug, parentSlug) {
 		images[] {
 			alt,
 			"id": asset._ref,
-			"preview": asset->metadata.lqip,
 		},
 		'metaImage': images[0],
 		name,
@@ -66,7 +65,6 @@ export async function getChild(slug, parentSlug) {
 			"image": images[0] {
 				alt,
 				"id": asset._ref,
-				"preview": asset->metadata.lqip,
 			},
 			name,
 			slug

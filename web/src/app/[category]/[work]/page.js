@@ -20,7 +20,6 @@ export async function getWork(slug, categorySlug) {
 		images[] {
 			alt,
 			"id": asset._ref,
-			"preview": asset->metadata.lqip,
 		},
 		'metaImage': images[0],
 		name,
@@ -30,7 +29,6 @@ export async function getWork(slug, categorySlug) {
 				"image": images[0] {
 					alt,
 					"id": asset._ref,
-					"preview": asset->metadata.lqip,
 				},
 				name,
 				slug
@@ -43,7 +41,6 @@ export async function getWork(slug, categorySlug) {
 				"image": images[0] {
 					alt,
 					"id": asset._ref,
-					"preview": asset->metadata.lqip,
 				},
 				name,
 				slug
