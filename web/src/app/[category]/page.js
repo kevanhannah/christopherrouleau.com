@@ -18,7 +18,7 @@ async function getCategory(slug) {
 				"id": asset._ref,
 			},
 			name,
-			slug
+			slug,
 		}
 	}`;
 

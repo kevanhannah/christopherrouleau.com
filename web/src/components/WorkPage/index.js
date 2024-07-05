@@ -1,10 +1,13 @@
 import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import Badge from '@/components/WorkPage/Badge';
+import Button from '@/components/Button';
 import CardGrid from '@/components/CardGrid';
 import Gallery from '@/components/WorkPage/Gallery';
 import ItemCard from '@/components/ItemCard';
+import ShareButton from '@/components/ShareButton';
 import { handleRelatedWorks } from '@/utils/handleRelatedWorks';
+import { urlFor } from '@/utils/sanityImage';
 import styles from './work.module.css';
 
 export function WorkPage({ work }) {
@@ -23,15 +26,27 @@ export function WorkPage({ work }) {
 					</time>
 				</div>
 				<PortableText value={work.description} />
-				{work.parentWork && (
+				{work.parent && (
 					<>
-						<h3 className={styles.seriesTitle}>From {work.parentWork.name}</h3>
-						<p>{work.parentWork.excerpt}</p>
-						<Link href="./">More about {work.parentWork.name}</Link>
+						<h3 className={styles.seriesTitle}>From {work.parent.name}</h3>
+						<p>{work.parent.excerpt}</p>
+						<Link href="./">More about {work.parent.name}</Link>
 					</>
 				)}
 			</div>
-			<Gallery images={work.images} />
+			<div className={styles.galleryWrapper}>
+				<Gallery images={work.images} />
+				<div className={styles.buttonRow}>
+					{work.forSale && work.storeUrl && (
+						<Button link={work.storeUrl} text="Buy in store" type="primary" />
+					)}
+					<ShareButton
+						description={work.excerpt}
+						image={urlFor(work.metaImage).width(1200).height(627).quality(75).dpr(2).format('auto').url()}
+						pathname={work.slug.current}
+					/>
+				</div>
+			</div>
 			<div className={styles.relatedWorks}>
 				<h3>{relatedWorksHeading}</h3>
 				<CardGrid>

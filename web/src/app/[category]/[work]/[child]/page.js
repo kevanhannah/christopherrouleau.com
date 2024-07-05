@@ -1,7 +1,6 @@
 import { WorkPage } from '@/components/WorkPage';
 import { client } from '@/utils/sanityClient';
 import { urlFor } from '@/utils/sanityImage';
-import { getWork } from '../page';
 
 async function Child({ params }) {
 	const work = await getChild(params.child, params.work);
@@ -17,7 +16,7 @@ export async function generateMetadata({ params }) {
 			excerpt,
 			name,
 			"slug": slug.current
-		}
+		},
 	}`;
 
 	const { image, name, parent } = await client.fetch(metadataQuery);
@@ -49,6 +48,7 @@ export async function getChild(slug, parentSlug) {
       "slug": slug.current
 		},
 		description,
+		forSale,
 		'id': _id,
 		images[] {
 			alt,
@@ -70,7 +70,8 @@ export async function getChild(slug, parentSlug) {
 			slug
 		},
 		releaseDate,
-		slug
+		slug,
+		storeUrl,
 	}`;
 
 	const data = await client.fetch(query);
