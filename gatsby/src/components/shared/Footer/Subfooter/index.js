@@ -6,7 +6,7 @@ import {
   SubfooterLinkList,
   SubfooterStyles,
 } from './Styles';
-import { Instagram, Newsletter, Twitter } from './Icons';
+import { Bluesky, Instagram, LinkedIn, Newsletter } from './Icons';
 
 export default function Subfooter() {
   const copyrightYear = new Date().getFullYear();
@@ -52,13 +52,24 @@ export default function Subfooter() {
             </SubfooterLink>
             <SubfooterLink>
               <a
-                href="http://twitter.com/Chris_Rouleau"
+                href="https://www.linkedin.com/in/christopher-rouleau-2a720442"
                 rel="noopener noreferrer"
                 target="_blank"
-                aria-label="Twitter"
+                aria-label="LinkedIn"
               >
-                <Twitter />
-                Twitter
+                <LinkedIn />
+                LinkedIn
+              </a>
+            </SubfooterLink>
+            <SubfooterLink>
+              <a
+                href="https://bsky.app/profile/chrisrouleau.bsky.social"
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label="Bluesky"
+              >
+                <Bluesky />
+                Bluesky
               </a>
             </SubfooterLink>
           </SubfooterLinkList>
