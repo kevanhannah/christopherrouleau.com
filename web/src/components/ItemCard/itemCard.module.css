@@ -4,59 +4,59 @@
 	margin: 0;
 	overflow: hidden;
 	text-overflow: ellipsis;
-}
 
-.itemCard a {
-	display: flex;
-	flex-direction: column;
-	gap: 0.75em;
-	text-decoration: none;
-	font-weight: 300;
-	color: var(--black);
-	user-select: none;
-}
+	& a {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75em;
+		text-decoration: none;
+		font-weight: 300;
+		color: var(--black);
+		user-select: none;
 
-.itemCard a:active,
-.itemCard a:visited {
-	color: var(--black);
-}
+		&:active,
+		&:visited {
+			color: var(--black);
+		}
 
-.itemCardImageWrapper {
-	width: 100%;
-	position: relative;
-	aspect-ratio: 1;
-}
+		& .itemCardImageWrapper {
+			width: 100%;
+			position: relative;
+			aspect-ratio: 1;
+		}
 
-.itemCard a span {
-	font-size: 1em;
-	font-weight: 400;
-	line-height: 1.4;
-	text-transform: uppercase;
-	margin: 0;
-}
+		& span {
+			font-size: 1em;
+			font-weight: 400;
+			line-height: 1.4;
+			text-transform: uppercase;
+			margin: 0;
 
-.itemCard:hover a {
-	color: var(--primary-blue);
-}
+			@media (max-width: 400px) {
+				font-size: 0.75em;
+			}
+		}
+	}
 
-.itemCard:hover a span {
-	text-decoration: underline;
-	text-decoration-thickness: 0.125em;
-	text-underline-offset: 0.125em;
-}
+	&:hover {
+		& a {
+			color: var(--primary-blue);
 
-.itemCard:hover a .itemCardImageWrapper {
-	opacity: 0.8;
+			& .itemCardImageWrapper {
+				filter: brightness(110%);
+			}
+
+			& span {
+				text-decoration: underline;
+				text-decoration-thickness: 0.125em;
+				text-underline-offset: 0.125em;
+			}
+		}
+	}
 }
 
 .dateDisplay {
 	text-transform: uppercase;
 	font-size: 0.75em;
 	font-weight: 400;
-}
-
-@media (max-width: 400px) {
-	.itemCard a span {
-		font-size: 0.75em;
-	}
 }
