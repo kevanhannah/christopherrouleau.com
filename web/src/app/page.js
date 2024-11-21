@@ -20,21 +20,21 @@ export default async function Home() {
 }
 
 async function getHomePage() {
-	const query = `*[_type == "home"][0] {
+	const query = `*[_type == 'home'][0] {
     greeting,
 		hero {
 			...,
 			image {
 				alt,
-				"id": asset._ref,
-				"preview": asset->metadata.lqip,
+				'id': asset._ref,
+				'preview': asset->metadata.lqip,
 			}
 		},
     introduction,
     introImage {
       alt,
-      "id": asset._ref,
-			"preview": asset->metadata.lqip,
+      'id': asset._ref,
+			'preview': asset->metadata.lqip,
     },
 		categories[]-> {
 			'id': _id,
@@ -44,7 +44,7 @@ async function getHomePage() {
 				'id': _id,
 				'image': images[0] {
 					alt,
-					"id": asset._ref,
+					'id': asset._ref,
 				},
 				name,
 				slug

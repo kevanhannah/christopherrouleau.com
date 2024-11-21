@@ -8,14 +8,14 @@ async function Category({ params }) {
 }
 
 async function getCategory(slug) {
-	const query = `*[_type == "category" && slug.current == "${slug}"][0] {
+	const query = `*[_type == 'category' && slug.current == '${slug}'][0] {
 		name,
 		slug,
-		'works': *[_type == "work" && references(^._id) && parentWork == null] | order(releaseDate desc) {
+		'works': *[_type == 'work' && references(^._id) && parentWork == null] | order(releaseDate desc) {
 			'id': _id,
 			'image': images[0] {
 				alt,
-				"id": asset._ref,
+				'id': asset._ref,
 			},
 			name,
 			slug,

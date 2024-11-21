@@ -13,8 +13,8 @@ export default async function BlogList() {
 				{posts.map((post) => (
 					<ItemCard
 						date={post.publishedAt}
-						image={post.heroImage}
-						key={post._id}
+						image={post.image}
+						key={post.id}
 						link={`blog/${post.slug.current}`}
 						name={post.title}
 					/>
@@ -26,8 +26,11 @@ export default async function BlogList() {
 
 async function getBlogPosts() {
 	const query = `*[_type == "post"] | order(publishedAt desc) {
-		_id,
-		heroImage,
+		'id': _id,
+		'image': heroImage {
+			alt,
+			'id': asset._ref
+		},
 		publishedAt,
 		slug {
 			current
