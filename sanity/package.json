@@ -13,6 +13,10 @@
   "keywords": [
     "sanity"
   ],
+  "engines": {
+    "node": ">=24.19.0 <25",
+    "npm": ">=11.17.0"
+  },
   "dependencies": {
     "@sanity/dashboard": "^6.0.17",
     "@sanity/icons": "^3.8.0",

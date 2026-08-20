@@ -4,7 +4,9 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "22.12"
+  # Kept in sync with sanity/.node-version, which Netlify reads first.
+  NODE_VERSION = "24.19.0"
+  NPM_VERSION = "11.17.0"
 
 [[redirects]]
   from = "https://tiny-froyo-134e27.netlify.app/*"
