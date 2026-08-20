@@ -3,6 +3,9 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  NODE_VERSION = "22.12"
+
 [[redirects]]
   from = "https://tiny-froyo-134e27.netlify.app/*"
   to = "https://content.christopherrouleau.com/"
