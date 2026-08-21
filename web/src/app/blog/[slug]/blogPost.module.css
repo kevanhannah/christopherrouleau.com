@@ -1,0 +1,47 @@
+.blogPost {
+	max-width: 43.75em;
+	margin: 0 auto 3em;
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+}
+
+.blogPostImageWrapper {
+	position: relative;
+	aspect-ratio: 1;
+	width: 100%;
+}
+
+.bodyImageWrapper {
+	position: relative;
+	aspect-ratio: 1;
+	width: 100%;
+	margin: 1em 0;
+}
+
+.content {
+	max-width: 40em;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1.75em;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+
+.date {
+	text-transform: uppercase;
+	font-size: 1em;
+	color: var(--black);
+}
+
+.title {
+	margin-bottom: 0.5em;
+	font-size: 3em;
+	font-weight: 700;
+	color: var(--black);
+}

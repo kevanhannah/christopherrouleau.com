@@ -1,0 +1,92 @@
+.workPage {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2em;
+	margin-bottom: 3em;
+}
+
+.workDetails {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1em;
+
+	& p,
+	& ul,
+	& ol,
+	& ul li:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.workTitle {
+	font-size: 2.25em;
+	font-weight: 700;
+	margin: 0;
+}
+
+.workYear {
+	font-size: 1.25em;
+	font-weight: 400;
+	margin: 0;
+}
+
+.seriesTitle {
+	font-size: 1.75em;
+	margin-top: 0.5em;
+}
+
+.galleryWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+
+	& .buttonRow {
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: stretch;
+		gap: 1em;
+
+		@media (max-width: 800px) {
+			flex-direction: column;
+		}
+	}
+}
+
+.relatedWorks {
+	grid-column: 1 / -1;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+
+	& h3 {
+		font-size: 1.75em;
+		font-weight: 700;
+		margin: 0;
+	}
+}
+
+@media (max-width: 800px) {
+	.workPage {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+	}
+
+	.galleryContainer {
+		order: 1;
+	}
+
+	.workDetails {
+		order: 2;
+	}
+
+	.relatedWorks {
+		order: 3;
+	}
+
+	.workTitle {
+		font-size: 2em;
+	}
+}

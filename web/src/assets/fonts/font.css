@@ -1,0 +1,20 @@
+@font-face {
+	font-family: 'Basecoat';
+	src: url('basecoat.otf') format('opentype');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Basecoat';
+	src: url('basecoat-light.otf') format('opentype');
+	font-style: normal;
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'Basecoat';
+	src: url('basecoat-bold.otf') format('opentype');
+	font-style: normal;
+	font-weight: 700;
+}

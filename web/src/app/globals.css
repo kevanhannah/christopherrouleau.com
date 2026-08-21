@@ -1,0 +1,144 @@
+:root {
+	--black: oklch(21.56% 0 0);
+	--black-light: oklch(32.11% 0 0);
+	--black-lighter: oklch(41.84% 0 0);
+	--black-lightest: oklch(51.03% 0 0);
+
+	--medium-grey: oklch(87.89% 0.024 285.91);
+	--light-grey: oklch(97.24% 0.005 286.3);
+	--dark-grey: oklch(78.34% 0.043 285.36);
+	--darker-grey: oklch(68.55% 0.064 284.58);
+	--darkest-grey: oklch(58.51% 0.087 283.39);
+
+	--primary-blue: oklch(30.48% 0.15548497699524386 263.1214587013914);
+	--primary-blue-lighter: oklch(42.58% 0.21722487251260747 263.12033815109777);
+	--primary-blue-darker: oklch(20.59% 0.10501869782943557 263.1169886979366);
+
+	--primary-red: oklch(61.91% 0.25040756116992324 24.06053623910877);
+	--primary-red-lighter: oklch(68.38% 0.2049223279618732 24.0578706448522);
+	--primary-red-darker: oklch(55.61% 0.22492935528400101 24.060089187984133);
+
+	--primary-yellow: oklch(87.87% 0.1780687503275213 93.27818667908264);
+	--primary-yellow-lighter: oklch(91.61% 0.12279887524212461 93.269458290416);
+	--primary-yellow-darker: oklch(80.13% 0.16411164849814838 93.28161287093134);
+
+	--page-max-width: 60.75em;
+}
+
+::selection {
+	background: var(--primary-yellow);
+}
+
+*,
+:after,
+:before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+html {
+	font-family:
+		Basecoat,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		'Open Sans',
+		'Helvetica Neue',
+		sans-serif;
+	color: var(--black);
+	font-size: 1.6em;
+	line-height: 1.6;
+	letter-spacing: 0.01em;
+}
+
+body {
+	font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.2;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+h1 {
+	font-weight: 700;
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 1.6em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+hr,
+ol,
+p,
+pre,
+ul {
+	margin-bottom: 0.8rem;
+}
+
+ol,
+ul {
+	margin-left: 1.5em;
+}
+
+a {
+	font-size: 1em;
+	font-weight: 400;
+	color: var(--black);
+	-webkit-text-decoration-thickness: 0.125em;
+	text-decoration-thickness: 0.125em;
+	text-underline-offset: 0.125em;
+}
+
+a:hover {
+	text-decoration: none;
+	color: var(--primary-blue);
+}
+
+p,
+li {
+	font-family: Basecoat;
+	font-weight: 300;
+	font-size: 1em;
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+strong {
+	font-weight: 700;
+}
+
+@media (color-gamut: p3) {
+	:root {
+		--primary-blue: oklch(30.48% 0.1775 263.12);
+		--primary-blue-lighter: oklch(42.58% 0.2605 263.12);
+		--primary-blue-darker: oklch(20.59% 0.1288 263.12);
+
+		--primary-red: oklch(61.91% 0.2741 24.06);
+		--primary-red-lighter: oklch(68.38% 0.2595 24.06);
+		--primary-red-darker: oklch(55.61% 0.2486 24.06);
+
+		--primary-yellow: oklch(87.87% 0.2078 93.28);
+		--primary-yellow-lighter: oklch(91.61% 0.1485 93.27);
+		--primary-yellow-darker: oklch(80.13% 0.1893 93.28);
+	}
+}

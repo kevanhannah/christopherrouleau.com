@@ -1,0 +1,10 @@
+.layout {
+	margin: 0 auto 2em;
+	max-width: var(--page-max-width);
+}
+
+@media (max-width: 970px) {
+	.layout {
+		margin: 0 1em;
+	}
+}

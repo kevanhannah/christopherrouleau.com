@@ -1,0 +1,7 @@
+.wordmark {
+	max-width: 18.75em;
+}
+
+.wordmark:hover {
+	fill: var(--primary-blue);
+}
