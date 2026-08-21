@@ -9,7 +9,7 @@ export async function Banner() {
 	}
 
 	return (
-		<aside className={styles.banner} role="banner">
+		<aside className={styles.banner} role="region" aria-label="Site announcement">
 			<a href={settings.bannerLink ?? undefined}>{settings.bannerText}</a>
 		</aside>
 	);

@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
-import { urlFor } from '@/lib/sanity/image';
+import { sanityImageSrc } from '@/lib/sanity/imageSrc';
 import { createShimmer, toBase64 } from '@/utils/createShimmer';
 import type { SanityImage } from '@/lib/sanity/types';
 import styles from './gallery.module.css';
@@ -14,9 +14,27 @@ interface GalleryProps {
 export function Gallery({ images }: GalleryProps) {
 	const [index, setIndex] = useState(0);
 	const featured = images[index];
+	const thumbnailRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
 	if (!featured) {
 		return null;
+	}
+
+	function selectThumbnail(nextIndex: number, focus: boolean) {
+		setIndex(nextIndex);
+		if (focus) {
+			thumbnailRefs.current[nextIndex]?.focus();
+		}
+	}
+
+	function handleArrowKey(event: React.KeyboardEvent, imgIndex: number) {
+		if (event.key === 'ArrowRight') {
+			event.preventDefault();
+			selectThumbnail((imgIndex + 1) % images.length, true);
+		} else if (event.key === 'ArrowLeft') {
+			event.preventDefault();
+			selectThumbnail((imgIndex - 1 + images.length) % images.length, true);
+		}
 	}
 
 	return (
@@ -26,51 +44,38 @@ export function Gallery({ images }: GalleryProps) {
 					alt={featured.alt}
 					fill={true}
 					key={featured.id}
-					unoptimized
 					priority={true}
+					quality={100}
 					placeholder={`data:image/svg+xml;base64,${toBase64(createShimmer(700, 700))}`}
 					sizes="(max-width: 800px) 770px, 450px"
-					src={urlFor(featured.id)
-						.width(780)
-						.height(780)
-						.quality(100)
-						.dpr(2)
-						.auto('format')
-						.url()}
+					src={sanityImageSrc(featured.id, 780, 780)}
 					style={{ objectFit: 'contain' }}
 				/>
 			</div>
 			{images.length > 1 && (
-				<div className={styles.galleryRow}>
+				<div className={styles.galleryRow} role="group" aria-label="Select image">
 					{images.map((image, imgIndex) => (
-						<div
+						<button
 							className={`${styles.imageWrapper} ${imgIndex === index ? styles.selected : ''}`}
 							key={image.id}
-							onClick={() => setIndex(imgIndex)}
-							onKeyDown={(event) => {
-								if (event.key === 'Enter' || event.key === ' ') {
-									setIndex(imgIndex);
-								}
+							ref={(el) => {
+								thumbnailRefs.current[imgIndex] = el;
 							}}
-							role="button"
-							tabIndex={0}>
+							type="button"
+							aria-current={imgIndex === index}
+							aria-label={`Show image ${imgIndex + 1} of ${images.length}`}
+							onClick={() => selectThumbnail(imgIndex, false)}
+							onKeyDown={(event) => handleArrowKey(event, imgIndex)}>
 							<Image
-								alt={image.alt}
-								aria-label="Change feature picture"
+								alt=""
 								fill
-								unoptimized
+								quality={60}
 								placeholder={`data:image/svg+xml;base64,${toBase64(createShimmer(180, 180))}`}
 								sizes="(max-width: 800px) 180px, (max-width: 970px) 100px, 64px"
-								src={urlFor(image.id)
-									.width(180)
-									.height(180)
-									.quality(60)
-									.dpr(2)
-									.auto('format')
-									.url()}
+								src={sanityImageSrc(image.id, 180, 180)}
 								style={{ objectFit: 'cover' }}
 							/>
-						</div>
+						</button>
 					))}
 				</div>
 			)}

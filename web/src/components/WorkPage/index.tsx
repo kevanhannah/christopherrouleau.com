@@ -8,6 +8,8 @@ import { ItemCard } from '@/components/common/ItemCard';
 import { ShareButton } from '@/components/common/ShareButton';
 import { handleRelatedWorks } from '@/utils/handleRelatedWorks';
 import { urlFor } from '@/lib/sanity/image';
+import { JsonLd } from '@/components/common/JsonLd';
+import { baseUrl } from '@/utils/defaultMetadata';
 import type { WorkDetail } from '@/lib/sanity/types';
 import styles from './work.module.css';
 
@@ -19,13 +21,32 @@ export function WorkPage({ work }: WorkPageProps) {
 	const year = new Date(work.releaseDate).getFullYear();
 	const { relatedWorksHeading, relatedWorksLinkPath } =
 		handleRelatedWorks(work);
+	const workPath = work.parentWork
+		? `/${work.category.slug}/${work.parentWork.slug.current}/${work.slug.current}`
+		: `/${work.category.slug}/${work.slug.current}`;
 
 	return (
 		<div className={styles.workPage}>
+			<JsonLd
+				data={{
+					'@context': 'https://schema.org',
+					'@type': 'VisualArtwork',
+					name: work.name,
+					description: work.excerpt,
+					dateCreated: work.releaseDate,
+					url: `${baseUrl}${workPath}`,
+					image: urlFor(work.metaImage.id).width(1200).height(627).quality(75).auto('format').url(),
+					creator: {
+						'@type': 'Person',
+						name: 'Christopher Rouleau',
+						url: baseUrl,
+					},
+				}}
+			/>
 			<div className={styles.workDetails}>
 				<Badge link={`/${work.category.slug}`} text={work.category.name} />
 				<div>
-					<h2 className={styles.workTitle}>{work.name}</h2>
+					<h1 className={styles.workTitle}>{work.name}</h1>
 					<time className={styles.workYear} dateTime={String(year)}>
 						({year})
 					</time>

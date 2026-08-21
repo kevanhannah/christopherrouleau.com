@@ -5,10 +5,12 @@ export default function NotFound() {
 	return (
 		<>
 			<Header />
-			<StatusPage
-				heading="Page not found"
-				message="The page you're looking for doesn't exist or may have moved."
-			/>
+			<main id="main-content">
+				<StatusPage
+					heading="Page not found"
+					message="The page you're looking for doesn't exist or may have moved."
+				/>
+			</main>
 		</>
 	);
 }

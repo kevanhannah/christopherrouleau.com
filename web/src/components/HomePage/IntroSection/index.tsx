@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
-import { urlFor } from '@/lib/sanity/image';
+import { sanityImageSrc } from '@/lib/sanity/imageSrc';
 import { Button } from '@/components/ui/Button';
 import type { SanityImage, PortableTextBlock } from '@/lib/sanity/types';
 import styles from './introSection.module.css';
@@ -30,15 +30,9 @@ export function IntroSection({
 					placeholder="blur"
 					priority={true}
 					blurDataURL={introImage.preview}
-					unoptimized
+					quality={80}
 					sizes="(max-width: 700px) 670px, (max-width: 800px) 360px, 380px"
-					src={urlFor(introImage.id)
-						.width(680)
-						.height(680)
-						.quality(80)
-						.dpr(2)
-						.auto('format')
-						.url()}
+					src={sanityImageSrc(introImage.id, 680, 680)}
 					style={{
 						boxShadow: '0.5em 0.5em 0 var(--primary-blue)',
 						objectFit: 'cover',

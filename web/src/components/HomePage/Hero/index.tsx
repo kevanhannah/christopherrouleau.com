@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { urlFor } from '@/lib/sanity/image';
+import { sanityImageSrc } from '@/lib/sanity/imageSrc';
 import { resolveLink } from '@/lib/sanity/resolveLink';
 import { Button } from '@/components/ui/Button';
 import type { HeroData } from '@/lib/sanity/types';
@@ -24,15 +24,9 @@ export function Hero({ content }: HeroProps) {
 						placeholder="blur"
 						priority={true}
 						blurDataURL={image.preview}
-						unoptimized
+						quality={80}
 						sizes="(max-width: 700px) 670px, 470px"
-						src={urlFor(image.id)
-							.width(680)
-							.height(382)
-							.quality(80)
-							.dpr(2)
-							.auto('format')
-							.url()}
+						src={sanityImageSrc(image.id, 680, 382)}
 						style={{
 							boxShadow: '0.5em 0.5em 0 var(--primary-blue-darker)',
 							objectFit: 'cover',

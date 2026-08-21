@@ -5,8 +5,11 @@ import type { Metadata } from 'next';
 import { TextLink } from '@/components/ui/TextLink';
 import { getAllBlogSlugs, getBlogPost } from '@/lib/sanity/queries/blog';
 import { urlFor } from '@/lib/sanity/image';
+import { sanityImageSrc } from '@/lib/sanity/imageSrc';
 import { defaultExcerpt } from '@/utils/defaultMetadata';
 import styles from './blogPost.module.css';
+
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
 	const slugs = await getAllBlogSlugs();
@@ -50,7 +53,7 @@ export async function generateMetadata(
 
 const textComponents: PortableTextComponents = {
 	block: {
-		h2: ({ children }) => <h3 className={styles.heading}>{children}</h3>,
+		h2: ({ children }) => <h2 className={styles.heading}>{children}</h2>,
 	},
 	types: {
 		blockImage: ({ value }) => (
@@ -58,15 +61,9 @@ const textComponents: PortableTextComponents = {
 				<Image
 					alt={value.alt}
 					fill
-					unoptimized
+					quality={80}
 					sizes="(max-width: 970px) 100vw, 800px"
-					src={urlFor(value.image.asset._ref)
-						.width(800)
-						.height(800)
-						.quality(80)
-						.dpr(2)
-						.auto('format')
-						.url()}
+					src={sanityImageSrc(value.image.asset._ref, 800, 800)}
 					style={{ objectFit: 'cover' }}
 				/>
 			</div>
@@ -101,21 +98,15 @@ export default async function BlogPost(props: PageProps<'/blog/[slug]'>) {
 	const { body, heroImage, publishedAt, title } = post;
 
 	return (
-		<main className={styles.blogPost}>
+		<div className={styles.blogPost}>
 			<div className={styles.blogPostImageWrapper}>
 				<Image
 					alt={heroImage.alt}
 					fill={true}
 					priority={true}
-					unoptimized
+					quality={80}
 					sizes="(max-width: 970px) 100vw, 800px"
-					src={urlFor(heroImage.id)
-						.width(800)
-						.height(800)
-						.quality(80)
-						.dpr(2)
-						.auto('format')
-						.url()}
+					src={sanityImageSrc(heroImage.id, 800, 800)}
 					style={{
 						userSelect: 'none',
 						boxShadow: '0.5em 0.5em 0 var(--primary-blue)',
@@ -127,10 +118,10 @@ export default async function BlogPost(props: PageProps<'/blog/[slug]'>) {
 					<time className={styles.date}>
 						{format(parseISO(publishedAt), 'MMMM d, yyyy')}
 					</time>
-					<h2 className={styles.title}>{title}</h2>
+					<h1 className={styles.title}>{title}</h1>
 					<PortableText value={body} components={textComponents} />
 				</div>
 			</div>
-		</main>
+		</div>
 	);
 }

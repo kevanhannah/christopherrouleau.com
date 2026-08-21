@@ -18,15 +18,17 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
 	return (
 		<>
 			<Header />
-			<StatusPage
-				heading="Something went wrong"
-				message="We couldn't load this page. Please try again."
-				action={
-					<button className={styles.link} type="button" onClick={reset}>
-						Try again
-					</button>
-				}
-			/>
+			<main id="main-content">
+				<StatusPage
+					heading="Something went wrong"
+					message="We couldn't load this page. Please try again."
+					action={
+						<button className={styles.link} type="button" onClick={reset}>
+							Try again
+						</button>
+					}
+				/>
+			</main>
 		</>
 	);
 }

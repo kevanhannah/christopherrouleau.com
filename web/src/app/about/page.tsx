@@ -3,7 +3,12 @@ import { PortableText, type PortableTextComponents } from '@portabletext/react';
 import type { Metadata } from 'next';
 import { getAboutPage } from '@/lib/sanity/queries/about';
 import { urlFor } from '@/lib/sanity/image';
+import { sanityImageSrc } from '@/lib/sanity/imageSrc';
+import { JsonLd } from '@/components/common/JsonLd';
+import { baseUrl } from '@/utils/defaultMetadata';
 import styles from './about.module.css';
+
+export const revalidate = 3600;
 
 const textComponents: PortableTextComponents = {
 	block: {
@@ -51,21 +56,32 @@ export default async function AboutPage() {
 	const { content, image, title, lead } = about;
 
 	return (
-		<main className={styles.about}>
+		<div className={styles.about}>
+			<JsonLd
+				data={{
+					'@context': 'https://schema.org',
+					'@type': 'Person',
+					name: 'Christopher Rouleau',
+					jobTitle: 'Graphic designer, letterer and visual artist',
+					description: lead,
+					url: baseUrl,
+					image: urlFor(image.id).width(800).height(800).quality(80).auto('format').url(),
+					address: {
+						'@type': 'PostalAddress',
+						addressLocality: 'Toronto',
+						addressRegion: 'ON',
+						addressCountry: 'CA',
+					},
+				}}
+			/>
 			<div className={styles.aboutPageImageWrapper}>
 				<Image
 					alt={image.alt}
 					fill
 					priority={true}
-					unoptimized
+					quality={80}
 					sizes="(max-width: 800px) 100vw, 50w"
-					src={urlFor(image.id)
-						.width(800)
-						.height(800)
-						.quality(80)
-						.dpr(2)
-						.auto('format')
-						.url()}
+					src={sanityImageSrc(image.id, 800, 800)}
 					style={{
 						boxShadow: '0.5em 0.5em 0 var(--primary-blue)',
 						objectFit: 'cover',
@@ -73,9 +89,9 @@ export default async function AboutPage() {
 					}}
 				/>
 			</div>
-			<h2 className={styles.title}>{title}</h2>
+			<h1 className={styles.title}>{title}</h1>
 			<p className={styles.lead}>{lead}</p>
 			<PortableText value={content} components={textComponents} />
-		</main>
+		</div>
 	);
 }

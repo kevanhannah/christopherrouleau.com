@@ -6,6 +6,8 @@ import {
 	getCategory,
 } from '@/lib/sanity/queries/category';
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
 	const slugs = await getAllCategorySlugs();
 

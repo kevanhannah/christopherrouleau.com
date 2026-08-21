@@ -127,6 +127,28 @@ strong {
 	font-weight: 700;
 }
 
+:focus-visible {
+	outline: 0.125em solid var(--primary-blue);
+	outline-offset: 0.125em;
+}
+
+.skip-link {
+	position: absolute;
+	top: -3em;
+	left: 0;
+	z-index: 100;
+	padding: 0.75em 1.25em;
+	background: var(--primary-blue);
+	color: white;
+	font-size: 1em;
+	font-weight: 700;
+	transition: top 0.15s ease-in-out;
+}
+
+.skip-link:focus {
+	top: 0;
+}
+
 @media (color-gamut: p3) {
 	:root {
 		--primary-blue: oklch(30.48% 0.1775 263.12);

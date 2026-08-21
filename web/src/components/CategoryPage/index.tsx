@@ -12,7 +12,7 @@ export function CategoryPage({ category }: CategoryPageProps) {
 
 	return (
 		<div className={styles.categoryPage}>
-			<h2 className={styles.categoryName}>{name}</h2>
+			<h1 className={styles.categoryName}>{name}</h1>
 			<CardGrid>
 				{works.map((work, index) => (
 					<ItemCard

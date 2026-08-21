@@ -10,7 +10,7 @@ export function Layout({ children }: LayoutProps) {
 	return (
 		<div className={styles.layout}>
 			<Header />
-			<main>{children}</main>
+			<main id="main-content">{children}</main>
 		</div>
 	);
 }

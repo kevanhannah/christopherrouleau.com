@@ -4,6 +4,8 @@ import { WorkPage } from '@/components/WorkPage';
 import { urlFor } from '@/lib/sanity/image';
 import { getAllChildWorkParams, getChild } from '@/lib/sanity/queries/work';
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
 	const params = await getAllChildWorkParams();
 

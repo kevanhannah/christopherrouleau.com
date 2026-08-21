@@ -5,6 +5,8 @@ import { defaultExcerpt } from '@/utils/defaultMetadata';
 import { urlFor } from '@/lib/sanity/image';
 import { getAllTopLevelWorkParams, getWork } from '@/lib/sanity/queries/work';
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
 	const params = await getAllTopLevelWorkParams();
 

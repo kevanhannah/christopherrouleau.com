@@ -3,12 +3,14 @@ import { ItemCard } from '@/components/common/ItemCard';
 import { getBlogPosts } from '@/lib/sanity/queries/blog';
 import styles from './blogList.module.css';
 
+export const revalidate = 3600;
+
 export default async function BlogList() {
 	const posts = await getBlogPosts();
 
 	return (
-		<main className={styles.blogList}>
-			<h2 className={styles.title}>Blog</h2>
+		<div className={styles.blogList}>
+			<h1 className={styles.title}>Blog</h1>
 			<CardGrid>
 				{posts.map((post) => (
 					<ItemCard
@@ -20,6 +22,6 @@ export default async function BlogList() {
 					/>
 				))}
 			</CardGrid>
-		</main>
+		</div>
 	);
 }
