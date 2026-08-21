@@ -23,10 +23,6 @@ export default {
       name: 'details',
       title: 'Details',
     },
-    {
-      name: 'settings',
-      title: 'Settings',
-    },
   ],
   fields: [
     {
@@ -50,7 +46,7 @@ export default {
         layout: 'radio',
       },
     },
-    orderRankField({ type: 'featureList' }),
+    orderRankField({ type: 'featureItem' }),
     {
       name: 'url',
       title: 'URL',
