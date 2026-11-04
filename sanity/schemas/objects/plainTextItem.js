@@ -1,4 +1,4 @@
-import { EditIcon } from '@sanity/icons';
+import { EditIcon } from '@sanity/icons/Edit';
 
 export default {
   name: 'plainTextItem',

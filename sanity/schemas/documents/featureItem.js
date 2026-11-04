@@ -2,7 +2,7 @@ import {
   orderRankField,
   orderRankOrdering,
 } from '@sanity/orderable-document-list';
-import { PackageIcon } from '@sanity/icons';
+import { PackageIcon } from '@sanity/icons/Package';
 
 export default {
   name: 'featureItem',

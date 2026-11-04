@@ -1,5 +1,5 @@
 import { defineConfig } from 'sanity';
-import { deskTool } from 'sanity/desk';
+import { structureTool } from 'sanity/structure';
 import { dashboardTool } from '@sanity/dashboard';
 import schemas from './schemas/schema';
 import deskStructure from './deskStructure';
@@ -13,7 +13,7 @@ export default defineConfig({
     dashboardTool({
       widgets: dashboardConfig,
     }),
-    deskTool({
+    structureTool({
       structure: deskStructure,
     }),
   ],

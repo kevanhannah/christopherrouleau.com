@@ -1,13 +1,13 @@
 import React from 'react';
-import { LinkIcon } from '@sanity/icons';
+import { LinkIcon } from '@sanity/icons/Link';
 
 export default {
   title: 'Internal Link',
   name: 'annotationLinkInternal',
   type: 'object',
-  blockEditor: {
-    icon: LinkIcon,
-    render: ({ children }) => (
+  icon: LinkIcon,
+  components: {
+    annotation: (props) => (
       <span>
         <LinkIcon
           style={{
@@ -16,7 +16,7 @@ export default {
             width: '0.75em',
           }}
         />
-        {children}
+        {props.renderDefault(props)}
       </span>
     ),
   },
