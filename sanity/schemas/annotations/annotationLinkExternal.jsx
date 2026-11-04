@@ -1,13 +1,13 @@
 import React from 'react';
-import { EarthGlobeIcon } from '@sanity/icons';
+import { EarthGlobeIcon } from '@sanity/icons/EarthGlobe';
 
 export default {
   title: 'External Link',
   name: 'annotationLinkExternal',
   type: 'object',
-  blockEditor: {
-    icon: EarthGlobeIcon,
-    render: ({ children }) => (
+  icon: EarthGlobeIcon,
+  components: {
+    annotation: (props) => (
       <span>
         <EarthGlobeIcon
           style={{
@@ -16,7 +16,7 @@ export default {
             width: '0.75em',
           }}
         />
-        {children}
+        {props.renderDefault(props)}
       </span>
     ),
   },

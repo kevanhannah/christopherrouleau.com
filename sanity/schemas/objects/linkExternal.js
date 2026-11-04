@@ -1,4 +1,4 @@
-import { EarthGlobeIcon } from '@sanity/icons';
+import { EarthGlobeIcon } from '@sanity/icons/EarthGlobe';
 
 export default {
   title: 'External Link',

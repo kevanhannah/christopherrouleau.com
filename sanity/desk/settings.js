@@ -1,6 +1,6 @@
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import { IoSettingsOutline, IoLibraryOutline } from 'react-icons/io5';
-import { UlistIcon } from '@sanity/icons';
+import { UlistIcon } from '@sanity/icons/Ulist';
 import { map } from 'rxjs/operators';
 
 export default function settings(S, context, schemaType) {
